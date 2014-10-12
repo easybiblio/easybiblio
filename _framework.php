@@ -83,6 +83,22 @@ class Framework {
       }
   }
    
+  // Echo the array into JSON.
+  // Also removes the numeric keys (important because when meddo create array based on result SQL, each column is present twice).
+  function echo_json($datas) {
+
+    // Important to remove duplicates, as each column is put in the array twice by medoo framework.
+    // Once with the name of the column, a second time with the position of the column like 0, 1, 2, etc.
+    for ($r=0; $r<=count($datas); $r++) {
+        $num_columns = count($datas[$r]) / 2;
+        for ($c=0; $c<=$num_columns; $c++) {
+            unset($datas[$r][$c]);
+        }
+    }
+
+    echo json_encode($datas);
+  }
+    
 }
 
 ?>
