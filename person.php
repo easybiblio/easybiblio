@@ -17,7 +17,7 @@
 <table width="70%" border="0">
 
   <tr>
-    <td><strong>Nom/Prénom:</strong></td>
+    <td width="10%"><strong>Nom/Prénom:</strong></td>
     <td><input type="text" name="name" value=<?= $fmw->getPostOrArrayQuoted($columns, 'name') ?> size="52" maxlength="120"></td>
   </tr>
   
