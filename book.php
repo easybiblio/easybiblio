@@ -64,7 +64,7 @@
 
   <!-- Code -->
   <tr>
-    <td><strong>Code:</strong></td>
+    <td width="10%"><strong>Code:</strong></td>
     <td><input type="text" name="code" value=<?= $fmw->getPostOrArrayQuoted($columns, 'code') ?> size="52" maxlength="45"></td>
   </tr>
 
@@ -85,8 +85,14 @@
       <input type="text" name="title" value=<?= $fmw->getPostOrArrayQuoted($columns, 'title') ?> size="52" maxlength="100"></td>
   </tr>
   
+  <tr>
+    <td>Description:</td>
+    <td>
+        <textarea rows="6" cols="47" name="description"><?= $fmw->escapeHtml($fmw->getPostOrArray($columns, 'description')) ?></textarea>
+    </td>
+  </tr>
+    
   <!-- Author -->
-
   <tr>
     <td>Auteur:</td>
     <td> 
@@ -105,10 +111,10 @@
     <td><input type="text" name="editor" value=<?= $fmw->getPostOrArrayQuoted($columns, 'editor') ?> size="52" maxlength="100"></td>
   </tr>
  
-  <!-- Number of pages -->
+  <!-- Year of publication -->
   <tr>
-    <td>Nombre&nbsp;pages:</td>
-    <td><input type="number" name="num_pages" value=<?= $fmw->getPostOrArrayQuoted($columns, 'num_pages') ?> size="52" maxlength="100"></td>
+    <td>Année publication:</td>
+    <td><input type="number" name="year_publication" value=<?= $fmw->getPostOrArrayQuoted($columns, 'year_publication') ?> size="52" maxlength="4"></td>
   </tr>
   
 
