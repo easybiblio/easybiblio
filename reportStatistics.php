@@ -15,4 +15,8 @@ Total d'Emprunts: <?= $numberLendedBooks ?><br/>
 <br/>
 Total de Livres Actuelement Empruntées: <?= $numberLendedBooksToday ?>
 
+<br/>
+<br/>
+<a href="backup.php">Cliquez ici pour faire une sauvegarde de votre Base de Donnée</a>
+
 <?php include '_footer.php' ?>

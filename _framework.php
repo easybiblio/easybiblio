@@ -79,7 +79,7 @@ class Framework {
   function checkDatabaseError() {
       $array_error = $this->database->error();
       if (current($array_error) != "00000") {
-          error('Error: ' . $array_error[2]);
+          $this->error('Error: ' . $array_error[2]);
       }
   }
    
