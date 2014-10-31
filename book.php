@@ -1,5 +1,21 @@
 <?php include '_header.php' ?>
 
+<script>
+
+function loadImage() {
+    var imgToLoad = $("#cover_url").val();
+
+	var img = $("<img/>")
+	.load(function(e) {
+		$("#imageContainer").replaceWith(e.target);
+	})
+    .attr("id","imageContainer")
+    .attr("width", 260)
+	.attr("src",imgToLoad);
+}
+
+</script>
+
 <h1>Livres</h1>
 
 <?php
@@ -60,6 +76,8 @@
 <!-- ID -->
 <input type="hidden" name="id" value="<?= $id ?>">
 
+<table>
+<tr><td>
 <table width="70%" border="0">
 
   <!-- Code -->
@@ -168,6 +186,17 @@
 
 
 </table>
+</td>
+
+
+<td style="vertical-align:top">
+Couverture<br/>
+<input id='cover_url' type="text" name="cover_url" value=<?= $fmw->getPostOrArrayQuoted($columns, 'cover_url') ?> size="52" onInput="loadImage();"/><br/><br/>
+<img id='imageContainer' src=<?= $fmw->getPostOrArrayQuoted($columns, 'cover_url') ?> width= "260" />
+</td>
+
+    
+</tr></table>
 
 </form>
 

@@ -12,6 +12,7 @@ $columns = array(
     "language" => $_POST['language'],
     "category_id" => $_POST['category_id'],
     "type_id" => $_POST['type_id'],
+    "cover_url" => $_POST['cover_url'],
     "notes" => $_POST['notes']
 );
 
