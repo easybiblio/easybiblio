@@ -19,4 +19,9 @@ Total de Livres Actuelement Empruntées: <?= $numberLendedBooksToday ?>
 <br/>
 <a href="backup.php">Cliquez ici pour faire une sauvegarde de votre Base de Donnée</a>
 
+<br/>
+<br/>
+<a href="bookCoverSearch.php">Rajouter couverture pour les livres</a>
+
+
 <?php include '_footer.php' ?>
