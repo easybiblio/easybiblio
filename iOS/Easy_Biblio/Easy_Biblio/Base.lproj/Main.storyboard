@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LZO-Xj-ndW">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,11 +17,119 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Book Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jqG-1i-7wj">
+                                <rect key="frame" x="26" y="84" width="518" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fw5-1h-Z5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wvl-63-FBq"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqv-TL-9Nt">
+                                <rect key="frame" x="554" y="84" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="WIg-DE-CdB"/>
+                                    <constraint firstAttribute="height" constant="30" id="yul-7A-7Ml"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="EB_Search_Icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSearchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7N-3g-Un3"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qkY-d0-7OS">
+                                <rect key="frame" x="16" y="124" width="568" height="476"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EBCellBookSearch" id="MaF-dr-Trx">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MaF-dr-Trx" id="H0T-sU-ldv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1GU-fd-znI" kind="show" id="b75-vS-ogM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wlp-5n-BFQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ppg-N3-WzZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qkY-d0-7OS" firstAttribute="top" secondItem="Mqv-TL-9Nt" secondAttribute="bottom" constant="10" id="DBt-ib-LV3"/>
+                            <constraint firstItem="jqG-1i-7wj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="DsS-3s-4jg"/>
+                            <constraint firstItem="Mqv-TL-9Nt" firstAttribute="leading" secondItem="jqG-1i-7wj" secondAttribute="trailing" constant="10" id="KWM-tF-qI7"/>
+                            <constraint firstItem="Mqv-TL-9Nt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="L0N-Ux-We8"/>
+                            <constraint firstItem="jqG-1i-7wj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="LT9-Fc-XdY"/>
+                            <constraint firstItem="qkY-d0-7OS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Upl-Oo-4Og"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qkY-d0-7OS" secondAttribute="trailing" id="bD9-wv-dU5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qkY-d0-7OS" secondAttribute="bottom" id="esg-aZ-IGX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mqv-TL-9Nt" secondAttribute="trailing" id="h0F-Ue-ZG6"/>
+                            <constraint firstItem="Mqv-TL-9Nt" firstAttribute="leading" secondItem="jqG-1i-7wj" secondAttribute="trailing" constant="10" id="ovo-OE-XnI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ovo-OE-XnI"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="g6R-Lf-t7e"/>
+                    <connections>
+                        <outlet property="btnSearch" destination="Mqv-TL-9Nt" id="Zhq-i4-WGm"/>
+                        <outlet property="txtSearch" destination="jqG-1i-7wj" id="uGQ-RP-IVU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="930" y="110"/>
+        </scene>
+        <!--Book Details View Controller-->
+        <scene sceneID="iaM-lh-W6S">
+            <objects>
+                <viewController id="1GU-fd-znI" customClass="EBBookDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kgf-8S-62a"/>
+                        <viewControllerLayoutGuide type="bottom" id="qCI-9P-OOU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z4M-2K-Ypt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7Q-nm-RHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="110"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m7s-65-n2V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LZO-Xj-ndW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rQx-Rz-iOa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Y8-49-OX0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aP-c5-nIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="EB_Search_Icon" width="64" height="64"/>
+    </resources>
 </document>

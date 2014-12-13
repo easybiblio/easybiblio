@@ -1,5 +1,5 @@
 /*!
- * @file EBViewController
+ * @file EBConstants
  *
  * @author SMRT
  *
@@ -7,7 +7,7 @@
  * Under MIT License
  *
  * @section Description
- * First View Controller
+ * Constants file for project.
  *
  * @section Version 1.0
  *
@@ -15,18 +15,17 @@
 /**************************************************************************************/
 #pragma mark - Imported Classes
 /**************************************************************************************/
-#import <UIKit/UIKit.h>
-
-@interface EBViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
-
-@property (nonatomic, weak) IBOutlet UITextField *txtSearch;
-@property (nonatomic, weak) IBOutlet UIButton *btnSearch;
+#import <Foundation/Foundation.h>
 
 /**************************************************************************************/
-#pragma mark - Actions
+#pragma mark - Interface
 /**************************************************************************************/
+@interface EBConstants : NSObject
 
-- (IBAction)btnSearchTapped:(id)sender;
+/* Page Titles */
+extern NSString *const STR_LAUNCH_PAGE_TITLE;
+
+/* Cell Identifiers */
+extern NSString *const STR_SEARCH_CELL_IDENTIFIER;
 
 @end
-

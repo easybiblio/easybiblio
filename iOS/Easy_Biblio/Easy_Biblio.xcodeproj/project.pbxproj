@@ -12,8 +12,10 @@
 		8C26D3801A3B1EE100D2C974 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C26D37F1A3B1EE100D2C974 /* Images.xcassets */; };
 		8C26D3831A3B1EE100D2C974 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C26D3811A3B1EE100D2C974 /* LaunchScreen.xib */; };
 		8C26D38F1A3B1EE100D2C974 /* Easy_BiblioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D38E1A3B1EE100D2C974 /* Easy_BiblioTests.m */; };
-		8C26D39E1A3B208400D2C974 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D39A1A3B208400D2C974 /* AppDelegate.m */; };
+		8C26D39E1A3B208400D2C974 /* EBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D39A1A3B208400D2C974 /* EBAppDelegate.m */; };
 		8C26D39F1A3B208400D2C974 /* EBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D39D1A3B208400D2C974 /* EBViewController.m */; };
+		8C26D3A31A3BABB100D2C974 /* EBBookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3A21A3BABB100D2C974 /* EBBookDetailsViewController.m */; };
+		8C26D3A81A3BB1DF00D2C974 /* EBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3A71A3BB1DF00D2C974 /* EBConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,14 @@
 		8C26D3881A3B1EE100D2C974 /* Easy_BiblioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Easy_BiblioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C26D38D1A3B1EE100D2C974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C26D38E1A3B1EE100D2C974 /* Easy_BiblioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Easy_BiblioTests.m; sourceTree = "<group>"; };
-		8C26D3991A3B208400D2C974 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8C26D39A1A3B208400D2C974 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8C26D3991A3B208400D2C974 /* EBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBAppDelegate.h; sourceTree = "<group>"; };
+		8C26D39A1A3B208400D2C974 /* EBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBAppDelegate.m; sourceTree = "<group>"; };
 		8C26D39C1A3B208400D2C974 /* EBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBViewController.h; sourceTree = "<group>"; };
 		8C26D39D1A3B208400D2C974 /* EBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBViewController.m; sourceTree = "<group>"; };
+		8C26D3A11A3BABB100D2C974 /* EBBookDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBookDetailsViewController.h; sourceTree = "<group>"; };
+		8C26D3A21A3BABB100D2C974 /* EBBookDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBookDetailsViewController.m; sourceTree = "<group>"; };
+		8C26D3A61A3BB1DF00D2C974 /* EBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBConstants.h; sourceTree = "<group>"; };
+		8C26D3A71A3BB1DF00D2C974 /* EBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +89,11 @@
 			children = (
 				8C26D3981A3B208400D2C974 /* AppDelegate */,
 				8C26D39B1A3B208400D2C974 /* Launch View Controller */,
+				8C26D3A01A3BAB6000D2C974 /* Book Details View Controller */,
+				8C26D3A41A3BB1CC00D2C974 /* Constants */,
+				8C26D3A51A3BB1CC00D2C974 /* Networking */,
 				8C26D37C1A3B1EE000D2C974 /* Main.storyboard */,
+				8C26D3A91A3BB5CB00D2C974 /* Reachability */,
 				8C26D37F1A3B1EE100D2C974 /* Images.xcassets */,
 				8C26D3811A3B1EE100D2C974 /* LaunchScreen.xib */,
 				8C26D3721A3B1EE000D2C974 /* Supporting Files */,
@@ -120,8 +130,8 @@
 		8C26D3981A3B208400D2C974 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				8C26D3991A3B208400D2C974 /* AppDelegate.h */,
-				8C26D39A1A3B208400D2C974 /* AppDelegate.m */,
+				8C26D3991A3B208400D2C974 /* EBAppDelegate.h */,
+				8C26D39A1A3B208400D2C974 /* EBAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -133,6 +143,38 @@
 				8C26D39D1A3B208400D2C974 /* EBViewController.m */,
 			);
 			path = "Launch View Controller";
+			sourceTree = "<group>";
+		};
+		8C26D3A01A3BAB6000D2C974 /* Book Details View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C26D3A11A3BABB100D2C974 /* EBBookDetailsViewController.h */,
+				8C26D3A21A3BABB100D2C974 /* EBBookDetailsViewController.m */,
+			);
+			path = "Book Details View Controller";
+			sourceTree = "<group>";
+		};
+		8C26D3A41A3BB1CC00D2C974 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8C26D3A61A3BB1DF00D2C974 /* EBConstants.h */,
+				8C26D3A71A3BB1DF00D2C974 /* EBConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8C26D3A51A3BB1CC00D2C974 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8C26D3A91A3BB5CB00D2C974 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C26D39F1A3B208400D2C974 /* EBViewController.m in Sources */,
-				8C26D39E1A3B208400D2C974 /* AppDelegate.m in Sources */,
+				8C26D3A81A3BB1DF00D2C974 /* EBConstants.m in Sources */,
+				8C26D39E1A3B208400D2C974 /* EBAppDelegate.m in Sources */,
 				8C26D3751A3B1EE000D2C974 /* main.m in Sources */,
+				8C26D3A31A3BABB100D2C974 /* EBBookDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +476,7 @@
 				8C26D3941A3B1EE100D2C974 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C26D3951A3B1EE100D2C974 /* Build configuration list for PBXNativeTarget "Easy_BiblioTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +485,7 @@
 				8C26D3971A3B1EE100D2C974 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 /*!
- * @file AppDelegate
+ * @file EBConstants
  *
  * @author SMRT
  *
@@ -7,7 +7,7 @@
  * Under MIT License
  *
  * @section Description
- * Application Delegate
+ * Constants file for project.
  *
  * @section Version 1.0
  *
@@ -15,15 +15,17 @@
 /**************************************************************************************/
 #pragma mark - Imported Classes
 /**************************************************************************************/
-#import <UIKit/UIKit.h>
+#import "EBConstants.h"
 
 /**************************************************************************************/
-#pragma mark - Interface
+#pragma mark - Implementation
 /**************************************************************************************/
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@implementation EBConstants
 
-@property (strong, nonatomic) UIWindow *window;
+/* Page Titles */
+NSString *const STR_LAUNCH_PAGE_TITLE       = @"Easy Biblio";
 
+/* Cell Identifiers */
+NSString *const STR_SEARCH_CELL_IDENTIFIER  = @"EBCellBookSearch";
 
 @end
-

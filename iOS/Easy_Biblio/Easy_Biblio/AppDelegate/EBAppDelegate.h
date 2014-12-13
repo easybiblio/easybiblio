@@ -1,5 +1,5 @@
 /*!
- * @file EBViewController
+ * @file EBAppDelegate
  *
  * @author SMRT
  *
@@ -7,7 +7,7 @@
  * Under MIT License
  *
  * @section Description
- * First View Controller
+ * Application Delegate
  *
  * @section Version 1.0
  *
@@ -17,16 +17,13 @@
 /**************************************************************************************/
 #import <UIKit/UIKit.h>
 
-@interface EBViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
-
-@property (nonatomic, weak) IBOutlet UITextField *txtSearch;
-@property (nonatomic, weak) IBOutlet UIButton *btnSearch;
-
 /**************************************************************************************/
-#pragma mark - Actions
+#pragma mark - Interface
 /**************************************************************************************/
+@interface EBAppDelegate : UIResponder <UIApplicationDelegate>
 
-- (IBAction)btnSearchTapped:(id)sender;
+@property (strong, nonatomic) UIWindow *window;
+
 
 @end
 
