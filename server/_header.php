@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>NEECAFLA - Bibliotheque</title>
+    <title>EasyBiblio</title>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
     <script src="jquery-ui/external/jquery/jquery.js"></script>
@@ -26,10 +26,10 @@
     </tr>
 </table>
     
-<a href="bookSearch.php">Chercher&nbsp;livres</a>&nbsp;&nbsp;
-<a href="personSearch.php">Chercher&nbsp;personnes</a>&nbsp;&nbsp;
-<a href="reportBookLended.php">Livres&nbsp;empruntés</a>&nbsp;&nbsp;
-<a href="reportStatistics.php">Statistiques</a>
+<a href="bookSearch.php"><?= $t->__('Search Books') ?></a>&nbsp;&nbsp;
+<a href="personSearch.php"><?= $t->__('Search People') ?></a>&nbsp;&nbsp;
+<a href="reportBookLended.php"><?= $t->__('Lent Books') ?></a>&nbsp;&nbsp;
+<a href="reportStatistics.php"><?= $t->__('Statistics') ?></a>
     
 <?php
  $message = $_SESSION['message'];

@@ -1,0 +1,19 @@
+Search Books=Chercher livres
+Search People=Chercher personnes
+Lent Books=Livres empruntées
+Statistics=Statistiques
+
+Book=Livre
+Search=Recherche
+New=Nouveau
+
+Code=Code
+Cover=Couverture
+Title=Titre
+Author=Auteur
+CoAuthor=Co-auteur
+Type=Type
+Action=Action
+
+List of Books=Liste de livres
+There are more books...=Il y a plus de livres...

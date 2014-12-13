@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1>Liste de livres</h1>
+<h1><?= $t->__('List of Books') ?></h1>
 
 <?php
     $search_string = $_POST['search_book'];
@@ -13,21 +13,21 @@
 ?>
 <form method="post">
     <input type="search" name="search_book" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" value="Recherche"/>
-    <input type="button" value="Nouveau livre" onclick="window.location.href='book.php'" />
+    <input type="submit" value="<?= $t->__('Search') ?>"/>
+    <input type="button" value="<?= $t->__('New') ?>" onclick="window.location.href='book.php'" />
 </form>
 
 <br/>
 
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
-        <th>Code</th>
-        <th>Cover</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>CoAuthor</th>
-        <th>Type</th>
-        <th>Action</th>
+        <th><?= $t->__('Code') ?></th>
+        <th><?= $t->__('Cover') ?></th>
+        <th><?= $t->__('Title') ?></th>
+        <th><?= $t->__('Author') ?></th>
+        <th><?= $t->__('CoAuthor') ?></th>
+        <th><?= $t->__('Type') ?></th>
+        <th><?= $t->__('Action') ?></th>
     </tr>
 <?php
 
@@ -84,7 +84,9 @@ foreach($datas as $row) {
     echo "</td>";
     echo "</tr>\n";
     if ($counter == 20) {
-        echo "<tr><td colspan='100' align='center'>Il y a plus de livres...</td></tr>";
+        echo "<tr><td colspan='100' align='center'>";
+        echo $t->__('There are more books...');
+        echo "</td></tr>";
         break;
     }
 }

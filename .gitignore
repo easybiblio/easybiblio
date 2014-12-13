@@ -1,4 +1,3 @@
-
 backup/*
-
 images/covers/*.jpg
+server/images/covers/*.jpg
