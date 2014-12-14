@@ -18,6 +18,7 @@
 #import "EBViewController.h"
 #import "EBConstants.h"
 #import "EBSearchResultsCustomCellTableViewCell.h"
+#import "EBServiceLayer.h"
 /**************************************************************************************/
 #pragma mark - Interface
 /**************************************************************************************/
@@ -92,6 +93,10 @@
     /* Also need to handle the negative scenario. */
     
     /* Need to add the reachability class. */
+    
+    /* sample test */
+    EBServiceLayer *objEBServiceLayer = [[EBServiceLayer alloc]init];
+    [objEBServiceLayer getCompleteListOfAvailableBooks];
 }
 
 @end

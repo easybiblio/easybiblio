@@ -27,6 +27,9 @@
 		8C26D3D21A3C847200D2C974 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3C51A3C847200D2C974 /* AFURLResponseSerialization.m */; };
 		8C26D3D31A3C847200D2C974 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3C71A3C847200D2C974 /* AFURLSessionManager.m */; };
 		8C26D3D41A3C847200D2C974 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3CA1A3C847200D2C974 /* Reachability.m */; };
+		8C26D3D71A3CF28D00D2C974 /* EBServiceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3D61A3CF28D00D2C974 /* EBServiceLayer.m */; };
+		8C26D3DB1A3CFF0600D2C974 /* EBBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3DA1A3CFF0600D2C974 /* EBBook.m */; };
+		8C26D3EC1A3D04AF00D2C974 /* EBBookList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C26D3EB1A3D04AF00D2C974 /* EBBookList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,12 @@
 		8C26D3C71A3C847200D2C974 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		8C26D3C91A3C847200D2C974 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8C26D3CA1A3C847200D2C974 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8C26D3D51A3CF28D00D2C974 /* EBServiceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBServiceLayer.h; sourceTree = "<group>"; };
+		8C26D3D61A3CF28D00D2C974 /* EBServiceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBServiceLayer.m; sourceTree = "<group>"; };
+		8C26D3D91A3CFF0600D2C974 /* EBBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBook.h; sourceTree = "<group>"; };
+		8C26D3DA1A3CFF0600D2C974 /* EBBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBook.m; sourceTree = "<group>"; };
+		8C26D3EA1A3D04AF00D2C974 /* EBBookList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBookList.h; sourceTree = "<group>"; };
+		8C26D3EB1A3D04AF00D2C974 /* EBBookList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBookList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +136,7 @@
 				8C26D3A41A3BB1CC00D2C974 /* Constants */,
 				8C26D3B31A3C847200D2C974 /* Networking */,
 				8C26D3C81A3C847200D2C974 /* Reachability */,
+				8C26D3D81A3CFED500D2C974 /* Model */,
 				8C26D37C1A3B1EE000D2C974 /* Main.storyboard */,
 				8C26D37F1A3B1EE100D2C974 /* Images.xcassets */,
 				8C26D3811A3B1EE100D2C974 /* LaunchScreen.xib */,
@@ -219,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				8C26D3B41A3C847200D2C974 /* AFNetworking */,
+				8C26D3D51A3CF28D00D2C974 /* EBServiceLayer.h */,
+				8C26D3D61A3CF28D00D2C974 /* EBServiceLayer.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -256,6 +268,17 @@
 				8C26D3CA1A3C847200D2C974 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		8C26D3D81A3CFED500D2C974 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C26D3D91A3CFF0600D2C974 /* EBBook.h */,
+				8C26D3DA1A3CFF0600D2C974 /* EBBook.m */,
+				8C26D3EA1A3D04AF00D2C974 /* EBBookList.h */,
+				8C26D3EB1A3D04AF00D2C974 /* EBBookList.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,11 +384,14 @@
 				8C26D3D31A3C847200D2C974 /* AFURLSessionManager.m in Sources */,
 				8C26D3A81A3BB1DF00D2C974 /* EBConstants.m in Sources */,
 				8C26D3AF1A3C775F00D2C974 /* EBViewController.m in Sources */,
+				8C26D3EC1A3D04AF00D2C974 /* EBBookList.m in Sources */,
 				8C26D3CE1A3C847200D2C974 /* AFNetworkReachabilityManager.m in Sources */,
+				8C26D3D71A3CF28D00D2C974 /* EBServiceLayer.m in Sources */,
 				8C26D3B21A3C779600D2C974 /* EBSearchResultsCustomCellTableViewCell.m in Sources */,
 				8C26D3D01A3C847200D2C974 /* AFURLConnectionOperation.m in Sources */,
 				8C26D3CD1A3C847200D2C974 /* AFHTTPSessionManager.m in Sources */,
 				8C26D3D11A3C847200D2C974 /* AFURLRequestSerialization.m in Sources */,
+				8C26D3DB1A3CFF0600D2C974 /* EBBook.m in Sources */,
 				8C26D39E1A3B208400D2C974 /* EBAppDelegate.m in Sources */,
 				8C26D3751A3B1EE000D2C974 /* main.m in Sources */,
 				8C26D3D41A3C847200D2C974 /* Reachability.m in Sources */,

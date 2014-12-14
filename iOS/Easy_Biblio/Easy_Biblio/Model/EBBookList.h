@@ -1,5 +1,5 @@
 /*!
- * @file EBSearchResultsCustomCellTableViewCell
+ * @file EBBook
  *
  * @author SMRT
  *
@@ -7,7 +7,7 @@
  * Under MIT License
  *
  * @section Description
- * First View Controller
+ * Model class containing the list of books.
  *
  * @section Version 1.0
  *
@@ -15,21 +15,18 @@
 /**************************************************************************************/
 #pragma mark - Imported Classes
 /**************************************************************************************/
-#import "EBSearchResultsCustomCellTableViewCell.h"
-
-@implementation EBSearchResultsCustomCellTableViewCell
+#import <Foundation/Foundation.h>
 
 /**************************************************************************************/
-#pragma mark - View Lifecycle
+#pragma mark - Getters & Setters
 /**************************************************************************************/
-- (void)awakeFromNib {
-    // Initialization code
-}
+@interface EBBookList : NSObject
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+@property (nonatomic, strong) NSArray *arrBooks;
 
-    // Configure the view for the selected state
-}
+/**************************************************************************************/
+#pragma mark - Designated Initializer
+/**************************************************************************************/
+-(id)initWithResponse:(NSArray *)response;
 
 @end

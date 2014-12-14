@@ -1,5 +1,5 @@
 /*!
- * @file EBSearchResultsCustomCellTableViewCell
+ * @file EBBook
  *
  * @author SMRT
  *
@@ -7,7 +7,7 @@
  * Under MIT License
  *
  * @section Description
- * First View Controller
+ * Model class for the book object
  *
  * @section Version 1.0
  *
@@ -15,21 +15,25 @@
 /**************************************************************************************/
 #pragma mark - Imported Classes
 /**************************************************************************************/
-#import "EBSearchResultsCustomCellTableViewCell.h"
+#import "EBBook.h"
 
-@implementation EBSearchResultsCustomCellTableViewCell
+@implementation EBBook
 
 /**************************************************************************************/
-#pragma mark - View Lifecycle
+#pragma mark - Birth & Death
 /**************************************************************************************/
-- (void)awakeFromNib {
-    // Initialization code
+
+- (id)initWithResponse:(NSDictionary *)dict
+{
+    if(self = [super init])
+    {
+        /* Parsing logic goes here */
+    }
+    
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
+/**************************************************************************************/
+#pragma mark - Private Methods
+/**************************************************************************************/
 @end
