@@ -25,10 +25,14 @@ db.book.date_creation=Date&nbsp;de&nbsp;Creation
 
 db.person=Personne
 db.person.name=Prénom/Nom
+db.person.address=Adress
+db.person.zipcode=Code Postal
 db.person.city=Ville
 db.person.phone1=Phone 1
 db.person.phone2=Phone 2
 db.person.email=E-mail
+db.person.notes=Notes
+db.person.date_creation=Date de Creation
 
 label.action=Action
 label.action.return=Retourner
