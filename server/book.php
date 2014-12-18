@@ -16,7 +16,7 @@ function loadImage() {
 
 </script>
 
-<h1>Livres</h1>
+<h1><?= $t->__('db.book') ?></h1>
 
 <?php
   $id = $_GET['id'];
@@ -82,7 +82,7 @@ function loadImage() {
 
   <!-- Code -->
   <tr>
-    <td width="10%"><strong>Code:</strong></td>
+    <td width="10%"><strong><?= $t->__('db.book.code') ?>:</strong></td>
     <td><input type="text" name="code" value=<?= $fmw->getPostOrArrayQuoted($columns, 'code') ?> size="52" maxlength="45"></td>
   </tr>
 
@@ -98,13 +98,13 @@ function loadImage() {
     
   <!-- Title -->
   <tr>
-    <td><strong>Titre:</strong></td>
+    <td><strong><?= $t->__('db.book.title') ?>:</strong></td>
     <td> 
       <input type="text" name="title" value=<?= $fmw->getPostOrArrayQuoted($columns, 'title') ?> size="52" maxlength="100"></td>
   </tr>
   
   <tr>
-    <td>Description:</td>
+    <td><?= $t->__('db.book.description') ?>:</td>
     <td>
         <textarea rows="6" cols="47" name="description"><?= $fmw->escapeHtml($fmw->getPostOrArray($columns, 'description')) ?></textarea>
     </td>
@@ -112,33 +112,33 @@ function loadImage() {
     
   <!-- Author -->
   <tr>
-    <td>Auteur:</td>
+    <td><?= $t->__('db.book.author') ?>:</td>
     <td> 
       <input type="text" name="author" value=<?= $fmw->getPostOrArrayQuoted($columns, 'author') ?> size="52" maxlength="100"></td>
   </tr>
   
   <!-- CoAuthor -->
   <tr>
-    <td>Esprit:</td>
+    <td><?= $t->__('db.book.coauthor') ?>:</td>
     <td><input type="text" name="coauthor" value=<?= $fmw->getPostOrArrayQuoted($columns, 'coauthor') ?> size="52" maxlength="100"></td>
   </tr>
   
   <!-- Editor -->
   <tr>
-    <td>Editeur:</td>
+    <td><?= $t->__('db.book.editor') ?>:</td>
     <td><input type="text" name="editor" value=<?= $fmw->getPostOrArrayQuoted($columns, 'editor') ?> size="52" maxlength="100"></td>
   </tr>
  
   <!-- Year of publication -->
   <tr>
-    <td>Année publication:</td>
+    <td><?= $t->__('db.book.year_publication') ?>:</td>
     <td><input type="number" name="year_publication" value=<?= $fmw->getPostOrArrayQuoted($columns, 'year_publication') ?> size="52" maxlength="4"></td>
   </tr>
   
 
   <!-- Language -->
   <tr>
-    <td>Langue:</td>
+    <td><?= $t->__('db.book.language') ?>:</td>
     <td>
         <select name="language" size="1">
             <?php prepareLanguageOptions( $fmw->getPostOrArray($columns, 'language') ); ?>
@@ -148,7 +148,7 @@ function loadImage() {
     
   <!-- Category -->
   <tr>
-    <td>Categorie:</td>
+    <td><?= $t->__('db.book.category') ?>:</td>
     <td>
     <select name="category_id" size="1">
         <?php prepareCategoryOptions( $fmw->getPostOrArray($columns, 'category_id') ); ?>
@@ -157,7 +157,7 @@ function loadImage() {
   </tr>
     
   <tr>
-    <td>Notes:</td>
+    <td><?= $t->__('db.book.notes') ?>:</td>
     <td>
         <textarea rows="6" cols="47" name="notes"><?= $fmw->escapeHtml($fmw->getPostOrArray($columns, 'notes')) ?></textarea>
     </td>
@@ -165,7 +165,7 @@ function loadImage() {
     
    <?php if ($id != '') { ?>
   <tr>
-    <td>Date&nbsp;Creation:</td>
+    <td><?= $t->__('db.book.date_creation') ?>:</td>
     <td><?= $fmw->getPostOrArray($columns, 'date_creation') ?></td>
   </tr>
   <?php } ?>
@@ -180,8 +180,8 @@ function loadImage() {
   <tr> 
     <td>&nbsp;</td>
     <td align="left" class="texte"> 
-      <input type="submit" name="Submit" value="Sauvegarder">
-      <input type="button" value="Annuler" onclick="window.location.href='bookSearch.php'" ></td>
+      <input type="submit" name="Submit" value="<?= $t->__('button.save') ?>">
+      <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" ></td>
   </tr>
 
 
@@ -195,7 +195,7 @@ function loadImage() {
 ?>
 
 <td style="vertical-align:top">
-Couverture<br/>
+<?= $t->__('db.book.cover') ?><br/>
 <input id='cover_url' type="text" name="cover_url" value=<?= $fmw->getPostOrArrayQuoted($columns, 'cover_url') ?> size="52" onInput="loadImage();"/><br/><br/>
 <img id='imageContainer' src=<?= $img_src_nocache ?> width= "260" />
 </td>

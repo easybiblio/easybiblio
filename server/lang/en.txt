@@ -5,6 +5,8 @@ menu.statistics=Statistics
 
 button.search=Search
 button.new=New
+button.save=Save
+button.cancel=Cancel
 
 db.book=Book
 db.book.code=Code
@@ -13,6 +15,13 @@ db.book.title=Title
 db.book.author=Author
 db.book.coauthor=CoAuthor
 db.book.type=Type
+db.book.description=Description
+db.book.editor=Edtor	
+db.book.year_publication=Year of publication
+db.book.language=Language
+db.book.category=Category
+db.book.notes=Notes
+db.book.date_creation=Creation&nbsp;Date
 
 label.action=Action
 label.action.return=Return

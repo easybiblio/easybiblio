@@ -3,9 +3,10 @@ menu.search_people=Chercher personnes
 menu.lent_book=Livres empruntées
 menu.statistics=Statistiques
 
-
 button.search=Recherche
 button.new=Nouveau
+button.save=Sauvegarder
+button.cancel=Annuler
 
 db.book=Livre
 db.book.code=Code
@@ -14,6 +15,13 @@ db.book.title=Titre
 db.book.author=Auteur
 db.book.coauthor=Co-auteur
 db.book.type=Type
+db.book.description=Description
+db.book.editor=Editeur
+db.book.year_publication=Année de Publication
+db.book.language=Langue
+db.book.category=Categorie
+db.book.notes=Notes
+db.book.date_creation=Date&nbsp;de&nbsp;Creation
 
 label.action=Action
 label.action.return=Retourner
