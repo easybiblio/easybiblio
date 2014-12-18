@@ -7,6 +7,8 @@ button.search=Search
 button.new=New
 button.save=Save
 button.cancel=Cancel
+button.newPerson=New Person
+button.confirmLend=Confirm Lending
 
 db.book=Book
 db.book.code=Code
@@ -35,7 +37,7 @@ db.person.notes=Notes
 db.person.date_creation=Creation&nbsp;Date
 
 db.lend=Lent Books
-db.lend.date_lend=Lend Date
+db.lend.date_lend=Lend&nbsp;Date
 db.lend.notes=Notes
 
 label.action=Action
@@ -45,6 +47,8 @@ label.report_lent_books=Lent books
 
 title.list_of_books=List of Books
 title.list_of_people=List of People
+
+bookLend.title=Lending of a book
 
 reportBookLended.title=List of lent books
 reportBookLended.label.days=Days

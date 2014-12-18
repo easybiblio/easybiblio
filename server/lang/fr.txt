@@ -7,6 +7,8 @@ button.search=Recherche
 button.new=Nouveau
 button.save=Sauvegarder
 button.cancel=Annuler
+button.newPerson=Nouvelle personne
+button.confirmLend=Confirmer l'emprunt
 
 db.book=Livre
 db.book.code=Code
@@ -35,7 +37,7 @@ db.person.notes=Notes
 db.person.date_creation=Date de Creation
 
 db.lend=Livres empruntées
-db.lend.date_lend=Date d'emprunt
+db.lend.date_lend=Date&nbsp;d'emprunt
 db.lend.notes=Notes
 
 label.action=Action
@@ -45,6 +47,8 @@ label.report_lent_books=Livres empruntées
 
 title.list_of_books=Liste de livres
 title.list_of_people=Liste de Personnes
+
+bookLend.title=Emprunter des livres
 
 reportBookLended.title=Liste de livres empruntées
 reportBookLended.label.days=Jours

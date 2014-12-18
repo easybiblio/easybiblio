@@ -8,22 +8,22 @@
   }
 ?>
 
-<h1>Emprunter des livres</h1>
+<h1><?= $t->__('bookLend.title') ?></h1>
 
-Livre:
+<?= $t->__('db.book') ?>:
 <table width="70%" border="1" cellpadding="5" cellspacing="0">
   <tr>
-    <td width="1%">Livre:</td>
+    <td width="1%"><?= $t->__('db.book.title') ?>:</td>
     <td>(<?=$book_columns['code'] ?>) <?=$book_columns['title'] ?></td>
   </tr>
     
   <tr>
-    <td>Auteur:</td>
+    <td><?= $t->__('db.book.author') ?>:</td>
     <td><?=$book_columns['author'] ?></td>
   </tr>
    
   <tr>
-    <td>Co-Auteur:</td>
+    <td><?= $t->__('db.book.coauthor') ?>:</td>
     <td><?=$book_columns['coauthor'] ?></td>
   </tr>
 </table>
@@ -31,7 +31,7 @@ Livre:
 
 <br/>
 <br/>
-Personne:
+<?= $t->__('db.person') ?>:
 <?php
     $search_string = $_POST['search_person'];
     if (!isset($search_string)) {
@@ -43,8 +43,8 @@ Personne:
 ?>
 <form method="post">
     <input type="search" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" value="Recherche"/>
-    <input type="button" value="Nouvelle personne" onclick="window.location.href='person.php'" />
+    <input type="submit" value="<?= $t->__('button.search') ?>"/>
+    <input type="button" value="<?= $t->__('button.newPerson') ?>" onclick="window.location.href='person.php'" />
 </form>
 
 <br/>
@@ -59,11 +59,11 @@ Personne:
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
         <th></th>
-        <th>Nom/Prenom</th>
-        <th>Ville</th>
-        <th>Phone 1</th>
-        <th>Phone 2</th>
-        <th>E-mail</th>
+        <th><?= $t->__('db.person.name') ?></th>
+        <th><?= $t->__('db.person.city') ?></th>
+        <th><?= $t->__('db.person.phone1') ?></th>
+        <th><?= $t->__('db.person.phone2') ?></th>
+        <th><?= $t->__('db.person.email') ?></th>
     </tr>
 <?php
 
@@ -113,12 +113,12 @@ foreach($datas as $row) {
     <table width="70%" cellpadding="5" border="0">
 
       <tr>
-        <td width="1%"><strong>Date&nbsp;d'emprunt:</strong></td>
+        <td width="1%"><strong><?= $t->__('db.lend.date_lend') ?>:</strong></td>
         <td><input type="text" name="date_lend" size="10" value="<?= date('d/m/Y', time()); ?>" id="datepicker"/></td>
       </tr>
 
       <tr>
-        <td>Notes:</td>
+        <td><?= $t->__('db.lend.notes') ?>:</td>
         <td>
             <textarea rows="6" cols="47" name="notes" autofocus></textarea>
         </td>
@@ -126,8 +126,8 @@ foreach($datas as $row) {
         
        <tr>
         <td colspan="2">
-            <input type="submit" value="Confirmer l'Emprunt"/>
-            <input type="button" value="Annuler" onclick="window.location.href='bookSearch.php'"/>
+            <input type="submit" value="<?= $t->__('button.confirmLend') ?>"/>
+            <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'"/>
         </td>
        </tr>
     </table>
