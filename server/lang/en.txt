@@ -41,14 +41,16 @@ db.lend.notes=Notes
 label.action=Action
 label.action.return=Return
 label.action.lend=Lend
-label.action.change_notes=Change&nbsp;Notes
-label.action.return=Return
 label.report_lent_books=Lent books
-label.days=Days
 
 title.list_of_books=List of Books
 title.list_of_people=List of People
-title.report_book_lended=List of lent books
+
+reportBookLended.title=List of lent books
+reportBookLended.label.days=Days
+reportBookLended.action.change_notes=Change&nbsp;Notes
+reportBookLended.action.return=Return
+reportBookLended.message.total_lent_books=Total number of lent books
 
 reportStatistics.title=Statistics
 reportStatistics.total_books=Total of books
@@ -60,4 +62,3 @@ reportStatistics.link_addBookCover=Add covers for your books
 
 message.there_are_more_books=There are more books...
 message.there_are_more_people=There are more people...
-message.total_lent_books=Total number of lent books
