@@ -1,19 +1,23 @@
-Search Books=Chercher livres
-Search People=Chercher personnes
-Lent Books=Livres empruntées
-Statistics=Statistiques
+menu.search_book=Chercher livres
+menu.search_people=Chercher personnes
+menu.lent_book=Livres empruntées
+menu.statistics=Statistiques
 
-Book=Livre
-Search=Recherche
-New=Nouveau
 
-Code=Code
-Cover=Couverture
-Title=Titre
-Author=Auteur
-CoAuthor=Co-auteur
-Type=Type
-Action=Action
+button.search=Recherche
+button.new=Nouveau
 
-List of Books=Liste de livres
-There are more books...=Il y a plus de livres...
+db.book=Livre
+db.book.code=Code
+db.book.cover=Couverture
+db.book.title=Titre
+db.book.author=Auteur
+db.book.coauthor=Co-auteur
+db.book.type=Type
+
+label.action=Action
+label.action.return=Retourner
+label.action.lend=Emprunter
+
+title.list_of_books=Liste de livres
+message.there_are_more_books=Il y a plus de livres...

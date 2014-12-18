@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1><?= $t->__('List of Books') ?></h1>
+<h1><?= $t->__('title.list_of_books') ?></h1>
 
 <?php
     $search_string = $_POST['search_book'];
@@ -13,21 +13,21 @@
 ?>
 <form method="post">
     <input type="search" name="search_book" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" value="<?= $t->__('Search') ?>"/>
-    <input type="button" value="<?= $t->__('New') ?>" onclick="window.location.href='book.php'" />
+    <input type="submit" value="<?= $t->__('button.search') ?>"/>
+    <input type="button" value="<?= $t->__('button.new') ?>" onclick="window.location.href='book.php'" />
 </form>
 
 <br/>
 
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
-        <th><?= $t->__('Code') ?></th>
-        <th><?= $t->__('Cover') ?></th>
-        <th><?= $t->__('Title') ?></th>
-        <th><?= $t->__('Author') ?></th>
-        <th><?= $t->__('CoAuthor') ?></th>
-        <th><?= $t->__('Type') ?></th>
-        <th><?= $t->__('Action') ?></th>
+        <th><?= $t->__('db.book.code') ?></th>
+        <th><?= $t->__('db.book.cover') ?></th>
+        <th><?= $t->__('db.book.title') ?></th>
+        <th><?= $t->__('db.book.author') ?></th>
+        <th><?= $t->__('db.book.coauthor') ?></th>
+        <th><?= $t->__('db.book.type') ?></th>
+        <th><?= $t->__('label.action') ?></th>
     </tr>
 <?php
 
@@ -76,16 +76,16 @@ foreach($datas as $row) {
     echo "<td>";
     
     if ($row['lended']) {
-        echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . 'Retourner</a>';
+        echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
     } else {
-        echo "<a href='bookLend.php?book_id=" . $row['id'] . "'>" . 'Emprunter</a>';
+        echo "<a href='bookLend.php?book_id=" . $row['id'] . "'>" . $t->__('label.action.lend') . '</a>';
     }
     
     echo "</td>";
     echo "</tr>\n";
     if ($counter == 20) {
         echo "<tr><td colspan='100' align='center'>";
-        echo $t->__('There are more books...');
+        echo $t->__('message.there_are_more_books');
         echo "</td></tr>";
         break;
     }

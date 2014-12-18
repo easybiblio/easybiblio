@@ -26,10 +26,10 @@
     </tr>
 </table>
     
-<a href="bookSearch.php"><?= $t->__('Search Books') ?></a>&nbsp;&nbsp;
-<a href="personSearch.php"><?= $t->__('Search People') ?></a>&nbsp;&nbsp;
-<a href="reportBookLended.php"><?= $t->__('Lent Books') ?></a>&nbsp;&nbsp;
-<a href="reportStatistics.php"><?= $t->__('Statistics') ?></a>
+<a href="bookSearch.php"><?= $t->__('menu.search_book') ?></a>&nbsp;&nbsp;
+<a href="personSearch.php"><?= $t->__('menu.search_people') ?></a>&nbsp;&nbsp;
+<a href="reportBookLended.php"><?= $t->__('menu.lent_book') ?></a>&nbsp;&nbsp;
+<a href="reportStatistics.php"><?= $t->__('menu.statistics') ?></a>
     
 <?php
  $message = $_SESSION['message'];
