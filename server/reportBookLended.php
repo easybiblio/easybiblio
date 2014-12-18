@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1>Liste de livres empruntées</h1>
+<h1><?= $t->__('title.report_book_lended') ?></h1>
 
 <?php
     $query = "select *, tb_lend.id as lend_id, tb_lend.notes as notes, tb_book.code as book_code, DATEDIFF(now(), date_lend) as late_days ".
@@ -12,15 +12,15 @@
 
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
-        <th>Date Emprunt</th>
-        <th>Jours</th>
-        <th>Livre</th>
-        <th>Personne</th>
-        <th>Phone1</th>
-        <th>Phone2</th>
-        <th>E-mail</th>
-        <th>Notes</th>
-        <th>Actions</th>
+        <th><?= $t->__('db.lend.date_lend') ?></th>
+        <th><?= $t->__('label.days') ?></th>
+        <th><?= $t->__('db.book') ?></th>
+        <th><?= $t->__('db.person') ?></th>
+        <th><?= $t->__('db.person.phone1') ?></th>
+        <th><?= $t->__('db.person.phone2') ?></th>
+        <th><?= $t->__('db.person.email') ?></th>
+        <th><?= $t->__('db.lend.notes') ?></th>
+        <th><?= $t->__('label.action') ?></th>
     </tr>
 <?php
 
@@ -54,9 +54,9 @@ foreach($datas as $row) {
     echo $row['notes'];
     echo "</td>";
     echo "<td>";
-    echo "<a href='bookLendEditNotes.php?lend_id=" . $row['lend_id'] . "'>" . 'Changer&nbsp;Notes</a>';
+    echo "<a href='bookLendEditNotes.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.change_notes') . '</a>';
     echo "&nbsp;&nbsp;&nbsp";
-    echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . 'Retourner</a>';
+    echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
     echo "</td>";
     echo "</tr>\n";
 }
@@ -66,6 +66,6 @@ foreach($datas as $row) {
 </table>
 
 <br/>
-Total de livres empruntées: <?=$counter?>
+<?= $t->__('message.total_lent_books') ?>: <?=$counter?>
 
 <?php include '_footer.php' ?>
