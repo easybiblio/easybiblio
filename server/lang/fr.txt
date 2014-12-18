@@ -50,6 +50,14 @@ title.list_of_books=Liste de livres
 title.list_of_people=Liste de Personnes
 title.report_book_lended=Liste de livres empruntées
 
+reportStatistics.title=Statistiques
+reportStatistics.total_books=Total de Livres
+reportStatistics.total_people=Total de Personnes
+reportStatistics.total_lent=Total d'Emprunts
+reportStatistics.total_lent_today=Total de Livres Actuelement Empruntées
+reportStatistics.link_backup=Cliquez ici pour faire une sauvegarde de votre Base de Donnée 
+reportStatistics.link_addBookCover=Rajouter couverture pour les livres 
+
 message.there_are_more_books=Il y a plus de livres ...
 message.there_are_more_people=Il y a plus de personnes ...
 message.total_lent_books=Total de livres empruntées
