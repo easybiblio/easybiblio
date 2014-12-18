@@ -23,9 +23,20 @@ db.book.category=Categorie
 db.book.notes=Notes
 db.book.date_creation=Date&nbsp;de&nbsp;Creation
 
+db.person=Personne
+db.person.name=Prénom/Nom
+db.person.city=Ville
+db.person.phone1=Phone 1
+db.person.phone2=Phone 2
+db.person.email=E-mail
+
 label.action=Action
 label.action.return=Retourner
 label.action.lend=Emprunter
+label.report_lent_books=Livres empruntées
 
 title.list_of_books=Liste de livres
-message.there_are_more_books=Il y a plus de livres...
+title.list_of_people=Liste de Personnes
+
+message.there_are_more_books=Il y a plus de livres ...
+message.there_are_more_people=Il y a plus de personnes ...

@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1>Liste de personnes</h1>
+<h1><?= $t->__('title.list_of_people') ?></h1>
 
 <?php
     $search_string = $_POST['search_person'];
@@ -13,20 +13,20 @@
 ?>
 <form method="post">
     <input type="search" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" value="Recherche"/>
-    <input type="button" value="Nouvelle personne" onclick="window.location.href='person.php'" />
+    <input type="submit" value="<?= $t->__('button.search') ?>"/>
+    <input type="button" value="<?= $t->__('button.new') ?>" onclick="window.location.href='person.php'" />
 </form>
 
 <br/>
 
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
-        <th>Nom/Prenom</th>
-        <th>Ville</th>
-        <th>Phone 1</th>
-        <th>Phone 2</th>
-        <th>E-mail</th>
-        <th>Action</th>
+        <th><?= $t->__('db.person.name') ?></th>
+        <th><?= $t->__('db.person.city') ?></th>
+        <th><?= $t->__('db.person.phone1') ?></th>
+        <th><?= $t->__('db.person.phone2') ?></th>
+        <th><?= $t->__('db.person.email') ?></th>
+        <th><?= $t->__('label.action') ?></th>
     </tr>
 <?php
 
@@ -60,11 +60,11 @@ foreach($datas as $row) {
     echo $row['email'];
     echo "</td>";
     echo "<td>";
-    echo "<a href='reportLendPerPerson.php?person_id=" . $row['id'] . "'>Livres empruntées</a>";
+    echo "<a href='reportLendPerPerson.php?person_id=" . $row['id'] . "'>". $t->__('label.report_lent_books') ."</a>";
     echo "</td>";
     echo "</tr>\n";
     if ($counter == 20) {
-        echo "<tr><td colspan='100' align='center'>Il y a plus de personnes...</td></tr>";
+        echo "<tr><td colspan='100' align='center'>" . $t->__('message.there_are_more_people') . "</td></tr>";
         break;
     }
 }
