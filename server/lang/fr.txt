@@ -30,14 +30,15 @@ db.person.name=Prénom/Nom
 db.person.address=Adress
 db.person.zipcode=Code Postal
 db.person.city=Ville
-db.person.phone1=Phone 1
-db.person.phone2=Phone 2
+db.person.phone1=Phone&nbsp;1
+db.person.phone2=Phone&nbsp;2
 db.person.email=E-mail
 db.person.notes=Notes
 db.person.date_creation=Date de Creation
 
 db.lend=Livres empruntées
 db.lend.date_lend=Date&nbsp;d'emprunt
+db.lend.date_return=Date&nbsp;du&nbsp;retour
 db.lend.notes=Notes
 
 label.action=Action
@@ -49,6 +50,11 @@ title.list_of_books=Liste de livres
 title.list_of_people=Liste de Personnes
 
 bookLend.title=Emprunter des livres
+
+bookReturn.title=Retourner livre
+bookReturn.button.confirmReturn=Confirmer le retour
+bookReturn.label.loandata=Données de l'emprunt
+bookReturn.label.question=Vous confirmez le retour de ce livre ?
 
 reportBookLended.title=Liste de livres empruntées
 reportBookLended.label.days=Jours
