@@ -46,8 +46,8 @@ label.action.return=Retourner
 label.action.lend=Emprunter
 label.report_lent_books=Livres empruntées
 
-title.list_of_books=Liste de livres
-title.list_of_people=Liste de Personnes
+bookSearch.title=Liste de livres
+personSearch.title=Liste de Personnes
 
 bookLend.title=Emprunter des livres
 

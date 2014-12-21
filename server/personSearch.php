@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1><?= $t->__('title.list_of_people') ?></h1>
+<h1><?= $t->__('personSearch.title') ?></h1>
 
 <?php
     $search_string = $_POST['search_person'];

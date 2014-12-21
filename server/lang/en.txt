@@ -46,8 +46,8 @@ label.action.return=Return
 label.action.lend=Lend
 label.report_lent_books=Lent books
 
-title.list_of_books=List of Books
-title.list_of_people=List of People
+bookSearch.title=List of Books
+personSearch.title=List of People
 
 bookLend.title=Lending of a book
 
