@@ -57,6 +57,8 @@ bookReturn.title=Return of book
 bookReturn.button.confirmReturn=Confirm Return
 bookReturn.label.question=Do you confirm the return of this book?
 
+bookLendEditNotes.title=Change notes for a lending
+
 reportBookLended.title=List of lent books
 reportBookLended.label.days=Days
 reportBookLended.action.change_notes=Change&nbsp;Notes

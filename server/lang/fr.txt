@@ -57,6 +57,8 @@ bookReturn.title=Retourner livre
 bookReturn.button.confirmReturn=Confirmer le retour
 bookReturn.label.question=Vous confirmez le retour de ce livre ?
 
+bookLendEditNotes.title=Changer les notes d'un emprunt
+
 reportBookLended.title=Liste de livres empruntées
 reportBookLended.label.days=Jours
 reportBookLended.action.change_notes=Changer&nbsp;Notes

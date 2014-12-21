@@ -22,64 +22,64 @@
   $notes = $lend_columns['notes'];
 ?>
 
-<h1>Changer les notes d'un emprunt</h1>
+<h1><?= $t->__('bookLendEditNotes.title') ?></h1>
 
-<h3>Livre:</h3>
+<h3><?= $t->__('db.book') ?>:</h3>
 <table width="70%" border="1" cellpadding="5" cellspacing="0">
   <tr>
-    <td width="1%">Livre:</td>
+    <td width="1%"><?= $t->__('db.book.title') ?>:</td>
     <td>(<?=$book_columns['code'] ?>) <?=$book_columns['title'] ?></td>
   </tr>
     
   <tr>
-    <td>Auteur:</td>
+    <td><?= $t->__('db.book.author') ?>:</td>
     <td><?=$book_columns['author'] ?></td>
   </tr>
    
   <tr>
-    <td>Co-Auteur:</td>
+    <td><?= $t->__('db.book.coauthor') ?>:</td>
     <td><?=$book_columns['coauthor'] ?></td>
   </tr>
 </table>
 
-<h3>Personne:</h3>
+<h3><?= $t->__('db.person') ?>:</h3>
 <table width="70%" border="1" cellpadding="5" cellspacing="0">
   <tr>
-    <td width="1%">Nom/Prenom:</td>
+    <td width="1%"><?= $t->__('db.person.name') ?>:</td>
     <td><?=$person_columns['name'] ?></td>
   </tr>
   <tr>
-    <td>Ville:</td>
+    <td><?= $t->__('db.person.city') ?>:</td>
     <td><?=$person_columns['city'] ?></td>
   </tr>
   <tr>
-    <td>Phone 1:</td>
+    <td><?= $t->__('db.person.phone1') ?>:</td>
     <td><?=$person_columns['phone1'] ?></td>
   </tr>
   <tr>
-    <td>Phone2:</td>
+    <td><?= $t->__('db.person.phone2') ?>:</td>
     <td><?=$person_columns['phone2'] ?></td>
   </tr>
   <tr>
-    <td>E-mail:</td>
+    <td><?= $t->__('db.person.email') ?>:</td>
     <td><?=$person_columns['email'] ?></td>
   </tr>
 </table>
 
 
 
-<h3>Données de l'emprunt:</h3>
+<h3><?= $t->__('db.lend') ?>:</h3>
 
 <form action="bookLendEditNotesSave.php" method="post" id="myform">
     <input type="hidden" name="lend_id"   value="<?=$lend_id?>" />
 
 <table width="70%" border="0" cellpadding="5" cellspacing="0">
   <tr>
-    <td width="1%">Date&nbsp;d'Emprunt:</td>
+    <td width="1%"><?= $t->__('db.lend.date_lend') ?>:</td>
     <td><?=$date_lend?></td>
   </tr>
   <tr>
-    <td width="1%">Notes:</td>
+    <td width="1%"><?= $t->__('db.lend.notes') ?>:</td>
     <td>
         <textarea rows="6" cols="50" name="notes" autofocus><?= $fmw->escapeHtml($notes) ?></textarea>
     </td>
@@ -89,8 +89,8 @@
 
 <br/>
 
-    <input type="submit" name="Submit" value="Changer Notes" />
-    <input type="button" value="Annuler" onclick="window.location.href='reportBookLended.php'" />
+    <input type="submit" name="Submit" value="<?= $t->__('button.save') ?>" />
+    <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='reportBookLended.php'" />
 </form>
 
 <?php include '_footer.php' ?>
