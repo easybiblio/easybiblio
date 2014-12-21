@@ -3,9 +3,11 @@
 class Framework {
 
    var $database;
+   var $translator;
 
-   function Framework($database) {
+   function Framework($database, $translator) {
        $this->database = $database;
+       $this->translator = $translator;
    }
 
   // Check if a date if valid, return TRUE or FALSE.
@@ -57,15 +59,20 @@ class Framework {
   }
 
   // Set an info message to be shown to the user
-  function info($message) {
-      $_SESSION['message'] = $message;
+  function info($message, $arg1 = "", $arg2 = "") {
+      $_SESSION['message'] = $this->translator->__($message, $arg1, $arg2);
   }
 
   // Set an error message to be shown to the user
-  function error($message) {
-      $_SESSION['error_message'] = $message;
+  function error($message, $arg1 = "", $arg2 = "") {
+      $_SESSION['error_message'] = $this->translator->__($message, $arg1, $arg2);
   }
 
+  function clearMessages() {
+      $_SESSION['message'] = '';
+      $_SESSION['error_message'] = '';
+  }
+    
   // Check if there is a message that was set
   function hasInfo() {
       return $_SESSION['message'] != '';

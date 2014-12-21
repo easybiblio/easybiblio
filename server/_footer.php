@@ -1,6 +1,5 @@
 <?php
-  $fmw->info('');
-  $fmw->error('');
+  $fmw->clearMessages();
 ?>
 <br/>
 <br/>

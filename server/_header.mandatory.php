@@ -13,11 +13,13 @@
     'username' => $config->username,
     'password' => $config->password );
 
+  // Medoo instance
   $database = new medoo($dbconfig);
-  $fmw = new Framework($database);
 
   // Object for translating text
   $t = new Translator($config->language);
+
+  $fmw = new Framework($database, $t);
 
   session_start();
 ?>

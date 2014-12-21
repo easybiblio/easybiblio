@@ -21,11 +21,15 @@ if ($id != '') {
     
     // Check if code already exist in another book
     $to_check = $database->get("tb_book", "*", array("code" => $code));
-    if (isset($to_check['id']) and $to_check['id'] != $id) {
-        $fmw->error('Il y a un livre que contient déjà ce code ! Livre pas enregistrée ');
+    if ($columns['code'] == '') {
+        $fmw->error('bookSave.message.codeMandatory');
+    } else if ($columns['title'] == '') {
+        $fmw->error('bookSave.message.titleMandatory');
+    } else if (isset($to_check['id']) and $to_check['id'] != $id) {
+        $fmw->error('bookSave.message.codeAlreadyExist', $to_check['title'], $code);
     } else {
         $database->update("tb_book", $columns, array("id[=]" => $id));  
-        $fmw->info('Livre "' . $columns['title'] . '" enregistré !');  
+        $fmw->info('bookSave.message.bookUpdated', $columns['title']);  
     }
   
 } else {
@@ -33,15 +37,15 @@ if ($id != '') {
     // Check if code already exist in another book
     $to_check = $database->get("tb_book", "*", array("code" => $code));
     if ($columns['code'] == '') {
-        $fmw->error('Le code d\'un livre est obligatoire !');
+        $fmw->error('bookSave.message.codeMandatory');
     } else if ($columns['title'] == '') {
-        $fmw->error('Le titre d\'un livre est obligatoire !');
+        $fmw->error('bookSave.message.titleMandatory');
     } else if (isset($to_check['id'])) {
-        $fmw->error('Attention ! Il y a déjà le livre "'. $to_check['title'] .'" avec le code "' . $code . '"');
+        $fmw->error('bookSave.message.codeAlreadyExist', $to_check['title'], $code);
     } else {
         $columns['#date_creation'] = "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')";
         $last_book_id = $database->insert("tb_book", $columns);    
-        $fmw->info('Nouveau livre "' . $columns['title'] . '" enregistré avec ID = ' . $last_book_id);
+        $fmw->info('bookSave.message.newBookSaved', $columns['title'], $last_book_id);
     }
     
 }

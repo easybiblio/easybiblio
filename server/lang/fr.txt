@@ -49,6 +49,12 @@ label.report_lent_books=Livres empruntées
 bookSearch.title=Liste de livres
 personSearch.title=Liste de Personnes
 
+bookSave.message.newBookSaved=Nouveau livre '%1' a été enregistré avec ID %2
+bookSave.message.bookUpdated=Livre '%1' a été actualisé !
+bookSave.message.codeMandatory=Le code d'un livre est obligatoire !
+bookSave.message.titleMandatory=Le title d'un livre est obligatoire !
+bookSave.message.codeAlreadyExist=Il y a déjà le livre '%1' avec le code '%2'. Livre n'as pas été sauvegardé.
+
 bookLend.title=Emprunter des livres
 
 bookLendConfirmation.title=Confirmation d'emprunt de livre

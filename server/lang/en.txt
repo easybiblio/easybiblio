@@ -49,6 +49,12 @@ label.report_lent_books=Lent books
 bookSearch.title=List of Books
 personSearch.title=List of People
 
+bookSave.message.newBookSaved=New book '%1' saved with ID %2
+bookSave.message.bookUpdated=Book '%1' was updated.
+bookSave.message.codeMandatory=The code is mandatory !
+bookSave.message.titleMandatory=The title is mandatory !
+bookSave.message.codeAlreadyExist=The book '%1' is already using the code '%2'. Book was not saved.
+
 bookLend.title=Lending of a book
 
 bookLendConfirmation.title=Confirmation for lending a book
