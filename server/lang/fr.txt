@@ -59,6 +59,9 @@ bookReturn.label.question=Vous confirmez le retour de ce livre ?
 
 bookLendEditNotes.title=Changer les notes d'un emprunt
 
+bookCoverSearch.title=Rajouter couverture pour les livres
+bookCoverSearch.label.withoutCover=Sans couverture
+
 reportBookLended.title=Liste de livres empruntées
 reportBookLended.label.days=Jours
 reportBookLended.action.change_notes=Changer&nbsp;Notes

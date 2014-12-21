@@ -59,6 +59,9 @@ bookReturn.label.question=Do you confirm the return of this book?
 
 bookLendEditNotes.title=Change notes for a lending
 
+bookCoverSearch.title=Add Book Cover
+bookCoverSearch.label.withoutCover=Without cover
+
 reportBookLended.title=List of lent books
 reportBookLended.label.days=Days
 reportBookLended.action.change_notes=Change&nbsp;Notes

@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1>Add Book Cover</h1>
+<h1><?= $t->__('bookCoverSearch.title') ?></h1>
 
 <?php
     $search_string = $_POST['search_book'];
@@ -16,18 +16,18 @@
 ?>
 <form method="post">
     <input type="search"   name="search_book"      value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="checkbox" name="onlyWithoutCover" value="true" <?= $onlyWithoutCover ? "checked" : "" ?> >Sans couverture 
-    <input type="submit"   value="Recherche"/>
+    <input type="checkbox" name="onlyWithoutCover" value="true" <?= $onlyWithoutCover ? "checked" : "" ?> ><?= $t->__('bookCoverSearch.label.withoutCover') ?> 
+    <input type="submit"   value="<?= $t->__('button.search') ?>"/>
 </form>
 
 <br/>
 
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
-        <th>Code</th>
-        <th>Title</th>
-        <th>Cover</th>
-        <th>Action</th>
+        <th><?= $t->__('db.book.code') ?></th>
+        <th><?= $t->__('db.book.cover') ?></th>
+        <th><?= $t->__('db.book.title') ?></th>
+        <th><?= $t->__('label.action') ?></th>
     </tr>
 <?php
 
@@ -53,9 +53,6 @@ foreach($datas as $row) {
     echo "<td>";
     echo $row['code'];
     echo "</td>";
-    echo "<td>";
-    echo "<a href='book.php?id=" . $row['id'] . "'>" . $row['title'] . '</a>';
-    echo "</td>";
    
     // Existing cover
     echo "<td>";
@@ -63,6 +60,10 @@ foreach($datas as $row) {
         $img_src_nocache = $fmw->escapeHtml($row['cover_url']) . '?' . time();
         echo "<img src='".$img_src_nocache."' width='150'/>";
     }
+    echo "</td>";
+    
+    echo "<td>";
+    echo "<a href='book.php?id=" . $row['id'] . "'>" . $row['title'] . '</a>';
     echo "</td>";
     
     // Upload cover
@@ -75,7 +76,9 @@ foreach($datas as $row) {
     
     echo "</tr>\n";
     if ($counter == 10) {
-        echo "<tr><td colspan='100' align='center'>Il y a plus de livres...</td></tr>";
+        echo "<tr><td colspan='100' align='center'>";
+        echo $t->__('message.there_are_more_books');
+        echo "</td></tr>";
         break;
     }
 }
