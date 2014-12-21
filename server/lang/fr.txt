@@ -63,6 +63,10 @@ reportBookLended.action.change_notes=Changer&nbsp;Notes
 reportBookLended.action.return=Retourner
 reportBookLended.message.total_lent_books=Total de livres empruntées
 
+reportLendPerPerson.title=Liste de livres par personne
+reportLendPerPerson.label.days=Jours
+reportLendPerPerson.message.total_lent_books=Total de livres empruntées
+
 reportStatistics.title=Statistiques
 reportStatistics.total_books=Total de Livres
 reportStatistics.total_people=Total de Personnes

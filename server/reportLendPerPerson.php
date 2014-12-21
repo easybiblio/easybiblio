@@ -1,6 +1,6 @@
 <?php include '_header.php' ?>
     
-<h1>Liste de livres par personne</h1>
+<h1><?= $t->__('reportLendPerPerson.title') ?></h1>
 
 <?php
     
@@ -15,26 +15,26 @@
     $datas = $database->query($query)->fetchAll();
 ?>
 
-Personne:
+<?= $t->__('db.person') ?>:
 <table width="70%" border="1" cellpadding="5" cellspacing="0">
   <tr>
-    <td width="1%">Nom/Prenom:</td>
+    <td width="1%"><?= $t->__('db.person.name') ?>:</td>
     <td><?=$person_columns['name'] ?></td>
   </tr>
   <tr>
-    <td>Ville:</td>
+    <td><?= $t->__('db.person.city') ?>:</td>
     <td><?=$person_columns['city'] ?></td>
   </tr>
   <tr>
-    <td>Phone 1:</td>
+    <td><?= $t->__('db.person.phone1') ?>:</td>
     <td><?=$person_columns['phone1'] ?></td>
   </tr>
   <tr>
-    <td>Phone2:</td>
+    <td><?= $t->__('db.person.phone2') ?>:</td>
     <td><?=$person_columns['phone2'] ?></td>
   </tr>
   <tr>
-    <td>E-mail:</td>
+    <td><?= $t->__('db.person.email') ?>:</td>
     <td><?=$person_columns['email'] ?></td>
   </tr>
 </table>
@@ -44,13 +44,13 @@ Personne:
 
 <table border=1 cellpadding="5" cellspacing="0">
     <tr>
-        <th>Date&nbsp;Emprunt</th>
-        <th>Date Retour</th>
-        <th>Jours</th>
-        <th>Livre</th>
-        <th>Author</th>
-        <th>CoAuthor</th>
-        <th>Action</th>
+        <th><?= $t->__('db.lend.date_lend') ?></th>
+        <th><?= $t->__('db.lend.date_return') ?></th>
+        <th><?= $t->__('reportLendPerPerson.label.days') ?></th>
+        <th><?= $t->__('db.book') ?></th>
+        <th><?= $t->__('db.book.author') ?></th>
+        <th><?= $t->__('db.book.coauthor') ?></th>
+        <th><?= $t->__('label.action') ?></th>
     </tr>
 <?php
 
@@ -96,6 +96,6 @@ foreach($datas as $row) {
 </table>
 
 <br/>
-Total de livres empruntées: <?=$counter?>
+<?= $t->__('reportLendPerPerson.message.total_lent_books') ?>: <?=$counter?>
 
 <?php include '_footer.php' ?>
