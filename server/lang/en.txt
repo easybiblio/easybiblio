@@ -36,7 +36,7 @@ db.person.email=E-mail
 db.person.notes=Notes
 db.person.date_creation=Creation&nbsp;Date
 
-db.lend=Lent Books
+db.lend=Loan data
 db.lend.date_lend=Lend&nbsp;Date
 db.lend.date_return=Return&nbsp;Date
 db.lend.notes=Notes
@@ -51,9 +51,10 @@ title.list_of_people=List of People
 
 bookLend.title=Lending of a book
 
+bookLendConfirmation.title=Confirmation for lending a book
+
 bookReturn.title=Return of book
 bookReturn.button.confirmReturn=Confirm Return
-bookReturn.label.loandata=Loan data
 bookReturn.label.question=Do you confirm the return of this book?
 
 reportBookLended.title=List of lent books

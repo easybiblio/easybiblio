@@ -36,7 +36,7 @@ db.person.email=E-mail
 db.person.notes=Notes
 db.person.date_creation=Date de Creation
 
-db.lend=Livres empruntées
+db.lend=Données de l'emprunt
 db.lend.date_lend=Date&nbsp;d'emprunt
 db.lend.date_return=Date&nbsp;du&nbsp;retour
 db.lend.notes=Notes
@@ -51,9 +51,10 @@ title.list_of_people=Liste de Personnes
 
 bookLend.title=Emprunter des livres
 
+bookLendConfirmation.title=Confirmation d'emprunt de livre
+
 bookReturn.title=Retourner livre
 bookReturn.button.confirmReturn=Confirmer le retour
-bookReturn.label.loandata=Données de l'emprunt
 bookReturn.label.question=Vous confirmez le retour de ce livre ?
 
 reportBookLended.title=Liste de livres empruntées

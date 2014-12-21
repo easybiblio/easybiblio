@@ -67,7 +67,7 @@
 </table>
 
 
-<h3><?= $t->__('bookReturn.label.loandata') ?>:</h3>
+<h3><?= $t->__('db.lend') ?>:</h3>
 
 <script>
     $(function() {
