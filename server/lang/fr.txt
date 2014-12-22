@@ -80,6 +80,10 @@ bookReturnSave.message.bookReturned=Livre '%1' a été retourné !
 
 bookLendEditNotes.title=Changer les notes d'un emprunt
 
+bookLendEditNotesSave.message.loanNotFound=Emprunt pas trouvé !
+bookLendEditNotesSave.message.bookAlreadyReturned=Livre est déjà retourné. Rien a été sauvegardé !
+bookLendEditNotesSave.message.success=Notes pour l'emprunt ont été sauvegardés !
+
 bookCoverSearch.title=Rajouter couverture pour les livres
 bookCoverSearch.label.withoutCover=Sans couverture
 

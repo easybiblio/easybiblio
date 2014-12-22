@@ -80,6 +80,10 @@ bookReturnSave.message.bookReturned=Book '%1' was successful returned !
 
 bookLendEditNotes.title=Change notes for a lending
 
+bookLendEditNotesSave.message.loanNotFound=Loan not found!
+bookLendEditNotesSave.message.bookAlreadyReturned=Book is already returned. Nothing was saved!
+bookLendEditNotesSave.message.success=Notes for the loan are saved!
+
 bookCoverSearch.title=Add Book Cover
 bookCoverSearch.label.withoutCover=Without cover
 

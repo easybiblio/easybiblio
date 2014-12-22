@@ -8,9 +8,9 @@
   $notes = $_POST['notes'];
 
   if (!isset($lend_columns['id'])) {
-      $fmw->error("Emprunt n'as pas été trouvé !");
+      $fmw->error('bookLendEditNotesSave.message.loanNotFound');
   } else if (isset($lend_columns['date_return'])) {
-      $fmw->error('Livre est déjà retourné. Rien a été sauvegardé !');
+      $fmw->error('bookLendEditNotesSave.message.bookAlreadyReturned');
   }
 
   if (!$fmw->hasError()) {
@@ -21,7 +21,7 @@
       );
 
     $database->update("tb_lend", $columns, array("id[=]" => $lend_id));
-	$fmw->info("Notes pour l'emprunt ont été sauvegardés !");
+	$fmw->info('bookLendEditNotesSave.message.success');
 
     $fmw->checkDatabaseError();
   }
