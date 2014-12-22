@@ -2,7 +2,7 @@
 
 $name = $_POST['name'];
 if ($name == '') {
-    $fmw->error('Le nom est obligatoire.');
+    $fmw->error('personSave.message.nameMandatory');
     include('person.php');
     exit();
 }
@@ -21,11 +21,11 @@ $columns = array(
 $id = $_POST['id'];
 if ($id != '') {
     $database->update("tb_person", $columns, array("id[=]" => $id));
-	$fmw->info('Personne "' . $columns['name'] . '" enregistrée.');
+	$fmw->info('personSave.message.personUpdated', $columns['name']);
 } else {
     $columns['#date_creation'] = "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')";
     $last_person_id = $database->insert("tb_person", $columns);    
-	$fmw->info('Nouvelle personne "'. $columns['name'] . '" enregistrée avec ID = ' . $last_person_id);
+    $fmw->info('personSave.message.newPersonSaved', $columns['name'], $last_person_id);
 }
 
 $fmw->checkDatabaseError();

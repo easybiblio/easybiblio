@@ -55,6 +55,10 @@ bookSave.message.codeMandatory=Le code d'un livre est obligatoire !
 bookSave.message.titleMandatory=Le title d'un livre est obligatoire !
 bookSave.message.codeAlreadyExist=Il y a déjà le livre '%1' avec le code '%2'. Livre n'as pas été sauvegardé.
 
+personSave.message.newPersonSaved=Nouvelle personne '%1' enregistrée avec ID %2
+personSave.message.personUpdated=Personne '%1' a été enregistrée.
+personSave.message.nameMandatory=Le nom est obligatoire.
+
 bookLend.title=Emprunter des livres
 
 bookLendConfirmation.title=Confirmation d'emprunt de livre
