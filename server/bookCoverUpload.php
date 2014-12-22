@@ -70,7 +70,7 @@ function fix_image($file, $file_type) {
 
 $bookId = $_POST['bookId'];
 if (!is_numeric($bookId)) {
-    $fmw->error("ID du livre n'as pas été trouvé.");
+    $fmw->error('bookCoverUpload.message.bookNotFound');
     header("Location: bookCoverSearch.php");
     exit();
 }
@@ -87,13 +87,13 @@ $target_dir = "images/covers/book_cover_" . $bookId . '.jpg';
 
 // Check file size
 if ($uploadFile_size > 500000) {
-    $fmw->error("Sorry, your file is too large.");
+    $fmw->error('bookCoverUpload.message.fileTooBig');
 }
 
 // Only JPG files allowed
 $uploadfile_type = $_FILES['uploadFile']['type'];
 if (!($uploadfile_type == "image/jpeg")) {
-    $fmw->error("Sorry, only JPG files are allowed. Uploaded file is of type ".$uploadfile_type);
+    $fmw->error('bookCoverUpload.message.wrongFileType', $uploadfile_type);
 }
 
 // Check if file already exist, lets remove it
@@ -104,8 +104,6 @@ if (!$fmw->hasError() && file_exists($target_dir)) {
 // Check if $uploadOk is set to 0 by an error
 if (!$fmw->hasError()) {
     if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) {
-        $fmw->info( "The file has been uploaded.");
-        
         fix_image($target_dir, 'image/jpeg');
         
         $columns = array(
@@ -115,8 +113,10 @@ if (!$fmw->hasError()) {
         $database->update("tb_book", $columns, array("id[=]" => $bookId));  
 
         $fmw->checkDatabaseError();
+        
+        $fmw->info('bookCoverUpload.message.success');
     } else {
-        $fmw->error("Sorry, there was an error uploading your file.");
+        $fmw->error('bookCoverUpload.message.error');
     }
 }
 

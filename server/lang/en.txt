@@ -87,6 +87,12 @@ bookLendEditNotesSave.message.success=Notes for the loan are saved!
 bookCoverSearch.title=Add Book Cover
 bookCoverSearch.label.withoutCover=Without cover
 
+bookCoverUpload.message.bookNotFound=Book not found !
+bookCoverUpload.message.wrongFileType=Only JPG files are allowed. Uploaded file is of type %1
+bookCoverUpload.message.fileTooBig=Your file is too big, please upload a smaller file.
+bookCoverUpload.message.success=The photo has been uploaded.
+bookCoverUpload.message.error=There was an error when uploading your file.
+
 reportBookLended.title=List of lent books
 reportBookLended.label.days=Days
 reportBookLended.action.change_notes=Change&nbsp;Notes

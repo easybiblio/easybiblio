@@ -87,6 +87,12 @@ bookLendEditNotesSave.message.success=Notes pour l'emprunt ont été sauvegardé
 bookCoverSearch.title=Rajouter couverture pour les livres
 bookCoverSearch.label.withoutCover=Sans couverture
 
+bookCoverUpload.message.bookNotFound=Livre n'a pas été trouvé.
+bookCoverUpload.message.wrongFileType=Seulement fichiers JPG sont acceptés. Le fichier télécharger est du type %1
+bookCoverUpload.message.fileTooBig=Fichier trop grand. S'il vous plaît de télécharger un fichier plus petit.
+bookCoverUpload.message.success=La photo a été sauvegardé.
+bookCoverUpload.message.error=Il y a eu un erreur pendant le téléchargement de la photo !
+
 reportBookLended.title=Liste de livres empruntées
 reportBookLended.label.days=Jours
 reportBookLended.action.change_notes=Changer&nbsp;Notes
