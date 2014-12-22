@@ -73,6 +73,11 @@ bookReturn.title=Return of book
 bookReturn.button.confirmReturn=Confirm Return
 bookReturn.label.question=Do you confirm the return of this book?
 
+bookReturnSave.message.loanNotFound=Loan not found !
+bookReturnSave.message.returnDateNotValid=Return date is not valid. Please try again !
+bookReturnSave.message.bookAlreadyReturned=Book is already returned. Nothing was saved!
+bookReturnSave.message.bookReturned=Book '%1' was successful returned !
+
 bookLendEditNotes.title=Change notes for a lending
 
 bookCoverSearch.title=Add Book Cover

@@ -9,11 +9,11 @@
   $notes = $_POST['notes'];
 
   if (!isset($lend_columns['id'])) {
-      $fmw->error('Emprunt pas trouvé !');
+      $fmw->error('bookReturnSave.message.loanNotFound');
   } else if (!$fmw->verifyDate($date_return)) {
-      $fmw->error("Date de retourn n'est pas valide !");
+      $fmw->error('bookReturnSave.message.returnDateNotValid');
   } else if (isset($lend_columns['date_return'])) {
-      $fmw->error('Livre est déjà retourné. Rien a été sauvegardé !');
+      $fmw->error('bookReturnSave.message.bookAlreadyReturned');
   }
 
   if (!$fmw->hasError()) {
@@ -26,7 +26,7 @@
 
     $book_columns = $database->get("tb_book", "*", array("id" => $lend_columns['book_id']));
     $database->update("tb_lend", $columns, array("id[=]" => $lend_id));
-	$fmw->info('Livre "' . $book_columns['title'] . '" a été retourné !');
+	$fmw->info('bookReturnSave.message.bookReturned', $book_columns['title']);
 
     $fmw->checkDatabaseError();
   }
