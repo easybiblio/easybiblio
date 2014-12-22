@@ -63,6 +63,12 @@ bookLend.title=Emprunter des livres
 
 bookLendConfirmation.title=Confirmation d'emprunt de livre
 
+bookLendConfirmationSave.message.bookNotFound=Livre n'as pas été trouvé. Essayer à nouveau.
+bookLendConfirmationSave.message.personNotFound=Personne n'as pas été trouvé. Essayer à nouveau.
+bookLendConfirmationSave.message.dateNotValid=Date d'Emprunt n'est pas valide. Essayer à nouveau.
+bookLendConfirmationSave.message.bookAlreadyLent=Livre est déjà preté à une autre personne.
+bookLendConfirmationSave.message.success=Emprunt du livre '%1' a été enregistrée avec ID %2
+
 bookReturn.title=Retourner livre
 bookReturn.button.confirmReturn=Confirmer le retour
 bookReturn.label.question=Vous confirmez le retour de ce livre ?

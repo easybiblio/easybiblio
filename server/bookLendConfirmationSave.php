@@ -14,17 +14,17 @@
   $notes = $_POST['notes'];
 
   if (!isset($book_columns['id'])) {
-      $fmw->error('Livre pas trouvé !');
+      $fmw->error('bookLendConfirmationSave.message.bookNotFound');
   } else if (!isset($person_columns['id'])) {
-      $fmw->error('Personne n\'as pas été trouvé');
+      $fmw->error('bookLendConfirmationSave.message.personNotFound');
   } else if (!$fmw->verifyDate($date_lend)) {
-      $fmw->error("Date d'Emprunt n'est pas valide !");
+      $fmw->error('bookLendConfirmationSave.message.dateNotValid');
   } else {
     // Check if book is already lended
       $query = "select * from tb_lend where book_id = " . $book_id . " and date_return is null";
       $book_already_lended = $database->query($query)->fetchAll();
       if (count($book_already_lended) > 0) {
-          error('Livre est déjà preté à une autre personne');
+          error('bookLendConfirmationSave.message.bookAlreadyLent');
       }
   }
 
@@ -40,7 +40,7 @@
     );
 
     $last_book_lend_id = $database->insert("tb_lend", $columns);
-	$fmw->info('Emprunt du livre "' . $book_columns['title'] .'" a été enregistrée avec ID = ' . $last_book_lend_id);
+	$fmw->info('bookLendConfirmationSave.message.success', $book_columns['title'], $last_book_lend_id);
 
     $fmw->checkDatabaseError();
   }

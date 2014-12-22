@@ -63,6 +63,12 @@ bookLend.title=Lending of a book
 
 bookLendConfirmation.title=Confirmation for lending a book
 
+bookLendConfirmationSave.message.bookNotFound=Book was not found. Please try again.
+bookLendConfirmationSave.message.personNotFound=Person was not found. Please try again.
+bookLendConfirmationSave.message.dateNotValid=Date is not valid. Please try again.
+bookLendConfirmationSave.message.bookAlreadyLent=Book is already lent to another person.
+bookLendConfirmationSave.message.success=Lent of the book '%1' is saved with ID %2
+
 bookReturn.title=Return of book
 bookReturn.button.confirmReturn=Confirm Return
 bookReturn.label.question=Do you confirm the return of this book?
