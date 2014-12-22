@@ -12,21 +12,13 @@
     
 <body>
 
-<div style="position: absolute; top: -5px; right: 2%;">
-    <table border = "0" style="border-spacing:10px;">
-        <tr>
-            <td>
-                <img src="logoNeecafla_officiel_inter.jpg" height="90" />
-            </td>
-            <td>
-                <strong>Notre Bibliothèque</strong><br/>
-                Tous les samedi de 16h au 17h. <br/>
-                Le 1er et 3ème lundi du mois de 18h30 au 19h00.<br/>
-                Une grande collections de livres Spirites pour vous preter !
-            </td>
-        </tr>
-    </table>
+<div style="position: absolute; top: 5px; right: 2%;">
+    <img src="http://www.easybiblio.com/wp-content/themes/camp/images/default-image.jpg" height="90" />
 </div>
+<div style="position: absolute; top: 30px; right: 4%;">
+    <span style="color: white; font-size:2pc;">EasyBiblio Demo Site</span>
+</div>
+
     
 <a href="bookSearch.php"><?= $t->__('menu.search_book') ?></a>&nbsp;&nbsp;
 <a href="personSearch.php"><?= $t->__('menu.search_people') ?></a>&nbsp;&nbsp;
