@@ -4,7 +4,6 @@
   require_once '_framework.php';
   require_once '_translator.php';
 
-  // Here you put the config for your database
   $config = new EBBConfig();
   $dbconfig = array(
     'database_type' => $config->database_type,
@@ -16,10 +15,15 @@
   // Medoo instance
   $database = new medoo($dbconfig);
 
+  session_start();
+
+  // Getting the language to be used
+  if (isset($_SESSION['_language'])) {
+      $config->language = $_SESSION['_language'];
+  }
+
   // Object for translating text
   $t = new Translator($config->language);
 
   $fmw = new Framework($database, $t);
-
-  session_start();
 ?>

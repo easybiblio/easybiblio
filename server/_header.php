@@ -8,23 +8,42 @@
     <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
     <script src="jquery-ui/external/jquery/jquery.js"></script>
     <script src="jquery-ui/jquery-ui.js"></script>
+    
+    <script>
+        function _changeLanguage(languageToSet) {
+           $.get("_changeLanguage.php?_language=" + languageToSet, function(data,status) {
+              alert('language was set, reload URL here');
+           });
+        }
+    </script>
+    
 </head>
     
 <body>
 
-<div style="position: absolute; top: 5px; right: 2%;">
+<div style="position: absolute; top: 5px; right: 3%;">
     <img src="http://www.easybiblio.com/wp-content/themes/camp/images/default-image.jpg" height="90" />
 </div>
-<div style="position: absolute; top: 30px; right: 4%;">
+<div style="position: absolute; top: 30px; right: 5%;">
     <span style="color: white; font-size:2pc;">EasyBiblio Demo Site</span>
 </div>
-
+  
+<div id="changeLanguage" style="position: absolute; top: 10px; right: 1%;">
+<?php
+ // Getting all possible languages
+ $possible_languages = array_diff(scandir('lang'), array('..', '.'));
+ foreach($possible_languages as $language) {
+     $language = substr($language, 0, strpos($language, '.'));
+     echo "<a href='' onClick=\"javascript:_changeLanguage('", $language ,"')\">", $language, "</a><br/>";
+ }
+?>
+</div>
     
 <a href="bookSearch.php"><?= $t->__('menu.search_book') ?></a>&nbsp;&nbsp;
 <a href="personSearch.php"><?= $t->__('menu.search_people') ?></a>&nbsp;&nbsp;
 <a href="reportBookLended.php"><?= $t->__('menu.lent_book') ?></a>&nbsp;&nbsp;
-<a href="reportStatistics.php"><?= $t->__('menu.statistics') ?></a>
-    
+<a href="reportStatistics.php"><?= $t->__('menu.statistics') ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
+
 <?php
  $message = $_SESSION['message'];
  if ($message != '') {?>
