@@ -29,7 +29,7 @@ INSERT INTO tb_category VALUES("17","Silver");
 
 INSERT INTO tb_language VALUES("en","English");
 INSERT INTO tb_language VALUES("fr","Français");
-INSERT INTO tb_language VALUES("nl","Nerlands");
+INSERT INTO tb_language VALUES("nl","Netherlands");
 INSERT INTO tb_language VALUES("pt","Português");
 INSERT INTO tb_language VALUES("xx","---");
 
