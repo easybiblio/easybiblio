@@ -2,7 +2,7 @@
 class EBBConfig {
     
     var $database_type = 'mysql';
-    var $database_name = 'biblio_neecafla';
+    var $database_name = 'easybiblio';
     var $server = 'localhost';
     var $username = 'root';
     var $password = 'root';
