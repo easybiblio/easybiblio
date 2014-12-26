@@ -8,23 +8,23 @@ DELETE FROM tb_language;
 DELETE FROM tb_category;
 
 
-INSERT INTO tb_category VALUES("1","AZUL");
-INSERT INTO tb_category VALUES("2","SALMAO");
-INSERT INTO tb_category VALUES("3","PRETO");
-INSERT INTO tb_category VALUES("4","AZUL MARINHO");
-INSERT INTO tb_category VALUES("5","VERDE");
-INSERT INTO tb_category VALUES("6","AMARELO");
-INSERT INTO tb_category VALUES("7","AZUL MARINHO");
-INSERT INTO tb_category VALUES("8","LARANJA/VERDE");
-INSERT INTO tb_category VALUES("9","INFANTO JUVENIL");
-INSERT INTO tb_category VALUES("10","AUTO-AJUDA");
-INSERT INTO tb_category VALUES("11","LARANJA");
-INSERT INTO tb_category VALUES("12","VERDE AGUA");
-INSERT INTO tb_category VALUES("13","MARROM");
-INSERT INTO tb_category VALUES("14","LILAS");
-INSERT INTO tb_category VALUES("15","VERMELHO");
-INSERT INTO tb_category VALUES("16","SAUMON");
-INSERT INTO tb_category VALUES("17","VERDE ESCURO");
+INSERT INTO tb_category VALUES("1","White");
+INSERT INTO tb_category VALUES("2","Black");
+INSERT INTO tb_category VALUES("3","Blue");
+INSERT INTO tb_category VALUES("4","Red");
+INSERT INTO tb_category VALUES("5","Green");
+INSERT INTO tb_category VALUES("6","Yellow");
+INSERT INTO tb_category VALUES("7","Orange");
+INSERT INTO tb_category VALUES("8","Pink");
+INSERT INTO tb_category VALUES("9","Violet");
+INSERT INTO tb_category VALUES("10","Purple");
+INSERT INTO tb_category VALUES("11","Brown");
+INSERT INTO tb_category VALUES("12","Gray");
+INSERT INTO tb_category VALUES("13","Rose");
+INSERT INTO tb_category VALUES("14","Magenta");
+INSERT INTO tb_category VALUES("15","Cyan");
+INSERT INTO tb_category VALUES("16","Gold");
+INSERT INTO tb_category VALUES("17","Silver");
 
 
 INSERT INTO tb_language VALUES("en","English");
