@@ -21,14 +21,14 @@
     
 <body>
 
-<div style="position: absolute; top: 5px; right: 3%;">
-    <img src="http://www.easybiblio.com/wp-content/themes/camp/images/default-image.jpg" height="90" />
+<div style="position: absolute; top: 5px; right: 80px;">
+    <img src="http://www.easybiblio.com/wp-content/themes/camp/images/default-image.jpg" height="80" />
 </div>
-<div style="position: absolute; top: 30px; right: 5%;">
-    <span style="color: white; font-size:2pc;">EasyBiblio Demo Site</span>
+<div style="position: absolute; top: 30px; right: 100px;">
+    <span style="color: white; font-size:27px;">EasyBiblio Demo Site</span>
 </div>
   
-<div id="changeLanguage" style="position: absolute; top: 10px; right: 1%;">
+<div id="changeLanguage" style="position: absolute; top: 10px; right: 5px;">
 <?php
  // Getting all possible languages
  $possible_languages = array_diff(scandir('lang'), array('..', '.'));

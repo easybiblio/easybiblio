@@ -1,0 +1,115 @@
+menu.search_book=Procurar livros
+menu.search_people=Procurar pessoas
+menu.lent_book=Livros emprestados
+menu.statistics=Estatísticas
+
+button.search=Procurar
+button.new=Novo
+button.save=Gravar
+button.cancel=Cancelar
+button.newPerson=Nova Pessoa
+button.confirmLend=Confirmar Empréstimo
+
+db.book=Livro
+db.book.code=Código
+db.book.cover=Capa
+db.book.title=Título
+db.book.author=Autor
+db.book.coauthor=Co-Autor
+db.book.type=Tipo
+db.book.description=Descrição
+db.book.editor=Editor
+db.book.year_publication=Ano de publicação
+db.book.language=Língua
+db.book.category=Categoria
+db.book.notes=Notas
+db.book.date_creation=Data&nbsp;de&nbsp;Criação
+
+db.person=Pessoa
+db.person.name=Nome
+db.person.address=Endereço
+db.person.zipcode=Código&nbsp;Postal
+db.person.city=Cidade
+db.person.phone1=Fone&nbsp;1
+db.person.phone2=Fone&nbsp;2
+db.person.email=E-mail
+db.person.notes=Notas
+db.person.date_creation=Data&nbsp;de&nbsp;Criação
+
+db.lend=Dados&nbsp;do&nbsp;Empréstimo
+db.lend.date_lend=Data&nbsp;de&nbsp;Empréstimo
+db.lend.date_return=Data&nbsp;de&nbsp;Retorno
+db.lend.notes=Notas
+
+label.action=Ação
+label.action.return=Retornar
+label.action.lend=Emprestar
+label.report_lent_books=Livros Emprestados
+
+bookSearch.title=Lista de livros
+personSearch.title=Lista de pessoas
+
+bookSave.message.newBookSaved=Novo livro '%1' criado com ID %2
+bookSave.message.bookUpdated=Livro '%1' was updated.
+bookSave.message.codeMandatory=O código é obrigatório !
+bookSave.message.titleMandatory=O título é obrigatório !
+bookSave.message.codeAlreadyExist=O livro '%1' já esta usando o código '%2'. Livro não foi gravado..
+
+personSave.message.newPersonSaved=Nova pessoa '%1' criada com ID %2
+personSave.message.personUpdated=Pessoa '%1' atualizada com sucesso.
+personSave.message.nameMandatory=O nome é obrigatório !
+
+bookLend.title=Empréstimo de um livro
+
+bookLendConfirmation.title=Confirmação do empréstimo do livro
+
+bookLendConfirmationSave.message.bookNotFound=Livro não encontrado. Tente novamente.
+bookLendConfirmationSave.message.personNotFound=Pessoa não encontrada. Tente novamente.
+bookLendConfirmationSave.message.dateNotValid=Data é inválida. Tente novamente.
+bookLendConfirmationSave.message.bookAlreadyLent=Livro já está emprestado para outra pessoa.
+bookLendConfirmationSave.message.success=Empréstimo do livro '%1' está gravado com ID %2
+
+bookReturn.title=Devolução do livro
+bookReturn.button.confirmReturn=Confirmar devolução
+bookReturn.label.question=Você confirma a devolução deste livro?
+
+bookReturnSave.message.loanNotFound=Empréstimo não encontrado !
+bookReturnSave.message.returnDateNotValid=Data de devolução é inválida. Tente novamente !
+bookReturnSave.message.bookAlreadyReturned=Livro já estava devolvido. Nada foi gravado!
+bookReturnSave.message.bookReturned=Livro '%1' devolvido com sucesso !
+
+bookLendEditNotes.title=Alterar notas do empréstimo
+
+bookLendEditNotesSave.message.loanNotFound=Empréstimo não encontrado!
+bookLendEditNotesSave.message.bookAlreadyReturned=Livro já está devolvido. Nada foi gravado!
+bookLendEditNotesSave.message.success=Notas para empréstimo foram gravadas com sucesso!
+
+bookCoverSearch.title=Adicionar capa para os livros
+bookCoverSearch.label.withoutCover=Sem capa
+
+bookCoverUpload.message.bookNotFound=Livro não encontrado !
+bookCoverUpload.message.wrongFileType=Somente JPG são permitidos. Arquivo enviado é do tipo %1
+bookCoverUpload.message.fileTooBig=Seu arquivo é muito grando, favor enviar um arquivo menor.
+bookCoverUpload.message.success=Foto da capa foi enviada com sucesso.
+bookCoverUpload.message.error=Ocorreu um erro durante o envio do arquivo.
+
+reportBookLended.title=Lista de livros emprestados
+reportBookLended.label.days=Dias
+reportBookLended.action.change_notes=Alterar&nbsp;Notas
+reportBookLended.action.return=Devolver
+reportBookLended.message.total_lent_books=Quantidade total de livros emprestados
+
+reportLendPerPerson.title=Livros emprestados pela pessoa
+reportLendPerPerson.label.days=Dias
+reportLendPerPerson.message.total_lent_books=Quantidade total de livros emprestados
+
+reportStatistics.title=Estatísticas
+reportStatistics.total_books=Quantidade total de livros
+reportStatistics.total_people=Quantidade total de pessoas
+reportStatistics.total_lent=Quantidade total de livros emprestados
+reportStatistics.total_lent_today=Quantidade total de livros emprestados até o momento
+reportStatistics.link_backup=Clique aqui para fazer uma cópia de segurança
+reportStatistics.link_addBookCover=Adicione capa para os seus livros
+
+message.there_are_more_books=Há mais livros...
+message.there_are_more_people=Há mais pessoas...
