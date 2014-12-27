@@ -88,7 +88,7 @@ function loadImage() {
 
   <!-- Type -->
   <tr>
-    <td>Type:</td>
+    <td><?= $t->__('db.book.type') ?>:</td>
     <td>
     <select name="type_id" size="1">
         <?php prepareTypeOptions( $fmw->getPostOrArray($columns, 'type_id') ); ?>
