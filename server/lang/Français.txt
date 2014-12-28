@@ -41,9 +41,13 @@ db.lend.date_lend=Date&nbsp;d'emprunt
 db.lend.date_return=Date&nbsp;du&nbsp;retour
 db.lend.notes=Notes
 
+db.type=Type de livres
+db.type.name=Nom
+
 label.action=Action
 label.action.return=Retourner
 label.action.lend=Emprunter
+label.action.delete=Effacer
 label.report_lent_books=Livres empruntées
 
 bookSearch.title=Liste de livres
@@ -110,6 +114,14 @@ reportStatistics.total_lent=Total d'Emprunts
 reportStatistics.total_lent_today=Total de Livres Actuelement Empruntées
 reportStatistics.link_backup=Cliquez ici pour faire une sauvegarde de votre Base de Donnée 
 reportStatistics.link_addBookCover=Rajouter couverture pour les livres 
+
+bookTypeList.title=Liste de type de livres
+bookTypeSave.message.nameMandatory=Le nom est obligatoire !
+bookTypeSave.message.bookTypeUpdated=Type de livre a été actualisé.
+bookTypeSave.message.newBookTypeCreated=Type de livre a été créé.
+bookTypeDelete.message.bookTypeNotFound=Type de livre n'a pas été trouvé. Il n'a pas été effacé.
+bookTypeDelete.message.bookTypeDeleted=Type de livre a été effacé.
+bookTypeDelete.message.notPossibleToDelete=Il y a %1 livres qui utilisent ce type. Il n'est pas possible de l'effacer.
 
 message.there_are_more_books=Il y a plus de livres ...
 message.there_are_more_people=Il y a plus de personnes ...

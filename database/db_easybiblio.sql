@@ -127,7 +127,7 @@ ALTER TABLE `tb_lend`
 
 
 CREATE TABLE `tb_type` (
- `id` int(10) unsigned NOT NULL,
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
  `name` varchar(45) DEFAULT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

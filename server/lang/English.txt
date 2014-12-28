@@ -41,9 +41,13 @@ db.lend.date_lend=Lend&nbsp;Date
 db.lend.date_return=Return&nbsp;Date
 db.lend.notes=Notes
 
+db.type=Type of book
+db.type.name=Name
+
 label.action=Action
 label.action.return=Return
 label.action.lend=Lend
+label.action.delete=Delete
 label.report_lent_books=Lent books
 
 bookSearch.title=List of Books
@@ -110,6 +114,14 @@ reportStatistics.total_lent=Total of Lent Books
 reportStatistics.total_lent_today=Total of Lent Books today
 reportStatistics.link_backup=Click here for making a backup of your database
 reportStatistics.link_addBookCover=Add covers for your books 
+
+bookTypeList.title=List of book types
+bookTypeSave.message.nameMandatory=The name is mandatory !
+bookTypeSave.message.bookTypeUpdated=Book Type is updated.
+bookTypeSave.message.newBookTypeCreated=Book Type is created.
+bookTypeDelete.message.bookTypeNotFound=Book Type not found. Nothing was deleted.
+bookTypeDelete.message.bookTypeDeleted=Book Type was deleted.
+bookTypeDelete.message.notPossibleToDelete=There are %1 books using this type. Not possible to delete.
 
 message.there_are_more_books=There are more books...
 message.there_are_more_people=There are more people...
