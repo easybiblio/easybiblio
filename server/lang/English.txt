@@ -49,6 +49,10 @@ db.category=Book Category
 db.category.id=ID
 db.category.name=Name
 
+db.language=Book Language
+db.language.language=Code
+db.language.language_name=Name
+
 label.action=Action
 label.action.return=Return
 label.action.lend=Lend
@@ -137,6 +141,14 @@ bookCategoryDelete.message.notFound=Book Category not found. Nothing was deleted
 bookCategoryDelete.message.deleted=Book Category was deleted.
 bookCategoryDelete.message.notPossibleToDelete=There are %1 books using this category. Not possible to delete.
 
+bookLanguageList.title=List of book languages
+bookLanguageSave.message.mandatory=The code and name are mandatory !
+bookLanguageSave.message.updated=Book Language is updated.
+bookLanguageSave.message.created=Book Language is created.
+bookLanguageSave.message.alreadyExist=A language with this code already exist.
+bookLanguageDelete.message.notFound=Book Language not found. Nothing was deleted.
+bookLanguageDelete.message.deleted=Book Language was deleted.
+bookLanguageDelete.message.notPossibleToDelete=There are %1 books using this language. Not possible to delete.
 
 message.there_are_more_books=There are more books...
 message.there_are_more_people=There are more people...

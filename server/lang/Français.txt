@@ -49,6 +49,10 @@ db.category=Catégorie des livres
 db.category.id=ID
 db.category.name=Name
 
+db.language=Langue du livre
+db.language.language=Code
+db.language.language_name=Nom
+
 label.action=Action
 label.action.return=Retourner
 label.action.lend=Emprunter
@@ -136,6 +140,15 @@ bookCategorySave.message.created=Catégorie de livre a été créé.
 bookCategoryDelete.message.notFound=Catégorie de livre n'a pas été trouvé. Il n'a pas été effacé.
 bookCategoryDelete.message.deleted=Catégorie de livre a été effacé.
 bookCategoryDelete.message.notPossibleToDelete=Il y a %1 livres qui utilisent cette catégorie. Il n'est pas possible de l'effacer.
+
+bookLanguageList.title=Liste de langues des livres
+bookLanguageSave.message.mandatory=Le code et le nom sont obligatoires !
+bookLanguageSave.message.updated=Langue a été actualisé.
+bookLanguageSave.message.created=Langue a été créé.
+bookLanguageSave.message.alreadyExist=Il y a déjà une langue avec cette code.
+bookLanguageDelete.message.notFound=Langue n'a pas été trouvée. Elle n'a pas été effacée.
+bookLanguageDelete.message.deleted=Langue a été effacée.
+bookLanguageDelete.message.notPossibleToDelete=Il y a %1 livres qui utilisent cette langue. Il n'est pas possible de l'effacer.
 
 message.there_are_more_books=Il y a plus de livres ...
 message.there_are_more_people=Il y a plus de personnes ...
