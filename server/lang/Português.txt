@@ -42,13 +42,19 @@ db.lend.date_return=Data&nbsp;de&nbsp;Retorno
 db.lend.notes=Notas
 
 db.type=Tipo de livros
+db.type.id=ID
 db.type.name=Nome
+
+db.category=Categoria dos livros
+db.category.id=ID
+db.category.name=Nome
 
 label.action=Ação
 label.action.return=Retornar
 label.action.lend=Emprestar
 label.action.delete=Remover
 label.report_lent_books=Livros Emprestados
+label.numberOfBooks=Quantidade de livros
 
 bookSearch.title=Lista de livros
 personSearch.title=Lista de pessoas
@@ -117,11 +123,19 @@ reportStatistics.link_addBookCover=Adicione capa para os seus livros
 
 bookTypeList.title=Lista de tipos de livros
 bookTypeSave.message.nameMandatory=O nome é obrigatório !
-bookTypeSave.message.bookTypeUpdated=Tipo de livro foi atualizado.
-bookTypeSave.message.newBookTypeCreated=Tipo de livro foi criado.
-bookTypeDelete.message.bookTypeNotFound=Tipo de livro não foi encontrado.
-bookTypeDelete.message.bookTypeDeleted=Tipo de livro foi removido.
-bookTypeDelete.message.notPossibleToDelete=Existem %1 livros que utilisam este tipo de livro. Não é possível removê-lo.
+bookTypeSave.message.updated=Tipo de livro foi atualizado.
+bookTypeSave.message.created=Tipo de livro foi criado.
+bookTypeDelete.message.notFound=Tipo de livro não foi encontrado.
+bookTypeDelete.message.deleted=Tipo de livro foi removido.
+bookTypeDelete.message.notPossibleToDelete=Existem %1 livros que utilisam este tipo. Não é possível removê-lo.
+
+bookCategoryList.title=Lista de tipos de livros
+bookCategorySave.message.nameMandatory=O nome é obrigatório !
+bookCategorySave.message.updated=Categoria de livro foi atualizado.
+bookCategorySave.message.created=Categoria de livro foi criado.
+bookCategoryDelete.message.notFound=Categoria de livro não foi encontrado.
+bookCategoryDelete.message.deleted=Categoria de livro foi removido.
+bookCategoryDelete.message.notPossibleToDelete=Existem %1 livros que utilisam esta categoria. Não é possível removê-la.
 
 message.there_are_more_books=Há mais livros...
 message.there_are_more_people=Há mais pessoas...

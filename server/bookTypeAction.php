@@ -14,9 +14,9 @@ if ($action == 'delete') {
         $deleted = $database->delete("tb_type", array("id[=]" => $id));
 
         if ($deleted > 0) {
-            $fmw->info('bookTypeDelete.message.bookTypeDeleted');
+            $fmw->info('bookTypeDelete.message.deleted');
         } else {
-            $fmw->info('bookTypeDelete.message.bookTypeNotFound');
+            $fmw->info('bookTypeDelete.message.notFound');
         }
     }
     
@@ -36,10 +36,10 @@ if ($action == 'delete') {
     $id = $_POST['id'];
     if ($id != '') {
         $database->update("tb_type", $columns, array("id[=]" => $id));
-        $fmw->info('bookTypeSave.message.bookTypeUpdated');
+        $fmw->info('bookTypeSave.message.updated');
     } else {
         $database->insert("tb_type", $columns); 
-        $fmw->info('bookTypeSave.message.newBookTypeCreated');
+        $fmw->info('bookTypeSave.message.created');
     }
     
 }

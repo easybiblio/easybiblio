@@ -42,13 +42,19 @@ db.lend.date_return=Date&nbsp;du&nbsp;retour
 db.lend.notes=Notes
 
 db.type=Type de livres
+db.type.id=ID
 db.type.name=Nom
+
+db.category=Catégorie des livres
+db.category.id=ID
+db.category.name=Name
 
 label.action=Action
 label.action.return=Retourner
 label.action.lend=Emprunter
 label.action.delete=Effacer
 label.report_lent_books=Livres empruntées
+label.numberOfBooks=Nombre de livres
 
 bookSearch.title=Liste de livres
 personSearch.title=Liste de Personnes
@@ -117,11 +123,19 @@ reportStatistics.link_addBookCover=Rajouter couverture pour les livres
 
 bookTypeList.title=Liste de type de livres
 bookTypeSave.message.nameMandatory=Le nom est obligatoire !
-bookTypeSave.message.bookTypeUpdated=Type de livre a été actualisé.
-bookTypeSave.message.newBookTypeCreated=Type de livre a été créé.
-bookTypeDelete.message.bookTypeNotFound=Type de livre n'a pas été trouvé. Il n'a pas été effacé.
-bookTypeDelete.message.bookTypeDeleted=Type de livre a été effacé.
+bookTypeSave.message.updated=Type de livre a été actualisé.
+bookTypeSave.message.created=Type de livre a été créé.
+bookTypeDelete.message.notFound=Type de livre n'a pas été trouvé. Il n'a pas été effacé.
+bookTypeDelete.message.deleted=Type de livre a été effacé.
 bookTypeDelete.message.notPossibleToDelete=Il y a %1 livres qui utilisent ce type. Il n'est pas possible de l'effacer.
+
+bookCategoryList.title=Liste de catégorie de livres
+bookCategorySave.message.nameMandatory=Le nom est obligatoire !
+bookCategorySave.message.updated=Catégorie de livre a été actualisé.
+bookCategorySave.message.created=Catégorie de livre a été créé.
+bookCategoryDelete.message.notFound=Catégorie de livre n'a pas été trouvé. Il n'a pas été effacé.
+bookCategoryDelete.message.deleted=Catégorie de livre a été effacé.
+bookCategoryDelete.message.notPossibleToDelete=Il y a %1 livres qui utilisent cette catégorie. Il n'est pas possible de l'effacer.
 
 message.there_are_more_books=Il y a plus de livres ...
 message.there_are_more_people=Il y a plus de personnes ...
