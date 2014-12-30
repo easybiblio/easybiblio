@@ -1,7 +1,13 @@
 menu.search_book=Procurar livros
 menu.search_people=Procurar pessoas
 menu.lent_book=Livros emprestados
-menu.statistics=Estatísticas
+menu.admin=Administração
+menu.admin.bookCategory=Categoria de Livros 
+menu.admin.bookType=Tipos de Livros
+menu.admin.bookLanguage=Idioma de Livros 
+menu.admin.bookCover=Capa dos livros
+menu.admin.statistics=Estatísticas
+menu.admin.backup=Backup de Segurança
 
 button.search=Procurar
 button.new=Novo
@@ -122,8 +128,6 @@ reportStatistics.total_books=Quantidade total de livros
 reportStatistics.total_people=Quantidade total de pessoas
 reportStatistics.total_lent=Quantidade total de livros emprestados
 reportStatistics.total_lent_today=Quantidade total de livros emprestados até o momento
-reportStatistics.link_backup=Clique aqui para fazer uma cópia de segurança
-reportStatistics.link_addBookCover=Adicione capa para os seus livros
 
 bookTypeList.title=Lista de tipos de livros
 bookTypeSave.message.nameMandatory=O nome é obrigatório !
@@ -133,7 +137,7 @@ bookTypeDelete.message.notFound=Tipo de livro não foi encontrado.
 bookTypeDelete.message.deleted=Tipo de livro foi removido.
 bookTypeDelete.message.notPossibleToDelete=Existem %1 livros que utilisam este tipo. Não é possível removê-lo.
 
-bookCategoryList.title=Lista de tipos de livros
+bookCategoryList.title=Lista de categorias de livros
 bookCategorySave.message.nameMandatory=O nome é obrigatório !
 bookCategorySave.message.updated=Categoria de livro foi atualizado.
 bookCategorySave.message.created=Categoria de livro foi criado.

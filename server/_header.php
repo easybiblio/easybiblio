@@ -42,7 +42,7 @@
 <a href="bookSearch.php"><?= $t->__('menu.search_book') ?></a>&nbsp;&nbsp;
 <a href="personSearch.php"><?= $t->__('menu.search_people') ?></a>&nbsp;&nbsp;
 <a href="reportBookLended.php"><?= $t->__('menu.lent_book') ?></a>&nbsp;&nbsp;
-<a href="reportStatistics.php"><?= $t->__('menu.statistics') ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="reportStatistics.php"><?= $t->__('menu.admin') ?></a>
 
 <?php
  $message = $_SESSION['message'];

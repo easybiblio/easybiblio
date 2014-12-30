@@ -1,7 +1,13 @@
 menu.search_book=Chercher livres
 menu.search_people=Chercher personnes
 menu.lent_book=Livres empruntées
-menu.statistics=Statistiques
+menu.admin=Administration
+menu.admin.bookCategory=Catégorie de Livres 
+menu.admin.bookType=Type de Livres
+menu.admin.bookLanguage=Langue des Livres 
+menu.admin.bookCover=Couverture des Livres
+menu.admin.statistics=Statistiques
+menu.admin.backup=Sauvegarde de la Base de Données
 
 button.search=Recherche
 button.new=Nouveau
@@ -121,9 +127,7 @@ reportStatistics.title=Statistiques
 reportStatistics.total_books=Total de Livres
 reportStatistics.total_people=Total de Personnes
 reportStatistics.total_lent=Total d'Emprunts
-reportStatistics.total_lent_today=Total de Livres Actuelement Empruntées
-reportStatistics.link_backup=Cliquez ici pour faire une sauvegarde de votre Base de Donnée 
-reportStatistics.link_addBookCover=Rajouter couverture pour les livres 
+reportStatistics.total_lent_today=Total de livres empruntées actuellement
 
 bookTypeList.title=Liste de type de livres
 bookTypeSave.message.nameMandatory=Le nom est obligatoire !

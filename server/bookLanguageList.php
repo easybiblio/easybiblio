@@ -1,4 +1,5 @@
 <?php include '_header.php' ?>
+<?php include '_menuAdmin.php' ?>
     
 <h1><?= $t->__('bookLanguageList.title') ?></h1>
 

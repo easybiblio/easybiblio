@@ -1,7 +1,13 @@
 menu.search_book=Search Books
 menu.search_people=Search People
 menu.lent_book=Lent Books
-menu.statistics=Statistics
+menu.admin=Administration
+menu.admin.bookCategory=Book Category 
+menu.admin.bookType=Book Type
+menu.admin.bookLanguage=Book Language 
+menu.admin.bookCover=Book Covers 
+menu.admin.statistics=Statistics
+menu.admin.backup=Database Backup
 
 button.search=Search
 button.new=New
@@ -121,9 +127,7 @@ reportStatistics.title=Statistics
 reportStatistics.total_books=Total of books
 reportStatistics.total_people=Total of people
 reportStatistics.total_lent=Total of Lent Books
-reportStatistics.total_lent_today=Total of Lent Books today
-reportStatistics.link_backup=Click here for making a backup of your database
-reportStatistics.link_addBookCover=Add covers for your books 
+reportStatistics.total_lent_today=Total of Lent Books at present
 
 bookTypeList.title=List of book types
 bookTypeSave.message.nameMandatory=The name is mandatory !
