@@ -10,7 +10,7 @@
     $datas = $database->query($query)->fetchAll();
 ?>
 
-<table border=1 cellpadding="5" cellspacing="0">
+<table class="table table-hover">
     <tr>
         <th><?= $t->__('db.lend.date_lend') ?></th>
         <th><?= $t->__('reportBookLended.label.days') ?></th>

@@ -1,6 +1,6 @@
 <br/>
 <div style="position: relative; top: 10px; border: 1px solid #a1a1a1; display: inline-block; padding: 4px 5px; background: #eef4ee; border-radius: 15px;">
-    <table border="0" cellpadding="5px">
+    <table style="border-spacing: 10px; border-collapse: separate;}">
         <tr>
             <td>
                 <a href="bookCategoryList.php"><?= $t->__('menu.admin.bookCategory') ?></a><br/>

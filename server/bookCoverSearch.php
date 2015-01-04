@@ -15,15 +15,17 @@
     }
     $search_string = trim($search_string);
 ?>
-<form method="post">
-    <input type="search"   name="search_book"      value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="checkbox" name="onlyWithoutCover" value="true" <?= $onlyWithoutCover ? "checked" : "" ?> ><?= $t->__('bookCoverSearch.label.withoutCover') ?> 
-    <input type="submit"   value="<?= $t->__('button.search') ?>"/>
+<form class="navbar-form navbar-left" role="search" method="post">
+    <input type="search"   class="form-control" name="search_book"      value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+    <div class="checkbox">
+    <label><input type="checkbox" name="onlyWithoutCover" value="true" <?= $onlyWithoutCover ? "checked" : "" ?> >&nbsp;<?= $t->__('bookCoverSearch.label.withoutCover') ?></label>
+    </div>
+    <input type="submit"   class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
 </form>
 
 <br/>
 
-<table border=1 cellpadding="5" cellspacing="0">
+<table class="table table-hover">
     <tr>
         <th><?= $t->__('db.book.code') ?></th>
         <th><?= $t->__('db.book.cover') ?></th>

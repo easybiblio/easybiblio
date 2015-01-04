@@ -10,28 +10,54 @@
 
 <h1><?= $t->__('bookLend.title') ?></h1>
 
-<?= $t->__('db.book') ?>:
-<table width="70%" border="1" cellpadding="5" cellspacing="0">
-  <tr>
-    <td width="1%"><?= $t->__('db.book.title') ?>:</td>
-    <td>(<?=$book_columns['code'] ?>) <?=$book_columns['title'] ?></td>
-  </tr>
+
+<!-- Book -->
+<div class="panel panel-success">
+   <div class="panel-heading"><?= $t->__('db.book') ?>:</div>
+   <div class="panel-body">
+       <table>
+          <tr>
+            <?php
+                if ($book_columns['cover_url'] != '') {
+                    $img_src_nocache = $fmw->escapeHtml($book_columns['cover_url']) . '?' . time();
+                    echo "<td rowspan='3' width='150px'>";
+                    echo "<img src='".$img_src_nocache."' width='130'/>";
+                    echo "</td>";
+                }
+            ?>
+            <td width="1px"><?= $t->__('db.book.title') ?>:</td>
+            <td>(<?=$book_columns['code'] ?>) <?=$book_columns['title'] ?></td>
+          </tr>
+
+          <tr>
+            <td><?= $t->__('db.book.author') ?>:</td>
+            <td><?=$book_columns['author'] ?></td>
+          </tr>
+
+          <tr>
+            <td><?= $t->__('db.book.coauthor') ?>:</td>
+            <td><?=$book_columns['coauthor'] ?></td>
+          </tr>
+       </table>
+   </div>
+</div>
+
+
+
+
+<!-- Person -->
+<div class="panel panel-success">
+<div class="panel-heading"><?= $t->__('db.person') ?>:</div>
     
-  <tr>
-    <td><?= $t->__('db.book.author') ?>:</td>
-    <td><?=$book_columns['author'] ?></td>
-  </tr>
-   
-  <tr>
-    <td><?= $t->__('db.book.coauthor') ?>:</td>
-    <td><?=$book_columns['coauthor'] ?></td>
-  </tr>
-</table>
+<div class="panel-body">
 
+<script>
+    function _personSelected(personId) {
+        $('#person_id_for_loan').val(personId);
+        $('#loan_data_submit_button').prop("disabled",false);
+    }
+</script>
 
-<br/>
-<br/>
-<?= $t->__('db.person') ?>:
 <?php
     $search_string = $_POST['search_person'];
     if (!isset($search_string)) {
@@ -41,24 +67,17 @@
     }
     $search_string = trim($search_string);
 ?>
-<form method="post">
-    <input type="search" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" value="<?= $t->__('button.search') ?>"/>
-    <input type="button" value="<?= $t->__('button.newPerson') ?>" onclick="window.location.href='person.php'" />
+<form class="navbar-form navbar-left" role="search" method="post">
+    <div class="form-group">
+      <input type="search" class="form-control" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+    </div>
+    <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
+    <input type="button" class="btn btn-default" value="<?= $t->__('button.newPerson') ?>" onclick="window.location.href='person.php'" />
 </form>
 
-<br/>
-
-
-
-
-<form method="post" action="bookLendConfirmation.php">
-
-<input type="hidden" name="book_id" value="<?=$book_id?>" />
-    
-<table border=1 cellpadding="5" cellspacing="0">
+<table class="table table-hover">
     <tr>
-        <th></th>
+        <th width="1%"></th>
         <th><?= $t->__('db.person.name') ?></th>
         <th><?= $t->__('db.person.city') ?></th>
         <th><?= $t->__('db.person.phone1') ?></th>
@@ -78,7 +97,7 @@ foreach($datas as $row) {
     $fmw->escapeHtmlArray($row);
     echo "<tr>";
     echo "<td>";
-    echo "<input type='radio' name='person_id' value='" . $row['id'] . "' />";
+    echo "<input type='radio' name='person_id' onchange='javascript:_personSelected(\"". $row['id'] . "\")'/>";
     echo "</td>";
     echo "<td>";
     echo "<a href='person.php?id=" . $row['id'] . "'>" . $row['name'] . '</a>';
@@ -101,16 +120,27 @@ foreach($datas as $row) {
 ?>
 </table>
 
+</div>
+</div>
 
-<br/>
 
+
+<!-- Loan Data -->
+<div class="panel panel-success">
+
+    <div class="panel-heading"><?= $t->__('db.lend') ?>:</div>
+   <div class="panel-body">
+
+       <form method="post" action="bookLendConfirmation.php">
+           <input type="hidden" name="book_id"   value="<?=$book_id?>"   />
+           <input type="hidden" name="person_id" value="<?=$person_id?>" id="person_id_for_loan"/>
     <script>
         $(function() {
             $( "#datepicker" ).datepicker({ dateFormat: "dd/mm/yy" });
         });
     </script>
     
-    <table width="70%" cellpadding="5" border="0">
+    <table style="border-spacing: 5px; border-collapse: separate;">
 
       <tr>
         <td width="1%"><strong><?= $t->__('db.lend.date_lend') ?>:</strong></td>
@@ -123,15 +153,23 @@ foreach($datas as $row) {
             <textarea rows="6" cols="47" name="notes" autofocus></textarea>
         </td>
       </tr>
-        
-       <tr>
-        <td colspan="2">
-            <input type="submit" value="<?= $t->__('button.confirmLend') ?>"/>
-            <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'"/>
-        </td>
-       </tr>
-    </table>
     
-</form>
+      <tr>
+        <td></td>
+        <td>
+            <input type="submit" class="btn btn-default" value="<?= $t->__('button.confirmLend') ?>" id='loan_data_submit_button' disabled=true/>
+            <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'"/>
+        </td>
+      </tr>
+        
+    </table>
+
+      
+       </form>
+   </div>
+
+</div>
+
+
     
 <?php include '_footer.php' ?>

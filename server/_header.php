@@ -3,20 +3,15 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBiblio</title>
-    <link rel="stylesheet" href="custom.css">
-    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    
     <script src="jquery-ui/external/jquery/jquery.js"></script>
     <script src="jquery-ui/jquery-ui.js"></script>
-    
-    <script>
-        function _changeLanguage(languageToSet) {
-           $.get("_changeLanguage.php?_language=" + languageToSet, function(data,status) {
-              // alert('language was set, reload URL here');
-           });
-        }
-    </script>
-    
 </head>
     
 <body>
@@ -24,7 +19,7 @@
 <div style="position: absolute; top: 5px; right: 80px;">
     <img src="http://www.easybiblio.com/wp-content/themes/camp/images/default-image.jpg" height="80" />
 </div>
-<div style="position: absolute; top: 30px; right: 100px;">
+<div style="position: absolute; top: 25px; right: 90px;">
     <span style="color: white; font-size:27px;">EasyBiblio Demo Site</span>
 </div>
   

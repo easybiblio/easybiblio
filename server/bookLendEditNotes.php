@@ -25,7 +25,7 @@
 <h1><?= $t->__('bookLendEditNotes.title') ?></h1>
 
 <h3><?= $t->__('db.book') ?>:</h3>
-<table width="70%" border="1" cellpadding="5" cellspacing="0">
+<table style="border-spacing: 5px; border-collapse: separate;">
   <tr>
     <td width="1%"><?= $t->__('db.book.title') ?>:</td>
     <td>(<?=$book_columns['code'] ?>) <?=$book_columns['title'] ?></td>
@@ -43,7 +43,7 @@
 </table>
 
 <h3><?= $t->__('db.person') ?>:</h3>
-<table width="70%" border="1" cellpadding="5" cellspacing="0">
+<table style="border-spacing: 5px; border-collapse: separate;">
   <tr>
     <td width="1%"><?= $t->__('db.person.name') ?>:</td>
     <td><?=$person_columns['name'] ?></td>
@@ -73,7 +73,7 @@
 <form action="bookLendEditNotesSave.php" method="post" id="myform">
     <input type="hidden" name="lend_id"   value="<?=$lend_id?>" />
 
-<table width="70%" border="0" cellpadding="5" cellspacing="0">
+<table style="border-spacing: 5px; border-collapse: separate;">
   <tr>
     <td width="1%"><?= $t->__('db.lend.date_lend') ?>:</td>
     <td><?=$date_lend?></td>

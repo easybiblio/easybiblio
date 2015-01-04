@@ -11,15 +11,15 @@
     }
     $search_string = trim($search_string);
 ?>
-<form method="post">
-    <input type="search" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" value="<?= $t->__('button.search') ?>"/>
-    <input type="button" value="<?= $t->__('button.new') ?>" onclick="window.location.href='person.php'" />
+<form class="navbar-form navbar-left" role="search" method="post">
+    <input type="search" class="form-control" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+    <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
+    <input type="button" class="btn btn-default" value="<?= $t->__('button.new') ?>" onclick="window.location.href='person.php'" />
 </form>
 
 <br/>
 
-<table border=1 cellpadding="5" cellspacing="0">
+<table class="table table-hover">
     <tr>
         <th><?= $t->__('db.person.name') ?></th>
         <th><?= $t->__('db.person.city') ?></th>

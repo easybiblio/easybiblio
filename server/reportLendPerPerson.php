@@ -15,8 +15,8 @@
     $datas = $database->query($query)->fetchAll();
 ?>
 
-<?= $t->__('db.person') ?>:
-<table width="70%" border="1" cellpadding="5" cellspacing="0">
+<h3><?= $t->__('db.person') ?>:</h3>
+<table style="border-spacing: 5px; border-collapse: separate;">
   <tr>
     <td width="1%"><?= $t->__('db.person.name') ?>:</td>
     <td><?=$person_columns['name'] ?></td>
@@ -42,7 +42,7 @@
 <br/>
 <br/>
 
-<table border=1 cellpadding="5" cellspacing="0">
+<table class="table table.hover">
     <tr>
         <th><?= $t->__('db.lend.date_lend') ?></th>
         <th><?= $t->__('db.lend.date_return') ?></th>
@@ -59,7 +59,7 @@ foreach($datas as $row) {
     $counter++;
     $fmw->escapeHtmlArray($row);
     if (!isset($row['date_return'])) {
-        echo "<tr class='lended'>";
+        echo "<tr class='success'>";
     } else {
         echo "<tr>";
     }

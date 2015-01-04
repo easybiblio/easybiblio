@@ -9,7 +9,7 @@
 
 <br/>
 
-<table border=1 cellpadding="5" cellspacing="0">
+<table class="table table-hover">
     <tr>
         <th><?= $t->__('db.language.language') ?></th>
         <th><?= $t->__('db.language.language_name') ?></th>
