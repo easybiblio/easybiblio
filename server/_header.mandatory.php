@@ -10,7 +10,8 @@
     'database_name' => $config->database_name,
     'server' => $config->server,
     'username' => $config->username,
-    'password' => $config->password );
+    'password' => $config->password,
+    'charset' => $config->charset);
 
   // Medoo instance
   $database = new medoo($dbconfig);

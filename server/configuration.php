@@ -8,6 +8,9 @@ class EBBConfig {
     var $password = 'root';
     var $language = 'English';
     
+    // Be sure what to do when changing charset
+    var $charset = 'utf8';
+    
     // To be implemented in the future
 	// var $dbprefix = 'ebb_';
 }
