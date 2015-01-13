@@ -1,5 +1,24 @@
 <?php require_once '_header.mandatory.php';
 
+// Check if String ends with toCheck.
+function endsWith($string, $toCheck) {
+    // search forward starting from end minus needle length characters
+    return $toCheck === "" || strpos($string, $toCheck, strlen($string) - strlen($toCheck)) !== FALSE;
+}
+
+// Checks if it is a REMOTE URL for the cover, if yes, tries to copy it to local server
+function copyImageFromServer($bookId, $columns) {
+    $urlSource = $columns['cover_url'];
+
+    if (substr($urlSource, 0, 4) === "http" && endsWith($urlSource, "jpg")) {
+        $newCoverURL = "images/covers/book_cover_" . $bookId . '.jpg';
+        if (@copy($urlSource, $newCoverURL)) {
+            // It worked, lets use it
+            $columns['cover_url'] = $newCoverURL;
+        };
+    }
+}
+
 $code = trim($_POST['code']);
 $columns = array(
     "code" => $code,
@@ -28,6 +47,10 @@ if ($id != '') {
     } else if (isset($to_check['id']) and $to_check['id'] != $id) {
         $fmw->error('bookSave.message.codeAlreadyExist', $to_check['title'], $code);
     } else {
+        
+        // This line tries to copy the remote cover to your local file
+        // copyImageFromServer($id, &$columns);
+        
         $database->update("tb_book", $columns, array("id[=]" => $id));  
         $fmw->info('bookSave.message.bookUpdated', $columns['title']);  
     }
@@ -44,6 +67,10 @@ if ($id != '') {
         $fmw->error('bookSave.message.codeAlreadyExist', $to_check['title'], $code);
     } else {
         $columns['#date_creation'] = "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')";
+        
+        // This line tries to copy the remote cover to your local file
+        // copyImageFromServer($id, &$columns);
+        
         $last_book_id = $database->insert("tb_book", $columns);    
         $fmw->info('bookSave.message.newBookSaved', $columns['title'], $last_book_id);
     }
