@@ -15,34 +15,11 @@
     $datas = $database->query($query)->fetchAll();
 ?>
 
-<h3><?= $t->__('db.person') ?>:</h3>
-<table style="border-spacing: 5px; border-collapse: separate;">
-  <tr>
-    <td width="1%"><?= $t->__('db.person.name') ?>:</td>
-    <td><?=$person_columns['name'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.city') ?>:</td>
-    <td><?=$person_columns['city'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.phone1') ?>:</td>
-    <td><?=$person_columns['phone1'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.phone2') ?>:</td>
-    <td><?=$person_columns['phone2'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.email') ?>:</td>
-    <td><?=$person_columns['email'] ?></td>
-  </tr>
-</table>
+<?php include 'showPerson.php' ?>
 
-<br/>
-<br/>
 
-<table class="table table.hover">
+<!-- List of Lent Books -->
+<table class="table table-hover">
     <tr>
         <th><?= $t->__('db.lend.date_lend') ?></th>
         <th><?= $t->__('db.lend.date_return') ?></th>
@@ -95,7 +72,6 @@ foreach($datas as $row) {
 
 </table>
 
-<br/>
 <?= $t->__('reportLendPerPerson.message.total_lent_books') ?>: <?=$counter?>
 
 <?php include '_footer.php' ?>

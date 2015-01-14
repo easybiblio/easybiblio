@@ -24,90 +24,62 @@
 
 <h1><?= $t->__('bookReturn.title') ?></h1>
 
-<h3><?= $t->__('db.book') ?>:</h3>
-<table style="border-spacing: 5px; border-collapse: separate;">
-  <tr>
-    <td width="1%"><?= $t->__('db.book.title') ?>:</td>
-    <td>(<?=$book_columns['code'] ?>) <?=$book_columns['title'] ?></td>
-  </tr>
-    
-  <tr>
-    <td><?= $t->__('db.book.author') ?>:</td>
-    <td><?=$book_columns['author'] ?></td>
-  </tr>
-   
-  <tr>
-    <td><?= $t->__('db.book.coauthor') ?>:</td>
-    <td><?=$book_columns['coauthor'] ?></td>
-  </tr>
-</table>
 
-<h3><?= $t->__('db.person') ?>:</h3>
-<table style="border-spacing: 5px; border-collapse: separate;">
-  <tr>
-    <td width="1%"><?= $t->__('db.person.name') ?>:</td>
-    <td><?=$person_columns['name'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.city') ?>:</td>
-    <td><?=$person_columns['city'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.phone1') ?>:</td>
-    <td><?=$person_columns['phone1'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.phone2') ?>:</td>
-    <td><?=$person_columns['phone2'] ?></td>
-  </tr>
-  <tr>
-    <td><?= $t->__('db.person.email') ?>:</td>
-    <td><?=$person_columns['email'] ?></td>
-  </tr>
-</table>
+<?php include 'showBook.php' ?>
+
+<?php include 'showPerson.php' ?>
 
 
-<h3><?= $t->__('db.lend') ?>:</h3>
 
-<script>
-    $(function() {
-        $( "#datepicker" ).datepicker({ dateFormat: "dd/mm/yy" });
-    });
-    
-    function confirmation() {
-        if (confirm("<?= $t->__('bookReturn.label.question') ?>")) {
-            document.forms["myform"].submit();
+<!-- Loan data -->
+<div class="panel panel-success">
+   <div class="panel-heading"><?= $t->__('db.lend') ?>:</div>
+   <div class="panel-body">
+       
+    <script>
+        $(function() {
+            $( "#datepicker" ).datepicker({ dateFormat: "dd/mm/yy" });
+        });
+
+        function confirmation() {
+            if (confirm("<?= $t->__('bookReturn.label.question') ?>")) {
+                document.forms["myform"].submit();
+            }
         }
-    }
-</script>
+    </script>
+       
+    <form action="bookReturnSave.php" method="post" id="myform">
+        <input type="hidden" name="lend_id"   value="<?=$lend_id?>" />
 
-<form action="bookReturnSave.php" method="post" id="myform">
-    <input type="hidden" name="lend_id"   value="<?=$lend_id?>" />
+        <table style="border-spacing: 5px; border-collapse: separate;">
+          <tr>
+            <td width="1%"><?= $t->__('db.lend.date_lend') ?>:</td>
+            <td><?=$date_lend?></td>
+          </tr>
+          <tr>
+            <td width="1%"><?= $t->__('db.lend.date_return') ?>:</td>
+            <td><input type="text" name="date_return" size="10" value="<?= date('d/m/Y', time()); ?>" id="datepicker"/></td>
+          </tr>
+          <tr>
+            <td width="1%"><?= $t->__('db.lend.notes') ?>:</td>
+            <td>
+                <textarea rows="6" cols="50" name="notes" autofocus><?= $fmw->escapeHtml($notes) ?></textarea>
+            </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td>
+                <input type="button" class="btn btn-default" name="Submit" value="<?= $t->__('bookReturn.button.confirmReturn') ?>" onclick="confirmation()" />
+                <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" />
+              </td>
+          </tr>
+        </table>
 
-<table style="border-spacing: 5px; border-collapse: separate;">
-  <tr>
-    <td width="1%"><?= $t->__('db.lend.date_lend') ?>:</td>
-    <td><?=$date_lend?></td>
-  </tr>
-  <tr>
-    <td width="1%"><?= $t->__('db.lend.date_return') ?>:</td>
-    <td><input type="text" name="date_return" size="10" value="<?= date('d/m/Y', time()); ?>" id="datepicker"/></td>
-  </tr>
-  <tr>
-    <td width="1%"><?= $t->__('db.lend.notes') ?>:</td>
-    <td>
-        <textarea rows="6" cols="50" name="notes" autofocus><?= $fmw->escapeHtml($notes) ?></textarea>
-    </td>
-  </tr>
-  <tr>
-      <td></td>
-      <td>
-        <input type="button" name="Submit" value="<?= $t->__('bookReturn.button.confirmReturn') ?>" onclick="confirmation()" />
-        <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" />
-      </td>
-  </tr>
-</table>
+    </form>
+       
+   </div>
+</div>
 
-</form>
+
 
 <?php include '_footer.php' ?>
