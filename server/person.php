@@ -9,79 +9,84 @@
   }
 ?>
 
-<form action="personSave.php" method="post">
+<form class="form-horizontal" action="personSave.php" method="post" role="form">
 
-<!-- ID -->
-<input type="hidden" name="id" value="<?= $columns['id'] ?>">
+  <!-- ID -->
+  <input type="hidden" name="id" value="<?= $columns['id'] ?>">
 
-<table width="70%" border="0">
-
-  <tr>
-    <td width="10%"><strong><?= $t->__('db.person.name') ?>:</strong></td>
-    <td><input type="text" name="name" value=<?= $fmw->getPostOrArrayQuoted($columns, 'name') ?> size="52" maxlength="120"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.name') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="name" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'name') ?> maxlength="120">
+    </div>
+  </div>
   
-  <tr>
-    <td><strong><?= $t->__('db.person.address') ?>:</strong></td>
-    <td><input type="text" name="address" value=<?= $fmw->getPostOrArrayQuoted($columns, 'address') ?> size="52" maxlength="120"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.address') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="address" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'address') ?> maxlength="120">
+    </div>
+  </div>
 
-  <tr>
-    <td><?= $t->__('db.person.zipcode') ?>:</td>
-    <td> 
-      <input type="text" name="zipcode" value=<?= $fmw->getPostOrArrayQuoted($columns, 'zipcode') ?> size="52" maxlength="10"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.zipcode') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="zipcode" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'zipcode') ?> maxlength="10">
+    </div>
+  </div>
   
-  <tr>
-    <td><?= $t->__('db.person.city') ?>:</td>
-    <td><input type="text" name="city" value=<?= $fmw->getPostOrArrayQuoted($columns, 'city') ?> size="52" maxlength="45"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.city') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="city" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'city') ?> maxlength="45">
+    </div>
+  </div>
 
-  <tr>
-    <td><?= $t->__('db.person.phone1') ?>:</td>
-    <td><input type="text" name="phone1" value=<?= $fmw->getPostOrArrayQuoted($columns, 'phone1') ?> size="52" maxlength="45"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.phone1') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="phone1" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'phone1') ?> maxlength="45">
+    </div>
+  </div>
   
-  <tr>
-    <td><?= $t->__('db.person.phone2') ?>:</td>
-    <td><input type="text" name="phone2" value=<?= $fmw->getPostOrArrayQuoted($columns, 'phone2') ?> size="52" maxlength="45"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.phone2') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="phone2" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'phone2') ?> maxlength="45">
+    </div>
+  </div>
     
-  <tr>
-    <td><?= $t->__('db.person.email') ?>:</td>
-    <td><input type="text" name="email" value=<?= $fmw->getPostOrArrayQuoted($columns, 'email') ?> size="52" maxlength="100"></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.email') ?>:</label>
+    <div class="col-sm-10">
+      <input type="text" name="email" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'email') ?> maxlength="100">
+    </div>
+  </div>
     
-  <tr>
-    <td><?= $t->__('db.person.notes') ?>:</td>
-    <td>
-        <textarea rows="6" cols="47" name="notes"><?= $fmw->escapeHtml($fmw->getPostOrArray($columns, 'notes')) ?></textarea>
-    </td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.notes') ?>:</label>
+    <div class="col-sm-10">
+      <textarea rows="6" cols="47" class="form-control" name="notes"><?= $fmw->escapeHtml($fmw->getPostOrArray($columns, 'notes')) ?></textarea>
+    </div>
+  </div>
     
   <?php if ($id != '') { ?>
-  <tr>
-    <td><?= $t->__('db.person.date_creation') ?>:</td>
-    <td><?= $fmw->getPostOrArray($columns, 'date_creation') ?></td>
-  </tr>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.date_creation') ?>:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><?= $fmw->getPostOrArray($columns, 'date_creation') ?></p>
+    </div>
+  </div>
   <?php } ?>
-    
-  <!-- Ligne vide -->
-  <tr>
-    <td valign="top">&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
 
   <!-- Buttons -->
-  <tr> 
-    <td>&nbsp;</td>
-    <td align="left" class="texte"> 
-      <input type="submit" name="Submit" value="<?= $t->__('button.save') ?>">
-      <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='personSearch.php'"></td>
-  </tr>
-
-</table>
-
+  <div class="form-group">
+    <label class="control-label col-sm-2">&nbsp;</label>
+    <div class="col-sm-10">
+      <input type="submit" class="btn btn-default" name="Submit" value="<?= $t->__('button.save') ?>">
+      <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='personSearch.php'">
+    </div>
+  </div>
 </form>
 
 <?php include '_footer.php' ?>
