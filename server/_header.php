@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBiblio</title>
     <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -40,49 +40,71 @@
         <?= strpos($_SERVER["REQUEST_URI"], 'reportBookLended.php') ? "<li class='active'>" : "<li>" ?>
           <a href="reportBookLended.php"><?= $t->__('menu.lent_book') ?></a>
         </li>
-        
      
-        <?php $url = $_SERVER["REQUEST_URI"];
+         <?php if ($fmw->isLoggedInAdmin()) {
+             $url = $_SERVER["REQUEST_URI"];
              $adminActive = false;
+             $adminActive = $adminActive || strpos($url, 'userList.php');
              $adminActive = $adminActive || strpos($url, 'bookCategoryList.php');
              $adminActive = $adminActive || strpos($url, 'bookTypeList.php');
              $adminActive = $adminActive || strpos($url, 'bookLanguageList.php');
              $adminActive = $adminActive || strpos($url, 'bookCoverSearch.php');
-             $adminActive = $adminActive || strpos($url, 'reportStatistics.php');
-        ?>
-        <li class="dropdown <?= $adminActive ? "active" : "" ?>">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <?= $t->__('menu.admin') ?> <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-
-            <?= strpos($_SERVER["REQUEST_URI"], 'bookCategoryList.php') ? "<li class='active'>" : "<li>" ?>
-              <a href="bookCategoryList.php"><?= $t->__('menu.admin.bookCategory') ?></a>
-            </li>
-
-            <?= strpos($_SERVER["REQUEST_URI"], 'bookTypeList.php') ? "<li class='active'>" : "<li>" ?>
-              <a href="bookTypeList.php"><?= $t->__('menu.admin.bookType') ?></a>
-            </li>
+             $adminActive = $adminActive || strpos($url, 'reportStatistics.php'); ?>
     
-            <?= strpos($_SERVER["REQUEST_URI"], 'bookLanguageList.php') ? "<li class='active'>" : "<li>" ?>
-              <a href="bookLanguageList.php"><?= $t->__('menu.admin.bookLanguage') ?></a>
-            </li>
-    
-            <?= strpos($_SERVER["REQUEST_URI"], 'bookCoverSearch.php') ? "<li class='active'>" : "<li>" ?>
-              <a href="bookCoverSearch.php"><?= $t->__('menu.admin.bookCover') ?></a>
-            </li>
-    
-            <?= strpos($_SERVER["REQUEST_URI"], 'reportStatistics.php') ? "<li class='active'>" : "<li>" ?>
-              <a href="reportStatistics.php"><?= $t->__('menu.admin.statistics') ?></a>
+            <li class="dropdown <?= $adminActive ? "active" : "" ?>">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <?= $t->__('menu.admin') ?> <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+
+                <?= strpos($_SERVER["REQUEST_URI"], 'userList.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="userList.php"><?= $t->__('menu.admin.userList') ?></a>
+                </li>
+                  
+                <?= strpos($_SERVER["REQUEST_URI"], 'bookCategoryList.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="bookCategoryList.php"><?= $t->__('menu.admin.bookCategory') ?></a>
+                </li>
+
+                <?= strpos($_SERVER["REQUEST_URI"], 'bookTypeList.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="bookTypeList.php"><?= $t->__('menu.admin.bookType') ?></a>
+                </li>
+
+                <?= strpos($_SERVER["REQUEST_URI"], 'bookLanguageList.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="bookLanguageList.php"><?= $t->__('menu.admin.bookLanguage') ?></a>
+                </li>
+
+                <?= strpos($_SERVER["REQUEST_URI"], 'bookCoverSearch.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="bookCoverSearch.php"><?= $t->__('menu.admin.bookCover') ?></a>
+                </li>
+
+                <?= strpos($_SERVER["REQUEST_URI"], 'reportStatistics.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="reportStatistics.php"><?= $t->__('menu.admin.statistics') ?></a>
+                </li>
+
+                <?= strpos($_SERVER["REQUEST_URI"], 'backup.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="backup.php"><?= $t->__('menu.admin.backup') ?></a>
+                </li>
+
+              </ul>
             </li>
 
-            <?= strpos($_SERVER["REQUEST_URI"], 'backup.php') ? "<li class='active'>" : "<li>" ?>
-              <a href="backup.php"><?= $t->__('menu.admin.backup') ?></a>
-            </li>
-              
-          </ul>
-        </li>
+        <?php } ?>
      
+     
+
+        <?php if (!$fmw->isLoggedIn()) { ?>
+
+            <li>
+              <a href="login.php"><?= $t->__('menu.login') ?></a>
+            </li>
+
+        <?php } else { ?>
+
+            <li>
+              <a href="logout.php"><?= $t->__('menu.logout') ?></a>
+            </li>
+
+        <?php } ?>
      
 
       </ul>

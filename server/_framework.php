@@ -2,12 +2,24 @@
 
 class Framework {
 
-   var $database;
-   var $translator;
+   public $config;
+   public $database;
+   public $translator;
 
-   function Framework($database, $translator) {
-       $this->database = $database;
+   function Framework($config, $translator) {
+       $this->config = $config;
        $this->translator = $translator;
+       
+       $dbconfig = array(
+         'database_type' => $config->database_type,
+         'database_name' => $config->database_name,
+         'server' => $config->server,
+         'username' => $config->username,
+         'password' => $config->password,
+         'charset' => $config->charset);
+
+       // Medoo instance
+       $this->database = new medoo($dbconfig);
    }
 
   // Check if a date if valid, return TRUE or FALSE.
@@ -104,6 +116,51 @@ class Framework {
     }
 
     echo json_encode($datas);
+  }
+   
+  // This function hash a password using a public salt (from argument) and a secret salt from configuration
+  function hashPassword($password, $public_salt) {
+      $hashed_password = hash('sha256', $this->config->secret_salt . $public_salt . $password);
+      return $hashed_password;
+  }
+    
+  // When user login, this method need to be called with the type of the user
+  // 9 -> Admin
+  // 8 -> Operator
+  // 0 -> Logged as a Guest
+  function login($username, $usertype) {
+      $_SESSION['_ebb_username'] = $username;
+      $_SESSION['_ebb_usertype'] = $usertype;
+  }
+
+  // Called for logout the user.
+  function logout() {
+      unset($_SESSION['_ebb_username']);
+      unset($_SESSION['_ebb_usertype']);
+  }
+
+  // Check if there is a logged user
+  function isLoggedIn() {
+      $userType = $_SESSION['_ebb_usertype'];
+      return isset($userType);
+  }
+    
+  // Check if the connected user is Admin
+  function isLoggedInAdmin() {
+      return $this->isUser(9);
+  }
+    
+  // Check if the connected user is Operator
+  function isLoggedInOperator() {
+      return $this->isUser(8);
+  }
+    
+  private function isUser($userType) {
+      $userType = $_SESSION['_ebb_usertype'];
+      if (isset($userType) && $userType == $userType) {
+          return true;
+      }
+      return false;
   }
     
 }

@@ -1,7 +1,10 @@
 menu.search_book=Procurar livros
 menu.search_people=Procurar pessoas
 menu.lent_book=Livros emprestados
+menu.login=Login
+menu.logout=Logout
 menu.admin=Administração
+menu.admin.userList=Usuários
 menu.admin.bookCategory=Categoria de Livros 
 menu.admin.bookType=Tipos de Livros
 menu.admin.bookLanguage=Idioma de Livros 
@@ -58,6 +61,14 @@ db.category.name=Nome
 db.language=Idioma dos livros
 db.language.language=Código
 db.language.language_name=Nome
+
+db.user=Usuário
+db.user.username=Usuário
+db.user.usertype=Tipo de usuário
+db.user.fullname=Nome
+db.user.email=E-mail
+db.user.password=Senha
+db.user.password_verify=Confirmação Senha
 
 label.action=Ação
 label.action.return=Retornar
@@ -153,6 +164,26 @@ bookLanguageSave.message.alreadyExist=Um idioma com este código já existe.
 bookLanguageDelete.message.notFound=Idioma não foi encontrado.
 bookLanguageDelete.message.deleted=Idioma foi removido.
 bookLanguageDelete.message.notPossibleToDelete=Existem %1 livros que utilisam este idioma. Não é possível removê-lo.
+
+login.title=Se conectar
+login.username=Usuário
+login.password=Senha
+login.tip.username=Entre seu usuário
+login.tip.password=Entre sua senha
+login.button.login=Login
+
+login.message.loginSuccessful=Você está conectado !
+login.message.loginFailed=Usuário ou Senha não são válidos.
+
+userList.title=Lista de usuários
+userActionSave.message.created=Usuário '%1' foi criado.
+userActionSave.message.usernameMandatory=Usuário é obrigatório.
+userActionSave.message.passworDoesNotMatch=Senha e Confirmação da Senha não são iguais.
+userActionUpdate.message.updated=Usuário '%1' foi alterado.
+userActionUpdate.message.lastAdmin=Não é possível de alterar o tipo de usuário do ultimo administrador.
+userActionDelete.message.deleted=Usuário '%1' foi removido.
+userActionDelete.message.notFound=Usuário '%1' não foi encontrado.
+userActionDelete.message.lastAdmin=Não é possível remover último administrator
 
 message.there_are_more_books=Há mais livros...
 message.there_are_more_people=Há mais pessoas...

@@ -1,7 +1,10 @@
 menu.search_book=Search Books
 menu.search_people=Search People
 menu.lent_book=Lent Books
+menu.login=Login
+menu.logout=Logout
 menu.admin=Administration
+menu.admin.userList=Users 
 menu.admin.bookCategory=Book Category 
 menu.admin.bookType=Book Type
 menu.admin.bookLanguage=Book Language 
@@ -58,6 +61,14 @@ db.category.name=Name
 db.language=Book Language
 db.language.language=Code
 db.language.language_name=Name
+
+db.user=User
+db.user.username=Username
+db.user.usertype=User Type
+db.user.fullname=Full name
+db.user.email=E-mail
+db.user.password=Password
+db.user.password_verify=Verify Password
 
 label.action=Action
 label.action.return=Return
@@ -153,6 +164,26 @@ bookLanguageSave.message.alreadyExist=A language with this code already exist.
 bookLanguageDelete.message.notFound=Book Language not found. Nothing was deleted.
 bookLanguageDelete.message.deleted=Book Language was deleted.
 bookLanguageDelete.message.notPossibleToDelete=There are %1 books using this language. Not possible to delete.
+
+login.title=Sign In
+login.username=Username
+login.password=Password
+login.tip.username=Enter Username
+login.tip.password=Enter Password
+login.button.login=Login
+
+login.message.loginSuccessful=You are connected !
+login.message.loginFailed=Username or Password not valid.
+
+userList.title=List of users
+userActionSave.message.created=User '%1' has been created.
+userActionSave.message.usernameMandatory=User is mandatory.
+userActionSave.message.passworDoesNotMatch=Password and Verify Password does not match.
+userActionUpdate.message.updated=User '%1' has been updated.
+userActionUpdate.message.lastAdmin=Not possible to change user type of last Adminstrator!
+userActionDelete.message.deleted=User '%1' has been deleted.
+userActionDelete.message.notFound=User '%1' not found.
+userActionDelete.message.lastAdmin=Not possible to remove last Admininstrator!
 
 message.there_are_more_books=There are more books...
 message.there_are_more_people=There are more people...
