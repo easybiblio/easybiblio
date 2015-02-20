@@ -156,11 +156,29 @@ class Framework {
   }
     
   private function isUser($userType) {
-      $userType = $_SESSION['_ebb_usertype'];
-      if (isset($userType) && $userType == $userType) {
+      $sessionUserType = $_SESSION['_ebb_usertype'];
+      if (isset($sessionUserType) && $sessionUserType == $userType) {
           return true;
       }
       return false;
+  }
+
+  // Check if the logged user has a userType equals or bigger than the required one.
+  // If it has not the authorization, it forward user to Login Page with an error message.
+  function checkAdmin() {
+      if (!$this->isLoggedInAdmin()) {          
+          $this->error('checkAuthorization.message.notAuthorized');
+          header("Location: login.php");
+          exit();
+      }
+  }
+    
+  function checkOperator() {
+      if (!$this->isLoggedInAdmin() && !$this->isLoggedInOperator()){          
+          $this->info('checkAuthorization.message.notAuthorized');
+          header("Location: login.php");
+          exit();
+      }
   }
     
 }

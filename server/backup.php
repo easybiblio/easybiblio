@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+$fmw->checkAdmin();
+
 /* Backup the db OR just a table */
 function backup_tables($host,$user,$pass,$name,$tables = '*')
 {
@@ -60,13 +62,14 @@ function backup_tables($host,$user,$pass,$name,$tables = '*')
 }
 
 // Name of files
-$sql_filename = 'db-backup-'.time().'.sql';
-$zip_filename = 'backup/db-backup-'.time().'.zip';
+$date_string = date("Y-m-d_-_H_i_s");
+$sql_filename = 'db-easybiblio-'.$data_string.'.sql';
+$zip_filename = 'backup/db-easybiblio-'.$date_string.'.zip';
 
 
 // Create backup
 $files_to_backup = "tb_category,tb_language,tb_person,tb_type,tb_book,tb_lend";
-$db_backup = backup_tables($dbconfig['server'], $dbconfig['username'], $dbconfig['password'], $dbconfig['database_name'], $files_to_backup);
+$db_backup = backup_tables($fmw->config->server, $fmw->config->username, $fmw->config->password, $fmw->config->database_name, $files_to_backup);
 
 // Fixing problem with date_return
 $db_backup .= "update tb_lend set date_return = null where date_return = '0000-00-00';\n";

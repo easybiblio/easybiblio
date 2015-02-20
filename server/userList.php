@@ -1,3 +1,5 @@
+<?php include_once '_header.mandatory.php' ?>
+<?php $fmw->checkAdmin(); ?>
 <?php include '_header.php' ?>
     
 <h1><?= $t->__('userList.title') ?></h1>

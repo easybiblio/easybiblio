@@ -185,5 +185,7 @@ userActionDelete.message.deleted=Usuário '%1' foi removido.
 userActionDelete.message.notFound=Usuário '%1' não foi encontrado.
 userActionDelete.message.lastAdmin=Não é possível remover último administrator
 
+checkAuthorization.message.notAuthorized=Você não está autorizado a acessar esta página. Se connecte primeiro.
+
 message.there_are_more_books=Há mais livros...
 message.there_are_more_people=Há mais pessoas...

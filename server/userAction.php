@@ -1,5 +1,6 @@
 <?php require_once '_header.mandatory.php';
 
+$fmw->checkAdmin();
 $action = $_GET['action'];
 
 if ($action == 'delete') {

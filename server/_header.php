@@ -137,22 +137,19 @@
 <?php
  $message = $_SESSION['message'];
  if ($message != '') {?>
-<div class="ui-widget">
-	<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
-		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
-		<?= $fmw->escapeHtml($message) ?></p>
-	</div>
-</div>
- <?php } ?>
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <?= $fmw->escapeHtml($message) ?>
+    </div>
+<?php } ?>
     
 <?php
  $message = $_SESSION['error_message'];
  if ($message != '') {?>
-    <br/> <br/>
-<div class="ui-widget">
-	<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-		<?= $fmw->escapeHtml($message) ?></p>
-	</div>
-</div>
+    <div class="alert alert-danger" role="alert">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <?= $fmw->escapeHtml($message) ?>
+    </div>
  <?php }  ?>

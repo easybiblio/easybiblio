@@ -185,5 +185,7 @@ userActionDelete.message.deleted=User '%1' has been deleted.
 userActionDelete.message.notFound=User '%1' not found.
 userActionDelete.message.lastAdmin=Not possible to remove last Admininstrator!
 
+checkAuthorization.message.notAuthorized=You are not authorized to access this page. Please login first !
+
 message.there_are_more_books=There are more books...
 message.there_are_more_people=There are more people...
