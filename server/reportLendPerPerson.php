@@ -10,7 +10,7 @@
     $fmw->escapeHtmlArray($person_columns);
   }
     
-    $query = "select *, tb_lend.id as lend_id, DATEDIFF(now(), date_lend) as late_days from (select * from tb_lend where person_id = " . $person_id . ") tb_lend left join tb_book on tb_lend.book_id = tb_book.id order by date_lend";
+    $query = "select *, tb_lend.id as lend_id, DATEDIFF(IF(date_return IS NULL,now(),date_return), date_lend) as late_days from (select * from tb_lend where person_id = " . $person_id . ") tb_lend left join tb_book on tb_lend.book_id = tb_book.id order by date_lend";
 
     $datas = $database->query($query)->fetchAll();
 ?>
