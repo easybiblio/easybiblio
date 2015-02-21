@@ -55,12 +55,22 @@
     </tr>
 <?php
 
+$search_string = strtr($search_string, " ", "%");
+$search_string_quoted = $database->quote("%".$search_string."%");
+        
+$query = 'select * from tb_person left join (
+select person_id, count(*) as qtt from tb_lend where date_return is null group by person_id ) qtt_livres ON tb_person.id = qtt_livres.person_id where name like ' . $search_string_quoted . ' or email like ' . $search_string_quoted . ' order by name';
+
+/* -- Old Simple Query --
 $datas = $database->select("tb_person", "*",  array(
                     'LIKE' => array(
                         'OR' => array( 'name' => $search_string,
                                   'email' => $search_string )
                                 )
                     ));
+*/
+
+$datas = $database->query($query)->fetchAll();
 
 foreach($datas as $row) {
     $fmw->escapeHtmlArray($row);
@@ -70,6 +80,11 @@ foreach($datas as $row) {
     echo "</td>";
     echo "<td>";
     echo "<a href='person.php?id=" . $row['id'] . "'>" . $row['name'] . '</a>';
+    if (isset($row['qtt'])) {
+        echo "&nbsp;<a href='reportLendPerPerson.php?person_id=", $row['id'] , "'>";
+        echo "<span class='badge'>", $row['qtt'], "</span>";
+        echo "</a>";
+    }
     echo "</td>";
     echo "<td>";
     echo $row['zipcode'].' '.$row['city'];
