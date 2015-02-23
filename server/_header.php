@@ -33,15 +33,17 @@
           <a href="bookSearch.php"><?= $t->__('menu.search_book') ?></a>
         </li>
         
-        <?= strpos($_SERVER["REQUEST_URI"], 'personSearch.php') ? "<li class='active'>" : "<li>" ?>
-          <a href="personSearch.php"><?= $t->__('menu.search_people') ?></a>
-        </li>
-        
-        <?= strpos($_SERVER["REQUEST_URI"], 'reportBookLended.php') ? "<li class='active'>" : "<li>" ?>
-          <a href="reportBookLended.php"><?= $t->__('menu.lent_book') ?></a>
-        </li>
+        <?php if ($fmw->isLoggedInOperator()) { ?>
+            <?= strpos($_SERVER["REQUEST_URI"], 'personSearch.php') ? "<li class='active'>" : "<li>" ?>
+              <a href="personSearch.php"><?= $t->__('menu.search_people') ?></a>
+            </li>
+
+            <?= strpos($_SERVER["REQUEST_URI"], 'reportBookLended.php') ? "<li class='active'>" : "<li>" ?>
+              <a href="reportBookLended.php"><?= $t->__('menu.lent_book') ?></a>
+            </li>
+        <?php } ?>
      
-         <?php if ($fmw->isLoggedInAdmin()) {
+         <?php if ($fmw->isLoggedInAdmin() || $fmw->isLoggedInOperator()) {
              $url = $_SERVER["REQUEST_URI"];
              $adminActive = false;
              $adminActive = $adminActive || strpos($url, 'userList.php');
@@ -57,9 +59,11 @@
               </a>
               <ul class="dropdown-menu" role="menu">
 
+                <?php if ($fmw->isLoggedInAdmin()) { ?>
                 <?= strpos($_SERVER["REQUEST_URI"], 'userList.php') ? "<li class='active'>" : "<li>" ?>
                   <a href="userList.php"><?= $t->__('menu.admin.userList') ?></a>
                 </li>
+                <?php } ?>
                   
                 <?= strpos($_SERVER["REQUEST_URI"], 'bookCategoryList.php') ? "<li class='active'>" : "<li>" ?>
                   <a href="bookCategoryList.php"><?= $t->__('menu.admin.bookCategory') ?></a>

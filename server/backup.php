@@ -1,6 +1,6 @@
 <?php require_once '_header.mandatory.php';
 
-$fmw->checkAdmin();
+$fmw->checkOperator();
 
 /* Backup the db OR just a table */
 function backup_tables($host,$user,$pass,$name,$tables = '*')

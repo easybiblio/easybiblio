@@ -1,11 +1,13 @@
-<?php include_once '_header.mandatory.php' ?>
-<?php $fmw->checkAdmin(); ?>
-<?php include '_header.php' ?>
+<?php
+  include_once '_header.mandatory.php';
+  $fmw->checkAdmin();
+  include '_header.php';
+?>
     
 <h1><?= $t->__('userList.title') ?></h1>
 
 <form method="post">
-  <input type="button" value="<?= $t->__('button.new') ?>" onclick="window.location.href='user.php'" />
+  <input type="button" class="btn btn-default" value="<?= $t->__('button.new') ?>" onclick="window.location.href='user.php'" />
 </form>
 
 <br/>
@@ -24,11 +26,15 @@ $datas = $database->select("tb_user", "*");
 foreach($datas as $row) {
     $fmw->escapeHtmlArray($row);
 
-    $usertype = "Guest";
+    $usertype = "- Not Recognized -";
     if ($row['usertype'] == 9) {
-        $usertype = "Admin";
-    } else if ($row['usertype'] == 8) {
-        $usertype = "Operator"; 
+        $usertype = "Administrator";
+    } else if ($row['usertype'] == 7) {
+        $usertype = "Operator";
+    } else if ($row['usertype'] == 3) {
+        $usertype = "Contributor"; 
+    } else if ($row['usertype'] == 1) {
+        $usertype = "Registered"; 
     }
     
     echo "<tr>";

@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+$fmw->checkOperator();
+
 $action = $_GET['action'];
 
 if ($action == 'delete') {

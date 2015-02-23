@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+$fmw->checkOperator();
+
 $name = $_POST['name'];
 if ($name == '') {
     $fmw->error('personSave.message.nameMandatory');

@@ -1,4 +1,6 @@
-<?php require_once '_header.mandatory.php';
+<?php include_once '_header.mandatory.php';
+
+  $fmw->checkOperator();
 
   $lend_id = $_POST['lend_id'];
   if ($lend_id != '') {

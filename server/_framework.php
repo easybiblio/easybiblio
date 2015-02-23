@@ -145,19 +145,29 @@ class Framework {
       return isset($userType);
   }
     
-  // Check if the connected user is Admin
+  // Check if the connected user is Administrator
   function isLoggedInAdmin() {
       return $this->isUser(9);
   }
     
   // Check if the connected user is Operator
   function isLoggedInOperator() {
-      return $this->isUser(8);
+      return $this->isUser(7);
+  }
+    
+  // Check if the connected user is Contributor
+  function isLoggedInContributor() {
+      return $this->isUser(3);
+  }
+    
+  // Check if the connected user is Registered
+  function isLoggedInRegistered() {
+      return $this->isUser(1);
   }
     
   private function isUser($userType) {
       $sessionUserType = $_SESSION['_ebb_usertype'];
-      if (isset($sessionUserType) && $sessionUserType == $userType) {
+      if (isset($sessionUserType) && $sessionUserType >= $userType) {
           return true;
       }
       return false;
@@ -174,8 +184,24 @@ class Framework {
   }
     
   function checkOperator() {
-      if (!$this->isLoggedInAdmin() && !$this->isLoggedInOperator()){          
-          $this->info('checkAuthorization.message.notAuthorized');
+      if (!$this->isLoggedInOperator()){          
+          $this->error('checkAuthorization.message.notAuthorized');
+          header("Location: login.php");
+          exit();
+      }
+  }
+    
+  function checkContributor() {
+      if (!$this->isLoggedInContributor()){          
+          $this->error('checkAuthorization.message.notAuthorized');
+          header("Location: login.php");
+          exit();
+      }
+  }
+    
+  function checkRegistered() {
+      if (!$this->isLoggedInRegistered()){          
+          $this->error('checkAuthorization.message.notAuthorized');
           header("Location: login.php");
           exit();
       }

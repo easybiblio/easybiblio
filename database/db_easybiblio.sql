@@ -156,4 +156,4 @@ ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `tb_user` (`username`, `fullname`, `password`, `salt`, `usertype`) VALUES
 ('admin', 'Administrator', 'b4761e9dbfbbeb7d8b1abd80e2d4f904e902c6fa4c51bcc15759db80f1f60ecc', '3d358272ff5243ccf464a3cb62b7e69c9abd9a8b0fe31cfb18689a2751149c43', 9),
-('operator', 'Operator', 'a23d60f965c0309d5a84102968138e10b844ec6853776763ae9f5aa543d4b67a', 'e228a4aca6adb7e20b7e0cc19287e673d93ed82e11d2e2ca91c0435c7141ff43', 8);
+('operator', 'Operator', 'a23d60f965c0309d5a84102968138e10b844ec6853776763ae9f5aa543d4b67a', 'e228a4aca6adb7e20b7e0cc19287e673d93ed82e11d2e2ca91c0435c7141ff43', 7);

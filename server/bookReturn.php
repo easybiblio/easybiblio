@@ -1,4 +1,6 @@
 <?php
+  include_once '_header.mandatory.php';
+  $fmw->checkOperator();
   include '_header.php';
 
   $lend_id = $_GET['lend_id'];

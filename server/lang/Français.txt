@@ -43,7 +43,7 @@ db.person.phone1=Phone&nbsp;1
 db.person.phone2=Phone&nbsp;2
 db.person.email=E-mail
 db.person.notes=Notes
-db.person.date_creation=Date de Creation
+db.person.date_creation=Date&nbsp;de&nbsp;Creation
 
 db.lend=Données de l'emprunt
 db.lend.date_lend=Date&nbsp;d'emprunt
@@ -69,6 +69,7 @@ db.user.fullname=Nom
 db.user.email=E-mail
 db.user.password=Mot de passe
 db.user.password_verify=Confirmation mot de passe
+db.user.date_creation=Date de Creation
 
 label.action=Action
 label.action.return=Retourner

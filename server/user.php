@@ -1,6 +1,8 @@
-<?php include_once '_header.mandatory.php' ?>
-<?php $fmw->checkAdmin(); ?>
-<?php include '_header.php' ?>
+<?php
+  include_once '_header.mandatory.php';
+  $fmw->checkAdmin();
+  include '_header.php';
+?>
 
 <h1><?= $t->__('db.user') ?></h1>
 
@@ -42,9 +44,10 @@
     <label class="control-label col-sm-2"><?= $t->__('db.user.usertype') ?>:</label>
     <div class="col-sm-10">
         <select name="usertype" class="form-control">
-            <option value="0" <?= $columns['usertype'] == 0 ? "selected" : "" ?> >Guest</option>
-            <option value="8" <?= $columns['usertype'] == 8 ? "selected" : "" ?> >Operator</option>
-            <option value="9" <?= $columns['usertype'] == 9 ? "selected" : "" ?> >Admin</option>
+            <option value="1" <?= $columns['usertype'] == 1 ? "selected" : "" ?> >Registered</option>
+            <option value="3" <?= $columns['usertype'] == 3 ? "selected" : "" ?> >Contributor</option>
+            <option value="7" <?= $columns['usertype'] == 7 ? "selected" : "" ?> >Operator</option>
+            <option value="9" <?= $columns['usertype'] == 9 ? "selected" : "" ?> >Administrator</option>
         </select>   
     </div>
   </div>

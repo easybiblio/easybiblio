@@ -1,4 +1,8 @@
-<?php include '_header.php' ?>
+<?php
+  include_once '_header.mandatory.php';
+  $fmw->checkOperator();
+  include '_header.php';
+?>
     
 <h1><?= $t->__('bookCategoryList.title') ?></h1>
 

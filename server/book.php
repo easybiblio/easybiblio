@@ -179,8 +179,10 @@ function loadImage() {
   <!-- Buttons -->
   <tr> 
     <td>&nbsp;</td>
-    <td align="left" class="texte"> 
-      <input type="submit" name="Submit" value="<?= $t->__('button.save') ?>">
+    <td align="left" class="texte">
+      <?php if ($fmw->isLoggedInContributor()) { ?>
+        <input type="submit" name="Submit" value="<?= $t->__('button.save') ?>">
+      <?php } ?>
       <input type="button" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" ></td>
   </tr>
 

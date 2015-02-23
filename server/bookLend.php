@@ -1,4 +1,6 @@
 <?php
+  include_once '_header.mandatory.php';
+  $fmw->checkOperator();
   include '_header.php';
 
   $book_id = $_GET['book_id'];
@@ -37,11 +39,13 @@
     $search_string = trim($search_string);
 ?>
 <form class="navbar-form navbar-left" role="search" method="post">
-    <div class="form-group">
+    <div class="input-group">
       <input type="search" class="form-control" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
+        <input type="button" class="btn btn-default" value="<?= $t->__('button.newPerson') ?>" onclick="window.location.href='person.php'" />
+      </span>
     </div>
-    <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
-    <input type="button" class="btn btn-default" value="<?= $t->__('button.newPerson') ?>" onclick="window.location.href='person.php'" />
 </form>
 
 <table class="table table-hover">

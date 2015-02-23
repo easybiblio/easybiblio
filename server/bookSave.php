@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+$fmw->checkContributor();
+
 // Check if String ends with toCheck.
 function endsWith($string, $toCheck) {
     // search forward starting from end minus needle length characters

@@ -12,9 +12,19 @@
     $search_string = trim($search_string);
 ?>
 <form class="navbar-form navbar-left" role="search" method="post">
-    <input type="search" class="form-control" name="search_book" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+    
+<div class="input-group">
+  <input type="text" class="form-control" name="search_book" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+  <span class="input-group-btn">
     <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
+
+    <?php if ($fmw->isLoggedInContributor()) { ?>
     <input type="button" class="btn btn-default" value="<?= $t->__('button.new') ?>" onclick="window.location.href='book.php'" />
+    <?php } ?>
+  </span>
+</div>
+    
+
 </form>
 
 <br/>
@@ -27,7 +37,9 @@
         <th><?= $t->__('db.book.author') ?></th>
         <th><?= $t->__('db.book.coauthor') ?></th>
         <th><?= $t->__('db.book.type') ?></th>
+        <?php if ($fmw->isLoggedInOperator()) { ?>
         <th><?= $t->__('label.action') ?></th>
+        <?php } ?>
     </tr>
 <?php
 
@@ -73,15 +85,17 @@ foreach($datas as $row) {
     echo "<td>";
     echo $row['typeName'];
     echo "</td>";
-    echo "<td>";
     
-    if ($row['lended']) {
-        echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
-    } else {
-        echo "<a href='bookLend.php?book_id=" . $row['id'] . "'>" . $t->__('label.action.lend') . '</a>';
+    if ($fmw->isLoggedInOperator()) {
+        echo "<td>";
+        if ($row['lended']) {
+            echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
+        } else {
+            echo "<a href='bookLend.php?book_id=" . $row['id'] . "'>" . $t->__('label.action.lend') . '</a>';
+        }
+        echo "</td>";
     }
     
-    echo "</td>";
     echo "</tr>\n";
     if ($counter == 20) {
         echo "<tr><td colspan='100' align='center'>";

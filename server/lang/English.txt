@@ -69,6 +69,7 @@ db.user.fullname=Full name
 db.user.email=E-mail
 db.user.password=Password
 db.user.password_verify=Verify Password
+db.user.date_creation=Creation&nbsp;Date
 
 label.action=Action
 label.action.return=Return

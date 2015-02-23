@@ -1,4 +1,6 @@
-<?php require_once '_header.mandatory.php';
+<?php 
+  include_once '_header.mandatory.php';
+  $fmw->checkOperator();
 
   $book_id = $_POST['book_id'];
   if ($book_id != '') {

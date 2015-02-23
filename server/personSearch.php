@@ -1,4 +1,8 @@
-<?php include '_header.php' ?>
+<?php
+  include_once '_header.mandatory.php';
+  $fmw->checkOperator();
+  include '_header.php';
+?>
     
 <h1><?= $t->__('personSearch.title') ?></h1>
 
@@ -12,9 +16,16 @@
     $search_string = trim($search_string);
 ?>
 <form class="navbar-form navbar-left" role="search" method="post">
-    <input type="search" class="form-control" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
-    <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
-    <input type="button" class="btn btn-default" value="<?= $t->__('button.new') ?>" onclick="window.location.href='person.php'" />
+    
+    <div class="input-group">
+      <input type="search" class="form-control" name="search_person" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
+        <input type="button" class="btn btn-default" value="<?= $t->__('button.new') ?>" onclick="window.location.href='person.php'" />
+      </span>
+    </div>
+    
+
 </form>
 
 <br/>

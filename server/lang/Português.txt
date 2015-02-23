@@ -69,6 +69,7 @@ db.user.fullname=Nome
 db.user.email=E-mail
 db.user.password=Senha
 db.user.password_verify=Confirmação Senha
+db.person.date_creation=Data&nbsp;de&nbsp;Criação
 
 label.action=Ação
 label.action.return=Retornar

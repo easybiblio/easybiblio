@@ -1,4 +1,6 @@
 <?php
+  include_once '_header.mandatory.php';
+  $fmw->checkOperator();
   include '_header.php';
 
   $book_id = $_POST['book_id'];
