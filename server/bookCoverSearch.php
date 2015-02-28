@@ -63,8 +63,7 @@ foreach($datas as $row) {
     // Existing cover
     echo "<td>";
     if ($row['cover_url'] != '') {
-        $img_src_nocache = $fmw->escapeHtml($row['cover_url']) . '?' . time();
-        echo "<img src='".$img_src_nocache."' width='150'/>";
+        echo "<img src='".$fmw->escapeHtml($row['cover_url'])."' width='150'/>";
     }
     echo "</td>";
     

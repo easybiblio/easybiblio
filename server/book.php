@@ -190,16 +190,11 @@ function loadImage() {
 </table>
 </td>
 
-<?php
-  // Making sure that image does not get cached by the browser.
-  $img_src_nocache = $fmw->getPostOrArray($columns, 'cover_url');
-  $img_src_nocache = "'" . $fmw->escapeHtml($img_src_nocache) . '?' . time() . "'";
-?>
 
 <td style="vertical-align:top">
 <?= $t->__('db.book.cover') ?><br/>
 <input id='cover_url' type="text" name="cover_url" value=<?= $fmw->getPostOrArrayQuoted($columns, 'cover_url') ?> size="52" onInput="loadImage();"/><br/><br/>
-<img id='imageContainer' src=<?= $img_src_nocache ?> width= "260" />
+<img id='imageContainer' src=<?= $fmw->getPostOrArrayQuoted($columns, 'cover_url') ?> width= "260" />
 </td>
 
     

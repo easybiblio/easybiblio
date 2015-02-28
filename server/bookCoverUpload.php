@@ -108,6 +108,9 @@ if (!$fmw->hasError()) {
     if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) {
         fix_image($target_dir, 'image/jpeg');
         
+        // Making sure browser ignores previous cached image, as a new one is being saved now.
+        $target_dir = $target_dir . '?' . time();
+        
         $columns = array(
             "cover_url" => $target_dir
         );
