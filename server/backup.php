@@ -63,7 +63,7 @@ function backup_tables($host,$user,$pass,$name,$tables = '*')
 
 // Name of files
 $date_string = date("Y-m-d_-_H_i_s");
-$sql_filename = 'db-easybiblio-'.$data_string.'.sql';
+$sql_filename = 'db-easybiblio-'.$date_string.'.sql';
 $zip_filename = 'backup/db-easybiblio-'.$date_string.'.zip';
 
 
