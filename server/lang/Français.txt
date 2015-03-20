@@ -1,6 +1,6 @@
 menu.search_book=Chercher livres
 menu.search_people=Chercher personnes
-menu.lent_book=Livres empruntées
+menu.lent_book=Livres empruntés
 menu.login=Login
 menu.logout=Logout
 menu.admin=Administration
@@ -32,18 +32,18 @@ db.book.year_publication=Année de Publication
 db.book.language=Langue
 db.book.category=Categorie
 db.book.notes=Notes
-db.book.date_creation=Date&nbsp;de&nbsp;Creation
+db.book.date_creation=Date&nbsp;de&nbsp;Création
 
 db.person=Personne
 db.person.name=Prénom/Nom
-db.person.address=Adress
+db.person.address=Adresse
 db.person.zipcode=Code Postal
 db.person.city=Ville
 db.person.phone1=Phone&nbsp;1
 db.person.phone2=Phone&nbsp;2
 db.person.email=E-mail
 db.person.notes=Notes
-db.person.date_creation=Date&nbsp;de&nbsp;Creation
+db.person.date_creation=Date&nbsp;de&nbsp;Création
 
 db.lend=Données de l'emprunt
 db.lend.date_lend=Date&nbsp;d'emprunt
@@ -69,17 +69,17 @@ db.user.fullname=Nom
 db.user.email=E-mail
 db.user.password=Mot de passe
 db.user.password_verify=Confirmation mot de passe
-db.user.date_creation=Date de Creation
+db.user.date_creation=Date de Création
 
 label.action=Action
-label.action.return=Retourner
+label.action.return=Rendre
 label.action.lend=Emprunter
 label.action.delete=Effacer
-label.report_lent_books=Livres empruntées
+label.report_lent_books=Livres empruntés
 label.numberOfBooks=Nombre de livres
 
-bookSearch.title=Liste de livres
-personSearch.title=Liste de Personnes
+bookSearch.title=Liste des livres
+personSearch.title=Liste des Personnes
 
 bookSave.message.newBookSaved=Nouveau livre '%1' a été enregistré avec ID %2
 bookSave.message.bookUpdated=Livre '%1' a été actualisé !
@@ -99,16 +99,16 @@ bookLendConfirmationSave.message.bookNotFound=Livre n'as pas été trouvé. Essa
 bookLendConfirmationSave.message.personNotFound=Personne n'as pas été trouvé. Essayer à nouveau.
 bookLendConfirmationSave.message.dateNotValid=Date d'Emprunt n'est pas valide. Essayer à nouveau.
 bookLendConfirmationSave.message.bookAlreadyLent=Livre est déjà preté à une autre personne.
-bookLendConfirmationSave.message.success=Emprunt du livre '%1' a été enregistrée avec ID %2
+bookLendConfirmationSave.message.success=Emprunt du livre '%1' a été enregistré avec ID %2
 
-bookReturn.title=Retourner livre
+bookReturn.title=Rentrer un livre
 bookReturn.button.confirmReturn=Confirmer le retour
 bookReturn.label.question=Vous confirmez le retour de ce livre ?
 
 bookReturnSave.message.loanNotFound=Emprunt pas trouvé !
-bookReturnSave.message.returnDateNotValid=Date de retourn n'est pas valide !
-bookReturnSave.message.bookAlreadyReturned=Livre est déjà retourné. Rien a été sauvegardé !
-bookReturnSave.message.bookReturned=Livre '%1' a été retourné !
+bookReturnSave.message.returnDateNotValid=Date de retour n'est pas valide !
+bookReturnSave.message.bookAlreadyReturned=Livre est déjà rendu. Rien a été sauvegardé !
+bookReturnSave.message.bookReturned=Livre '%1' a été rendu !
 
 bookLendEditNotes.title=Changer les notes d'un emprunt
 
@@ -125,21 +125,21 @@ bookCoverUpload.message.fileTooBig=Fichier trop grand. S'il vous plaît de tél�
 bookCoverUpload.message.success=La photo a été sauvegardé.
 bookCoverUpload.message.error=Il y a eu un erreur pendant le téléchargement de la photo !
 
-reportBookLended.title=Liste de livres empruntées
+reportBookLended.title=Liste des livres empruntés
 reportBookLended.label.days=Jours
 reportBookLended.action.change_notes=Changer&nbsp;Notes
-reportBookLended.action.return=Retourner
-reportBookLended.message.total_lent_books=Total de livres empruntées
+reportBookLended.action.return=Rendre
+reportBookLended.message.total_lent_books=Total de livres empruntés
 
-reportLendPerPerson.title=Liste de livres par personne
+reportLendPerPerson.title=Liste des livres par personne
 reportLendPerPerson.label.days=Jours
-reportLendPerPerson.message.total_lent_books=Total de livres empruntées
+reportLendPerPerson.message.total_lent_books=Total de livres empruntés
 
 reportStatistics.title=Statistiques
 reportStatistics.total_books=Total de Livres
 reportStatistics.total_people=Total de Personnes
 reportStatistics.total_lent=Total d'Emprunts
-reportStatistics.total_lent_today=Total de livres empruntées actuellement
+reportStatistics.total_lent_today=Total des livres empruntés actuellement
 
 bookTypeList.title=Liste de type de livres
 bookTypeSave.message.nameMandatory=Le nom est obligatoire !
