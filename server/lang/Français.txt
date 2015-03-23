@@ -188,5 +188,5 @@ userActionDelete.message.lastAdmin=Il n'est pas posible d'efface le dernier Admi
 
 checkAuthorization.message.notAuthorized=Vous n'êtes pas autorisé sur cette page. Vous devez vous connecter !
 
-message.there_are_more_books=Il y a plus de livres ...
-message.there_are_more_people=Il y a plus de personnes ...
+message.there_are_more_books=Il y a encore d’autres résultats.  Merci d’affiner votre recherche !
+message.there_are_more_people=Il y a encore d’autres résultats.  Merci d’affiner votre recherche !
