@@ -4,6 +4,7 @@ menu.lent_book=Lent Books
 menu.login=Login
 menu.logout=Logout
 menu.admin=Administration
+menu.admin.about=About your library
 menu.admin.userList=Users 
 menu.admin.bookCategory=Book Category 
 menu.admin.bookType=Book Type
@@ -70,6 +71,14 @@ db.user.email=E-mail
 db.user.password=Password
 db.user.password_verify=Verify Password
 db.user.date_creation=Creation&nbsp;Date
+
+db.about=About your library
+db.about.site_shortname=Site Short Name
+db.about.site_longname=Site Long Name
+db.about.site_meta_description=Meta Description
+db.about.site_meta_tags=Meta Tags
+db.about.site_logo_url=Site logo URL
+db.about.site_welcome=Welcome page of your library
 
 label.action=Action
 label.action.return=Return
@@ -185,6 +194,8 @@ userActionUpdate.message.lastAdmin=Not possible to change user type of last Admi
 userActionDelete.message.deleted=User '%1' has been deleted.
 userActionDelete.message.notFound=User '%1' not found.
 userActionDelete.message.lastAdmin=Not possible to remove last Admininstrator!
+
+aboutSave.message.saved=Data about your library saved.
 
 checkAuthorization.message.notAuthorized=You are not authorized to access this page. Please login first !
 

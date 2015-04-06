@@ -4,6 +4,7 @@ menu.lent_book=Livres empruntés
 menu.login=Login
 menu.logout=Logout
 menu.admin=Administration
+menu.admin.about=Donées de votre bibliothèque
 menu.admin.userList=Utilisateurs
 menu.admin.bookCategory=Catégorie de Livres 
 menu.admin.bookType=Type de Livres
@@ -70,6 +71,14 @@ db.user.email=E-mail
 db.user.password=Mot de passe
 db.user.password_verify=Confirmation mot de passe
 db.user.date_creation=Date de Création
+
+db.about=Donées de votre bibliothèque
+db.about.site_shortname=Petit nom
+db.about.site_longname=Long nom
+db.about.site_meta_description=Meta Description
+db.about.site_meta_tags=Meta Tags
+db.about.site_logo_url=Logo
+db.about.site_welcome=Page de bienvenue de votre bibliothèque
 
 label.action=Action
 label.action.return=Rendre
@@ -185,6 +194,8 @@ userActionUpdate.message.lastAdmin=Il n'est pas possible de changer le type d'ut
 userActionDelete.message.deleted=Utilisateur '%1' a été effacé.
 userActionDelete.message.notFound=Utilisateur '%1' pas trouvé.
 userActionDelete.message.lastAdmin=Il n'est pas posible d'efface le dernier Administrateur!
+
+aboutSave.message.saved=Donées de votre bibliotèque ont été sauvegardé.
 
 checkAuthorization.message.notAuthorized=Vous n'êtes pas autorisé sur cette page. Vous devez vous connecter !
 

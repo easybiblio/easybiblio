@@ -157,3 +157,18 @@ ENGINE = InnoDB DEFAULT CHARSET=latin1;
 INSERT INTO `tb_user` (`username`, `fullname`, `password`, `salt`, `usertype`) VALUES
 ('admin', 'Administrator', 'b4761e9dbfbbeb7d8b1abd80e2d4f904e902c6fa4c51bcc15759db80f1f60ecc', '3d358272ff5243ccf464a3cb62b7e69c9abd9a8b0fe31cfb18689a2751149c43', 9),
 ('operator', 'Operator', 'a23d60f965c0309d5a84102968138e10b844ec6853776763ae9f5aa543d4b67a', 'e228a4aca6adb7e20b7e0cc19287e673d93ed82e11d2e2ca91c0435c7141ff43', 7);
+
+
+--
+-- Table 'tb_about'
+--
+CREATE TABLE `tb_about` (
+  `site_shortname` VARCHAR(30) NULL,
+  `site_longname` VARCHAR(120) NULL,
+  `site_meta_description` VARCHAR(200) NULL,
+  `site_meta_tags` VARCHAR(200) NULL,
+  `site_logo_url` TEXT NULL,
+  `site_welcome` LONGTEXT NULL)
+ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `tb_about`(`site_shortname`, `site_longname`, `site_meta_description`, `site_meta_tags`, `site_logo_url`, `site_welcome`) VALUES ('EasyBiblio','EasyBiblio - A Book Lending System made easy.','EasyBiblio - A Book Lending System made easy.','easybiblio',null,'<h1>Welcome to EasyBiblio Installation</h1>Put here custom information about your library (address, opening hours, rules for renting books, etc).');

@@ -4,6 +4,7 @@ menu.lent_book=Livros emprestados
 menu.login=Login
 menu.logout=Logout
 menu.admin=Administração
+menu.admin.about=Sobre sua biblioteca
 menu.admin.userList=Usuários
 menu.admin.bookCategory=Categoria de Livros 
 menu.admin.bookType=Tipos de Livros
@@ -70,6 +71,14 @@ db.user.email=E-mail
 db.user.password=Senha
 db.user.password_verify=Confirmação Senha
 db.person.date_creation=Data&nbsp;de&nbsp;Criação
+
+db.about=Sobre sua biblioteca
+db.about.site_shortname=Nome curto
+db.about.site_longname=Nome longo
+db.about.site_meta_description=Meta Descrição
+db.about.site_meta_tags=Meta Tags
+db.about.site_logo_url=URL do logotipo
+db.about.site_welcome=Página de boas vindas de sua biblioteca
 
 label.action=Ação
 label.action.return=Retornar
@@ -185,6 +194,8 @@ userActionUpdate.message.lastAdmin=Não é possível de alterar o tipo de usuár
 userActionDelete.message.deleted=Usuário '%1' foi removido.
 userActionDelete.message.notFound=Usuário '%1' não foi encontrado.
 userActionDelete.message.lastAdmin=Não é possível remover último administrator
+
+aboutSave.message.saved=Dados de sua biblioteca foram salvos.
 
 checkAuthorization.message.notAuthorized=Você não está autorizado a acessar esta página. Se connecte primeiro.
 

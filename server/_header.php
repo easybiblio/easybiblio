@@ -60,6 +60,9 @@
               <ul class="dropdown-menu" role="menu">
 
                 <?php if ($fmw->isLoggedInAdmin()) { ?>
+                <?= strpos($_SERVER["REQUEST_URI"], 'about.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="about.php"><?= $t->__('menu.admin.about') ?></a>
+                </li>
                 <?= strpos($_SERVER["REQUEST_URI"], 'userList.php') ? "<li class='active'>" : "<li>" ?>
                   <a href="userList.php"><?= $t->__('menu.admin.userList') ?></a>
                 </li>
