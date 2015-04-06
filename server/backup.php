@@ -68,7 +68,7 @@ $zip_filename = 'backup/db-easybiblio-'.$date_string.'.zip';
 
 
 // Create backup
-$files_to_backup = "tb_category,tb_language,tb_person,tb_type,tb_book,tb_lend";
+$files_to_backup = "tb_about,tb_category,tb_language,tb_person,tb_type,tb_book,tb_lend";
 $db_backup = backup_tables($fmw->config->server, $fmw->config->username, $fmw->config->password, $fmw->config->database_name, $files_to_backup);
 
 // Fixing problem with date_return
