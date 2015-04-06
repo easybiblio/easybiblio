@@ -1,1 +1,1 @@
-<?php header('Location: bookSearch.php'); ?>
+<?php header('Location: aboutShow.php'); ?>
