@@ -76,7 +76,7 @@ db.about=Donées de votre bibliothèque
 db.about.site_shortname=Petit nom
 db.about.site_longname=Long nom
 db.about.site_meta_description=Meta Description
-db.about.site_meta_tags=Meta Tags
+db.about.site_meta_keywords=Meta Mot clés
 db.about.site_logo_url=Logo
 db.about.site_welcome=Page de bienvenue de votre bibliothèque
 

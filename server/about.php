@@ -33,8 +33,7 @@ function loadImage() {
 <h1><?= $t->__('db.about') ?></h1>
 
 <?php
-    $columns = $database->select("TB_ABOUT", "*");
-    $columns = $columns[0];
+    $columns = $config->about;
 ?>
 
 <form class="form-horizontal" action="aboutSave.php" method="post" role="form">
@@ -61,9 +60,9 @@ function loadImage() {
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2"><?= $t->__('db.about.site_meta_tags') ?>:</label>
+    <label class="control-label col-sm-2"><?= $t->__('db.about.site_meta_keywords') ?>:</label>
     <div class="col-sm-10">
-      <input type="text" name="site_meta_tags" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'site_meta_tags') ?> maxlength="200">
+      <input type="text" name="site_meta_keywords" class="form-control" value=<?= $fmw->getPostOrArrayQuoted($columns, 'site_meta_keywords') ?> maxlength="200">
     </div>
   </div>
 

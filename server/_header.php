@@ -1,10 +1,16 @@
 <?php require_once '_header.mandatory.php' ?>
+<?php
+    $config->about = $database->select("TB_ABOUT", "*");
+    $config->about = $config->about[0];
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyBiblio</title>
+    <meta name="description" content="<?= $config->about['site_meta_description'] ?>" />
+    <meta name="keywords" content="<?= $config->about['site_meta_keywords'] ?>" />
+    <title><?= $config->about['site_longname'] ?></title>
     <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
@@ -24,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="bookSearch.php"><span class="glyphicon glyphicon-book"> EasyBiblio</span></a>
+      <a class="navbar-brand" href="aboutShow.php"><span class="glyphicon glyphicon-book"> <?= $config->about['site_shortname'] ?></span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">

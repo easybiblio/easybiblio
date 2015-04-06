@@ -6,7 +6,7 @@ $columns = array(
     "site_shortname" => $_POST['site_shortname'],
     "site_longname" => trim($_POST['site_longname']),
     "site_meta_description" => trim($_POST['site_meta_description']),
-    "site_meta_tags" => trim($_POST['site_meta_tags']),
+    "site_meta_keywords" => trim($_POST['site_meta_keywords']),
     "site_logo_url" => trim($_POST['site_logo_url']),
     "site_welcome" => trim($_POST['site_welcome'])
 );
