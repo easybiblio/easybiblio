@@ -2,3 +2,4 @@ backup/*
 images/covers/*.jpg
 server/images/covers/*.jpg
 server/backup/*
+.DS_Store
