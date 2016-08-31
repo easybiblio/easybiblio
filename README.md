@@ -5,7 +5,7 @@ It will help you control the lending of books from your library to its participa
 # Used technologies
 * PHP
 * MySQL
-* iOS Client in construction. See https://github.com/fmfurtado/easybiblio-ios
+* iOS Client in construction. See https://github.com/easybiblio/easybiblio-ios
 
 # Demo site
 See a live demo website here:
