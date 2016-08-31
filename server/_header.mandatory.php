@@ -1,5 +1,5 @@
 <?php
-  require_once 'medoo.min.php';
+  require_once 'medoo.php';
   require_once 'configuration.php';
   require_once '_framework.php';
   require_once '_translator.php';
