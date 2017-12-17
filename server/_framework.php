@@ -207,6 +207,18 @@ class Framework {
       }
   }
     
+  // This function inserts an audit in the table TB_AUDIT
+  function audit($operation, $details) {
+      $columns = array(
+        "#timestamp" => "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')",
+        "username" => $_SESSION['_ebb_username'],
+        "operation" => $operation,
+        "details" => $details
+      );
+
+      $this->database->insert("tb_audit", $columns);
+  }
+    
 }
 
 ?>

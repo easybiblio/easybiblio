@@ -172,3 +172,16 @@ CREATE TABLE `tb_about` (
 ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `tb_about`(`site_shortname`, `site_longname`, `site_meta_description`, `site_meta_keywords`, `site_logo_url`, `site_welcome`) VALUES ('EasyBiblio','EasyBiblio - A Book Lending System made easy.','EasyBiblio - A Book Lending System made easy.','easybiblio',null,'<h1>Welcome to EasyBiblio Installation</h1>Put here custom information about your library (address, opening hours, rules for renting books, etc).');
+
+---
+--- Table 'tb_audit'
+---
+CREATE TABLE IF NOT EXISTS `tb_audit` (
+  `id` INT(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(30) NULL,
+  `timestamp` DATETIME NULL,
+  `operation` VARCHAR(30) NULL,
+  `details` LONGTEXT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+ENGINE = InnoDB DEFAULT CHARSET=latin1;
