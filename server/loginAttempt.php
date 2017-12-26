@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fmw->login($columns['username'], $columns['usertype']);
         $fmw->info('login.message.loginSuccessful');
         $redirection = "bookSearch.php";
-        $fmw->audit('User logged in');
     } else {
         $fmw->error('login.message.loginFailed');
     }

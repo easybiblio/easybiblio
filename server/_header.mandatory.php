@@ -3,6 +3,7 @@
   require_once 'configuration.php';
   require_once '_framework.php';
   require_once '_translator.php';
+  require_once '_audit.php';
 
   $config = new EBBConfig();
   session_start();
@@ -17,4 +18,5 @@
 
   $fmw = new Framework($config, $t);
   $database = $fmw->database;
+  $audit = $fmw->audit;
 ?>

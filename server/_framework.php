@@ -5,6 +5,7 @@ class Framework {
    public $config;
    public $database;
    public $translator;
+   public $audit;
 
    function Framework($config, $translator) {
        $this->config = $config;
@@ -20,6 +21,9 @@ class Framework {
 
        // Medoo instance
        $this->database = new medoo($dbconfig);
+       
+       // Audit
+       $this->audit = new Audit($this->database);
    }
 
   // Check if a date if valid, return TRUE or FALSE.
@@ -131,10 +135,12 @@ class Framework {
   function login($username, $usertype) {
       $_SESSION['_ebb_username'] = $username;
       $_SESSION['_ebb_usertype'] = $usertype;
+      $this->audit->login();
   }
 
   // Called for logout the user.
   function logout() {
+      $this->audit->logout();
       unset($_SESSION['_ebb_username']);
       unset($_SESSION['_ebb_usertype']);
   }
@@ -205,18 +211,6 @@ class Framework {
           header("Location: login.php");
           exit();
       }
-  }
-    
-  // This function inserts an audit in the table TB_AUDIT
-  function audit($operation, $details) {
-      $columns = array(
-        "#timestamp" => "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')",
-        "username" => $_SESSION['_ebb_username'],
-        "operation" => $operation,
-        "details" => $details
-      );
-
-      $this->database->insert("tb_audit", $columns);
   }
     
 }
