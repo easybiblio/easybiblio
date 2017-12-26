@@ -27,6 +27,12 @@
         $('#person_id_for_loan').val(personId);
         $('#loan_data_submit_button').prop("disabled",false);
     }
+    
+    function confirmation() {
+        if (confirm("<?= $t->__('bookLend.label.question') ?>")) {
+            document.forms["myform"].submit();
+        }
+    }
 </script>
 
 <?php
@@ -119,7 +125,7 @@ foreach($datas as $row) {
     <div class="panel-heading"><?= $t->__('db.lend') ?>:</div>
    <div class="panel-body">
 
-       <form method="post" action="bookLendConfirmation.php">
+       <form method="post" action="bookLendSave.php" id="myform">
            <input type="hidden" name="book_id"   value="<?=$book_id?>"   />
            <input type="hidden" name="person_id" value="<?=$person_id?>" id="person_id_for_loan"/>
     <script>
@@ -145,7 +151,7 @@ foreach($datas as $row) {
       <tr>
         <td></td>
         <td>
-            <input type="submit" class="btn btn-default" value="<?= $t->__('button.confirmLend') ?>" id='loan_data_submit_button' disabled=true/>
+            <input type="button" class="btn btn-default" value="<?= $t->__('button.confirmLend') ?>" onclick="confirmation()" id='loan_data_submit_button' disabled=true/>
             <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'"/>
         </td>
       </tr>

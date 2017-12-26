@@ -103,12 +103,13 @@ personSave.message.nameMandatory=The name is mandatory !
 bookLend.title=Lending of a book
 
 bookLendConfirmation.title=Confirmation for lending a book
+bookLend.label.question=Do you confirm the lending of this book?
 
-bookLendConfirmationSave.message.bookNotFound=Book was not found. Please try again.
-bookLendConfirmationSave.message.personNotFound=Person was not found. Please try again.
-bookLendConfirmationSave.message.dateNotValid=Date is not valid. Please try again.
-bookLendConfirmationSave.message.bookAlreadyLent=Book is already lent to another person.
-bookLendConfirmationSave.message.success=Lent of the book '%1' is saved with ID %2
+bookLendSave.message.bookNotFound=Book was not found. Please try again.
+bookLendSave.message.personNotFound=Person was not found. Please try again.
+bookLendSave.message.dateNotValid=Date is not valid. Please try again.
+bookLendSave.message.bookAlreadyLent=Book is already lent to another person.
+bookLendSave.message.success=Lent of the book '%1' is saved with ID %2
 
 bookReturn.title=Return of book
 bookReturn.button.confirmReturn=Confirm Return

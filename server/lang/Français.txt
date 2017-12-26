@@ -103,12 +103,13 @@ personSave.message.nameMandatory=Le nom est obligatoire.
 bookLend.title=Emprunter des livres
 
 bookLendConfirmation.title=Confirmation d'emprunt de livre
+bookLend.label.question=Est-ce que vous confirmez l'emprunt de ce livre?
 
-bookLendConfirmationSave.message.bookNotFound=Livre n'as pas été trouvé. Essayer à nouveau.
-bookLendConfirmationSave.message.personNotFound=Personne n'as pas été trouvé. Essayer à nouveau.
-bookLendConfirmationSave.message.dateNotValid=Date d'Emprunt n'est pas valide. Essayer à nouveau.
-bookLendConfirmationSave.message.bookAlreadyLent=Livre est déjà preté à une autre personne.
-bookLendConfirmationSave.message.success=Emprunt du livre '%1' a été enregistré avec ID %2
+bookLendSave.message.bookNotFound=Livre n'as pas été trouvé. Essayer à nouveau.
+bookLendSave.message.personNotFound=Personne n'as pas été trouvé. Essayer à nouveau.
+bookLendSave.message.dateNotValid=Date d'Emprunt n'est pas valide. Essayer à nouveau.
+bookLendSave.message.bookAlreadyLent=Livre est déjà preté à une autre personne.
+bookLendSave.message.success=Emprunt du livre '%1' a été enregistré avec ID %2
 
 bookReturn.title=Rentrer un livre
 bookReturn.button.confirmReturn=Confirmer le retour

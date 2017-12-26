@@ -16,17 +16,17 @@
   $notes = $_POST['notes'];
 
   if (!isset($book_columns['id'])) {
-      $fmw->error('bookLendConfirmationSave.message.bookNotFound');
+      $fmw->error('bookLendSave.message.bookNotFound');
   } else if (!isset($person_columns['id'])) {
-      $fmw->error('bookLendConfirmationSave.message.personNotFound');
+      $fmw->error('bookLendSave.message.personNotFound');
   } else if (!$fmw->verifyDate($date_lend)) {
-      $fmw->error('bookLendConfirmationSave.message.dateNotValid');
+      $fmw->error('bookLendSave.message.dateNotValid');
   } else {
     // Check if book is already lended
       $query = "select * from tb_lend where book_id = " . $book_id . " and date_return is null";
       $book_already_lended = $database->query($query)->fetchAll();
       if (count($book_already_lended) > 0) {
-          error('bookLendConfirmationSave.message.bookAlreadyLent');
+          error('bookLendSave.message.bookAlreadyLent');
       }
   }
 
@@ -42,7 +42,7 @@
     );
 
     $last_book_lend_id = $database->insert("tb_lend", $columns);
-	$fmw->info('bookLendConfirmationSave.message.success', $book_columns['title'], $last_book_lend_id);
+	$fmw->info('bookLendSave.message.success', $book_columns['title'], $last_book_lend_id);
 
     $fmw->checkDatabaseError();
   }
