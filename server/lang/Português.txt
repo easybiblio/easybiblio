@@ -34,6 +34,8 @@ db.book.language=Língua
 db.book.category=Categoria
 db.book.notes=Notas
 db.book.date_creation=Data&nbsp;de&nbsp;Criação
+db.book.lost_timestamp=Data&nbsp;da&nbsp;perda
+db.book.lost_by_username=Perda&nbsp;registrada por
 
 db.person=Pessoa
 db.person.name=Nome
@@ -81,7 +83,7 @@ db.about.site_logo_url=URL do logotipo
 db.about.site_welcome=Página de boas vindas de sua biblioteca
 
 label.action=Ação
-label.action.return=Retornar
+label.action.return=Devolver
 label.action.lend=Emprestar
 label.action.delete=Remover
 label.report_lent_books=Livros Emprestados
@@ -91,10 +93,19 @@ bookSearch.title=Lista de livros
 personSearch.title=Lista de pessoas
 
 bookSave.message.newBookSaved=Novo livro '%1' criado com ID %2
-bookSave.message.bookUpdated=Livro '%1' was updated.
+bookSave.message.bookUpdated=Livro '%1' foi atualizado.
 bookSave.message.codeMandatory=O código é obrigatório !
 bookSave.message.titleMandatory=O título é obrigatório !
 bookSave.message.codeAlreadyExist=O livro '%1' já esta usando o código '%2'. Livro não foi gravado..
+
+bookLostSave.message.lost=O livro está agora registrado como perdido.
+bookLostSave.message.unlost=O livro foi registrado como encontrado.
+
+book.button.lost=Registrar como perdido
+book.button.unlost=Registrar como encontrado
+book.label.question.lost=Confirma registrar este livro como perdido?
+book.label.question.unlost=Confirma registrar este livro como encontrado?
+book.label.lost=Livro perdido
 
 personSave.message.newPersonSaved=Nova pessoa '%1' criada com ID %2
 personSave.message.personUpdated=Pessoa '%1' atualizada com sucesso.
@@ -119,6 +130,7 @@ bookReturnSave.message.loanNotFound=Empréstimo não encontrado !
 bookReturnSave.message.returnDateNotValid=Data de devolução é inválida. Tente novamente !
 bookReturnSave.message.bookAlreadyReturned=Livro já estava devolvido. Nada foi gravado!
 bookReturnSave.message.bookReturned=Livro '%1' devolvido com sucesso !
+bookReturnSave.message.bookLostCannotReturn=Livro perdido não pode ser devolvido. Para devolvê-lo, é preciso primeiro registrar livro como encontrado.
 
 bookLendEditNotes.title=Alterar notas do empréstimo
 
@@ -147,6 +159,7 @@ reportLendPerPerson.message.total_lent_books=Quantidade total de livros empresta
 
 reportStatistics.title=Estatísticas
 reportStatistics.total_books=Quantidade total de livros
+reportStatistics.total_books_lost=Quantidade de livros perdidos
 reportStatistics.total_people=Quantidade total de pessoas
 reportStatistics.total_lent=Quantidade total de livros emprestados
 reportStatistics.total_lent_today=Quantidade total de livros emprestados até o momento

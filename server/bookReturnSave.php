@@ -5,6 +5,7 @@
   $lend_id = $_POST['lend_id'];
   if ($lend_id != '') {
     $lend_columns = $database->get("tb_lend", "*", array("id" => $lend_id));
+    $book_columns = $database->get("tb_book", "*", array("id" => $lend_columns['book_id']));
   }
 
   $date_return = $_POST['date_return'];
@@ -16,6 +17,8 @@
       $fmw->error('bookReturnSave.message.returnDateNotValid');
   } else if (isset($lend_columns['date_return'])) {
       $fmw->error('bookReturnSave.message.bookAlreadyReturned');
+  } else if ($book_columns['lost'] == 1) {
+      $fmw->error('bookReturnSave.message.bookLostCannotReturn');      
   }
 
   if (!$fmw->hasError()) {
@@ -26,7 +29,6 @@
         "notes" => $notes
       );
 
-    $book_columns = $database->get("tb_book", "*", array("id" => $lend_columns['book_id']));
     $database->update("tb_lend", $columns, array("id[=]" => $lend_id));
 	$fmw->info('bookReturnSave.message.bookReturned', $book_columns['title']);
 

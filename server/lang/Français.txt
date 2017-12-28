@@ -34,6 +34,8 @@ db.book.language=Langue
 db.book.category=Categorie
 db.book.notes=Notes
 db.book.date_creation=Date&nbsp;de&nbsp;Création
+db.book.lost_timestamp=Date&nbsp;Perte
+db.book.lost_by_username=Perte&nbsp;enregistré&nbsp;par
 
 db.person=Personne
 db.person.name=Prénom/Nom
@@ -96,6 +98,15 @@ bookSave.message.codeMandatory=Le code d'un livre est obligatoire !
 bookSave.message.titleMandatory=Le title d'un livre est obligatoire !
 bookSave.message.codeAlreadyExist=Il y a déjà le livre '%1' avec le code '%2'. Livre n'as pas été sauvegardé.
 
+bookLostSave.message.lost=Livre est enregistré comme etant perdu.
+bookLostSave.message.unlost=Livre est enregistré comme etant trouvé.
+
+book.button.lost=Enregistrer comme perdu
+book.button.unlost=Enregistrer comme trouvé
+book.label.question.lost=Est-ce que vous confirmez que le livre est perdu?
+book.label.question.unlost=Est-ce que vous confirmez que le livre a été trouvé?
+book.label.lost=Livre perdu
+
 personSave.message.newPersonSaved=Nouvelle personne '%1' enregistrée avec ID %2
 personSave.message.personUpdated=Personne '%1' a été enregistrée.
 personSave.message.nameMandatory=Le nom est obligatoire.
@@ -119,6 +130,7 @@ bookReturnSave.message.loanNotFound=Emprunt pas trouvé !
 bookReturnSave.message.returnDateNotValid=Date de retour n'est pas valide !
 bookReturnSave.message.bookAlreadyReturned=Livre est déjà rendu. Rien a été sauvegardé !
 bookReturnSave.message.bookReturned=Livre '%1' a été rendu !
+bookReturnSave.message.bookLostCannotReturn=Un livre perdu ne peut pas être rendu. Pour le rendre, vous devez d'abord l'enregistrer comme etant trouvé.
 
 bookLendEditNotes.title=Changer les notes d'un emprunt
 
@@ -147,6 +159,7 @@ reportLendPerPerson.message.total_lent_books=Total de livres empruntés
 
 reportStatistics.title=Statistiques
 reportStatistics.total_books=Total de Livres
+reportStatistics.total_books_lost=Total de Livres perdus
 reportStatistics.total_people=Total de Personnes
 reportStatistics.total_lent=Total d'Emprunts
 reportStatistics.total_lent_today=Total des livres empruntés actuellement

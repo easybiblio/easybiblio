@@ -25,6 +25,9 @@ CREATE TABLE `tb_book` (
  `date_creation` datetime DEFAULT NULL,
  `notes` longtext,
  `cover_url` TEXT NULL DEFAULT NULL,
+ `lost` TINYINT(1) NULL DEFAULT 0,
+ `lost_by_username` VARCHAR(30) NULL,
+ `lost_timestamp` DATETIME NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id_UNIQUE` (`id`),
  UNIQUE KEY `code_UNIQUE` (`code`)

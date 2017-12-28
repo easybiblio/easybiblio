@@ -56,10 +56,14 @@ $counter = 0;
 foreach($datas as $row) {
     $counter++;
     $fmw->escapeHtmlArray($row);
-    if ($row['lended']) {
-        echo "<tr class='success'>";
+    if ($row['lost'] == 1) {
+        echo "<tr class='danger'>";
     } else {
-        echo "<tr>";
+        if ($row['lended']) {
+            echo "<tr class='success'>";
+        } else {
+            echo "<tr>";
+        }
     }
     echo "<td>";
     echo $row['code'];
@@ -74,6 +78,9 @@ foreach($datas as $row) {
     
     echo "<td>";
     echo "<a href='book.php?id=" . $row['id'] . "'>" . $row['title'] . '</a>';
+    if ($row['lost'] == 1) {
+        echo "&nbsp;<span class='badge'>", $t->__('book.label.lost'), "</span>";
+    }
     echo "</td>";
     echo "<td>";
     echo $row['author'];
@@ -87,11 +94,15 @@ foreach($datas as $row) {
     
     if ($fmw->isLoggedInOperator()) {
         echo "<td>";
-        if ($row['lended']) {
-            echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
-        } else {
-            echo "<a href='bookLend.php?book_id=" . $row['id'] . "'>" . $t->__('label.action.lend') . '</a>';
+        
+        if ($row['lost'] == 0) {
+            if ($row['lended']) {
+                echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
+            } else {
+                echo "<a href='bookLend.php?book_id=" . $row['id'] . "'>" . $t->__('label.action.lend') . '</a>';
+            }
         }
+
         echo "</td>";
     }
     

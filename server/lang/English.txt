@@ -34,6 +34,8 @@ db.book.language=Language
 db.book.category=Category
 db.book.notes=Notes
 db.book.date_creation=Creation&nbsp;Date
+db.book.lost_timestamp=Lost&nbsp;Date
+db.book.lost_by_username=Lost&nbsp;registered&nbsp;by
 
 db.person=Person
 db.person.name=Name
@@ -96,6 +98,15 @@ bookSave.message.codeMandatory=The code is mandatory !
 bookSave.message.titleMandatory=The title is mandatory !
 bookSave.message.codeAlreadyExist=The book '%1' is already using the code '%2'. Book was not saved.
 
+bookLostSave.message.lost=Book is registered as lost.
+bookLostSave.message.unlost=Book is registered as found.
+
+book.button.lost=Register as lost
+book.button.unlost=Register as found
+book.label.question.lost=Do you confirm register book as lost?
+book.label.question.unlost=Do you confirm register book as found?
+book.label.lost=Lost book
+
 personSave.message.newPersonSaved=New person '%1' created with ID %2
 personSave.message.personUpdated=Person '%1' was updated.
 personSave.message.nameMandatory=The name is mandatory !
@@ -119,6 +130,7 @@ bookReturnSave.message.loanNotFound=Loan not found !
 bookReturnSave.message.returnDateNotValid=Return date is not valid. Please try again !
 bookReturnSave.message.bookAlreadyReturned=Book is already returned. Nothing was saved!
 bookReturnSave.message.bookReturned=Book '%1' was successful returned !
+bookReturnSave.message.bookLostCannotReturn=A lost book cannot be returned ! In order to return it, you must first register this book as found.
 
 bookLendEditNotes.title=Change notes for a lending
 
@@ -147,6 +159,7 @@ reportLendPerPerson.message.total_lent_books=Total number of lent books
 
 reportStatistics.title=Statistics
 reportStatistics.total_books=Total of books
+reportStatistics.total_books_lost=Total of lost books
 reportStatistics.total_people=Total of people
 reportStatistics.total_lent=Total of Lent Books
 reportStatistics.total_lent_today=Total of Lent Books at present

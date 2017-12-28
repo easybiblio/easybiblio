@@ -30,39 +30,41 @@
 
 $counter = 0;
 foreach($datas as $row) {
-    $counter++;
-    $fmw->escapeHtmlArray($row);
-    echo "<tr>";
-    echo "<td>";
-    echo $row['date_lend'];
-    echo "</td>";
-    echo "<td>";
-    echo $row['late_days'];
-    echo "</td>";
-    echo "<td>";
-    echo "<a href='book.php?id=" . $row['book_id'] . "'>(" . $row['book_code'] . ') ' . $row['title'] . '</a>';
-    echo "</td>";
-    echo "<td>";
-    echo "<a href='person.php?id=" . $row['person_id'] . "'>" . $row['name'] . '</a>';
-    echo "</td>";
-    echo "<td>";
-    echo $row['phone1'];
-    echo "</td>";
-    echo "<td>";
-    echo $row['phone2'];
-    echo "</td>";
-    echo "<td>";
-    echo $row['email'];
-    echo "</td>";
-    echo "<td>";
-    echo $row['notes'];
-    echo "</td>";
-    echo "<td>";
-    echo "<a href='bookLendEditNotes.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('reportBookLended.action.change_notes') . '</a>';
-    echo "&nbsp;&nbsp;&nbsp";
-    echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('reportBookLended.action.return') . '</a>';
-    echo "</td>";
-    echo "</tr>\n";
+    if ($row['lost'] == 0) {
+        $counter++;
+        $fmw->escapeHtmlArray($row);
+        echo "<tr>";
+        echo "<td>";
+        echo $row['date_lend'];
+        echo "</td>";
+        echo "<td>";
+        echo $row['late_days'];
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='book.php?id=" . $row['book_id'] . "'>(" . $row['book_code'] . ') ' . $row['title'] . '</a>';
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='person.php?id=" . $row['person_id'] . "'>" . $row['name'] . '</a>';
+        echo "</td>";
+        echo "<td>";
+        echo $row['phone1'];
+        echo "</td>";
+        echo "<td>";
+        echo $row['phone2'];
+        echo "</td>";
+        echo "<td>";
+        echo $row['email'];
+        echo "</td>";
+        echo "<td>";
+        echo $row['notes'];
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='bookLendEditNotes.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('reportBookLended.action.change_notes') . '</a>';
+        echo "&nbsp;&nbsp;&nbsp";
+        echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('reportBookLended.action.return') . '</a>';
+        echo "</td>";
+        echo "</tr>\n";
+    }
 }
 
 ?>

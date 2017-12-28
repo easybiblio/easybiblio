@@ -55,6 +55,9 @@ foreach($datas as $row) {
     echo "</td>";
     echo "<td>";
     echo "<a href='book.php?id=" . $row['id'] . "'>(" . $row['code'] .") " . $row['title'] . '</a>';
+    if ($row['lost'] == 1) {
+        echo "&nbsp;<span class='badge'>", $t->__('book.label.lost'), "</span>";
+    }
     echo "</td>";
     echo "<td>";
     echo $row['author'];
@@ -64,8 +67,8 @@ foreach($datas as $row) {
     echo "</td>";
     echo "<td>";
     
-    if (!isset($row['date_return'])) {
-        echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . 'Retourner</a>';
+    if (!isset($row['date_return']) && $row['lost'] == 0) {
+        echo "<a href='bookReturn.php?lend_id=" . $row['lend_id'] . "'>" . $t->__('label.action.return') . '</a>';
     }
     
     echo "</td>";

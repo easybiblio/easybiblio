@@ -14,6 +14,18 @@ function loadImage() {
 	.attr("src",imgToLoad);
 }
 
+    function confirmationLost() {
+        if (confirm("<?= $t->__('book.label.question.lost') ?>")) {
+            document.forms["formBookLost"].submit();
+        }
+    }
+    
+    function confirmationUnlost() {
+        if (confirm("<?= $t->__('book.label.question.unlost') ?>")) {
+            document.forms["formBookLost"].submit();
+        }
+    }
+    
 </script>
 
 <h1><?= $t->__('db.book') ?></h1>
@@ -183,6 +195,22 @@ function loadImage() {
   </div>
   <?php } ?>
 
+  <?php if ($columns['lost'] != 0) { ?>
+  <!-- Lost Fields -->
+  <div class="form-group">
+    <label class="control-label col-md-2"><?= $t->__('db.book.lost_timestamp') ?>:</label>
+    <div class="col-sm-10">
+        <p class="form-control-static"><?= $fmw->getPostOrArray($columns, 'lost_timestamp') ?></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2"><?= $t->__('db.book.lost_by_username') ?>:</label>
+    <div class="col-sm-10">
+        <p class="form-control-static"><?= $fmw->getPostOrArray($columns, 'lost_by_username') ?></p>
+    </div>
+  </div>
+  <?php } ?>
+    
 </div>
 
 
@@ -207,11 +235,24 @@ function loadImage() {
           <?php if ($fmw->isLoggedInContributor()) { ?>
             <input type="submit" class="btn btn-default" name="Submit" value="<?= $t->__('button.save') ?>">
           <?php } ?>
-          <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" >
+          <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" />
+          <?php if ($fmw->isLoggedInOperator()) { ?>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <?php if ($columns['lost'] == 0) { ?>
+               <input type="button" class="btn btn-default" name="Lost" value="<?= $t->__('book.button.lost') ?>" onclick="confirmationLost()" />
+            <?php } else { ?>
+               <input type="button" class="btn btn-default" name="Unlost" value="<?= $t->__('book.button.unlost') ?>" onclick="confirmationUnlost()" />
+            <?php } ?>
+          <?php } ?>
         </div>
 
 </div>
     
+</form>
+
+<form action="bookLostSave.php" class="form-horizontal" method="post" id="formBookLost">
+  <input type="hidden" name="id" value="<?= $id ?>" />
+  <input type="hidden" name="action" value="<?= ($columns['lost'] == 0 ? 'lost' : 'unlost') ?>"/>
 </form>
 
 <?php include '_footer.php' ?>

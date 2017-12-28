@@ -15,6 +15,14 @@ class Audit {
         $this->audit('LOGOUT');
     }
     
+    public function bookLost($details) {
+        $this->audit('BOOK_LOST', $details);
+    }
+    
+    public function bookFound($details) {
+        $this->audit('BOOK_FOUND', $details);
+    }
+    
     // This function inserts an audit in the table TB_AUDIT
     private function audit($operation, $details) {
       $columns = array(
