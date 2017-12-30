@@ -31,6 +31,13 @@
 
     $database->update("tb_lend", $columns, array("id[=]" => $lend_id));
 	$fmw->info('bookReturnSave.message.bookReturned', $book_columns['title']);
+      
+    // Audit
+    $person_columns = $database->get("tb_person", "*", array("id" => $lend_columns['person_id']));
+    $toAudit = 'bookCode: '   . $book_columns['code']  . ', ';
+    $toAudit .= 'bookTitle: ' . $book_columns['title'] . ', ';
+    $toAudit .= 'personName: ' . $person_columns['name'];
+    $audit->bookReturn($toAudit);
 
     $fmw->checkDatabaseError();
   }

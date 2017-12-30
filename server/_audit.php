@@ -23,6 +23,14 @@ class Audit {
         $this->audit('BOOK_FOUND', $details);
     }
     
+    public function bookLent($details) {
+        $this->audit('BOOK_LENT', $details);
+    }
+    
+    public function bookReturn($details) {
+        $this->audit('BOOK_RETURN', $details);
+    }
+    
     // This function inserts an audit in the table TB_AUDIT
     private function audit($operation, $details) {
       $columns = array(

@@ -44,6 +44,12 @@
     $last_book_lend_id = $database->insert("tb_lend", $columns);
 	$fmw->info('bookLendSave.message.success', $book_columns['title'], $last_book_lend_id);
 
+    // Audit
+    $toAudit = 'bookCode: '   . $book_columns['code']  . ', ';
+    $toAudit .= 'bookTitle: ' . $book_columns['title'] . ', ';
+    $toAudit .= 'personName: ' . $person_columns['name'];
+    $audit->bookLent($toAudit);
+      
     $fmw->checkDatabaseError();
   }
 
