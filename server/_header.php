@@ -93,6 +93,10 @@
                   <a href="bookCoverSearch.php"><?= $t->__('menu.admin.bookCover') ?></a>
                 </li>
 
+                <?= strpos($_SERVER["REQUEST_URI"], 'auditSearch.php') ? "<li class='active'>" : "<li>" ?>
+                  <a href="auditSearch.php"><?= $t->__('menu.admin.audit') ?></a>
+                </li>
+
                 <?= strpos($_SERVER["REQUEST_URI"], 'reportStatistics.php') ? "<li class='active'>" : "<li>" ?>
                   <a href="reportStatistics.php"><?= $t->__('menu.admin.statistics') ?></a>
                 </li>

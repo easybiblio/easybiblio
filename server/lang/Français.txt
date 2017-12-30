@@ -10,6 +10,7 @@ menu.admin.bookCategory=Catégorie de Livres
 menu.admin.bookType=Type de Livres
 menu.admin.bookLanguage=Langue des Livres 
 menu.admin.bookCover=Couverture des Livres
+menu.admin.audit=Audit d'activités
 menu.admin.statistics=Statistiques
 menu.admin.backup=Sauvegarde de la Base de Données
 
@@ -82,6 +83,12 @@ db.about.site_meta_keywords=Meta Mot clés
 db.about.site_logo_url=Logo
 db.about.site_welcome=Page de bienvenue de votre bibliothèque
 
+db.audit=Audit
+db.audit.username=Utilisateur
+db.audit.timestamp=Date
+db.audit.operation=Operation
+db.audit.details=Details
+
 label.action=Action
 label.action.return=Rendre
 label.action.lend=Emprunter
@@ -91,6 +98,10 @@ label.numberOfBooks=Nombre de livres
 
 bookSearch.title=Liste des livres
 personSearch.title=Liste des Personnes
+
+auditSearch.title=Audit d'activités
+auditSearch.label.start_date=Début
+auditSearch.label.end_date=Fin
 
 bookSave.message.newBookSaved=Nouveau livre '%1' a été enregistré avec ID %2
 bookSave.message.bookUpdated=Livre '%1' a été actualisé !
@@ -215,3 +226,4 @@ checkAuthorization.message.notAuthorized=Vous n'êtes pas autorisé sur cette pa
 
 message.there_are_more_books=Il y a encore d’autres résultats.  Merci d’affiner votre recherche !
 message.there_are_more_people=Il y a encore d’autres résultats.  Merci d’affiner votre recherche !
+message.there_are_more=Il y a plus d'elements.  Merci d’affiner votre recherche !
