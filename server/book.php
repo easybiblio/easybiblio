@@ -236,7 +236,7 @@ function loadImage() {
             <input type="submit" class="btn btn-default" name="Submit" value="<?= $t->__('button.save') ?>">
           <?php } ?>
           <input type="button" class="btn btn-default" value="<?= $t->__('button.cancel') ?>" onclick="window.location.href='bookSearch.php'" />
-          <?php if ($fmw->isLoggedInOperator()) { ?>
+          <?php if ($id != '' and $fmw->isLoggedInOperator()) { ?>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <?php if ($columns['lost'] == 0) { ?>
                <input type="button" class="btn btn-default" name="Lost" value="<?= $t->__('book.button.lost') ?>" onclick="confirmationLost()" />

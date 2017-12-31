@@ -75,6 +75,11 @@ if ($id != '') {
         
         $last_book_id = $database->insert("tb_book", $columns);    
         $fmw->info('bookSave.message.newBookSaved', $columns['title'], $last_book_id);
+        
+        // Audit
+        $details = 'code: '  . $columns['code'] . ', ';
+        $details.= 'title: ' . $columns['title'] ;
+        $audit->newBook($details);
     }
     
 }

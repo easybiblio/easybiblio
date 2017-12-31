@@ -31,6 +31,18 @@ class Audit {
         $this->audit('BOOK_RETURN', $details);
     }
     
+    public function newBook($details) {
+        $this->audit('NEW_BOOK', $details);
+    }
+    
+    public function updateBook($details) {
+        $this->audit('UPDATE_BOOK', $details);
+    }
+    
+    public function deleteBook($details) {
+        $this->audit('DELETE_BOOK', $details);
+    }
+    
     // This function inserts an audit in the table TB_AUDIT
     private function audit($operation, $details) {
       $columns = array(
