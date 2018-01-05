@@ -39,8 +39,12 @@ class Audit {
         $this->audit('UPDATE_BOOK', $details);
     }
     
-    public function deleteBook($details) {
-        $this->audit('DELETE_BOOK', $details);
+    public function newPerson($details) {
+        $this->audit('NEW_PERSON', $details);
+    }
+    
+    public function updatePerson($details) {
+        $this->audit('UPDATE_PERSON', $details);
     }
     
     // This function inserts an audit in the table TB_AUDIT

@@ -20,14 +20,18 @@ $columns = array(
     "notes" => $_POST['notes']
 );
 
+$audit_details= 'name: ' . $columns['name'] ;
+
 $id = $_POST['id'];
 if ($id != '') {
     $database->update("tb_person", $columns, array("id[=]" => $id));
 	$fmw->info('personSave.message.personUpdated', $columns['name']);
+    $audit->updatePerson($audit_details);
 } else {
     $columns['#date_creation'] = "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')";
     $last_person_id = $database->insert("tb_person", $columns);    
     $fmw->info('personSave.message.newPersonSaved', $columns['name'], $last_person_id);
+    $audit->newPerson($audit_details);
 }
 
 $fmw->checkDatabaseError();

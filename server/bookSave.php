@@ -37,6 +37,9 @@ $columns = array(
     "notes" => $_POST['notes']
 );
 
+$audit_details = 'code: '  . $columns['code'] . ', ';
+$audit_details.= 'title: ' . $columns['title'] ;
+
 $id = $_POST['id'];
 if ($id != '') {
     
@@ -54,7 +57,10 @@ if ($id != '') {
         // copyImageFromServer($id, &$columns);
         
         $database->update("tb_book", $columns, array("id[=]" => $id));  
-        $fmw->info('bookSave.message.bookUpdated', $columns['title']);  
+        $fmw->info('bookSave.message.bookUpdated', $columns['title']);
+        
+        // Audit
+        $audit->updateBook($audit_details);
     }
   
 } else {
@@ -77,9 +83,7 @@ if ($id != '') {
         $fmw->info('bookSave.message.newBookSaved', $columns['title'], $last_book_id);
         
         // Audit
-        $details = 'code: '  . $columns['code'] . ', ';
-        $details.= 'title: ' . $columns['title'] ;
-        $audit->newBook($details);
+        $audit->newBook($audit_details);
     }
     
 }
