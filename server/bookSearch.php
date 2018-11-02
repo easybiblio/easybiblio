@@ -3,6 +3,21 @@
 <h1><?= $t->__('bookSearch.title') ?></h1>
 
 <?php
+    
+    function prepareLanguageOptions($valueToSelect) {
+        global $database;
+        $data = $database->select("tb_language", '*');
+        echo "\n<option value=''></option>";
+        foreach ($data as $row) {
+            echo "\n<option value=";
+            echo $database->quote($row['language']);
+            echo $valueToSelect == $row['language'] ? "selected" : "";
+            echo ">";
+            echo $row['language_name'];
+            echo "</option>";
+        }
+    }
+    
     $search_string = $_POST['search_book'];
     if (!isset($search_string)) {
         $search_string = $_SESSION['search_book'];
@@ -10,20 +25,34 @@
         $_SESSION['search_book'] = $search_string;
     }
     $search_string = trim($search_string);
+
+    // search_language
+    $search_language = $_POST['search_language'];
+    if (!isset($search_language)) {
+        $search_language = $_SESSION['search_language'];
+    } else {
+        $_SESSION['search_language'] = $search_language;
+    }
+    $search_language = trim($search_language);
 ?>
+
 <form class="navbar-form navbar-left" role="search" method="post">
-    
+
+<select class="form-control" name="search_language">
+  <?php prepareLanguageOptions( $fmw->escapeHtml($search_language) ); ?>
+</select>
+
 <div class="input-group">
   <input type="text" class="form-control" name="search_book" value="<?= $fmw->escapeHtml($search_string) ?>" autofocus/>
+
   <span class="input-group-btn">
     <input type="submit" class="btn btn-default" value="<?= $t->__('button.search') ?>"/>
-
+      
     <?php if ($fmw->isLoggedInContributor()) { ?>
     <input type="button" class="btn btn-default" value="<?= $t->__('button.new') ?>" onclick="window.location.href='book.php'" />
     <?php } ?>
   </span>
 </div>
-    
 
 </form>
 
@@ -45,8 +74,12 @@
 
 $search_string = strtr($search_string, " ", "%");
 $search_string_quoted = $database->quote("%".$search_string."%");
+$query_language = "";
+if ($search_language != '') {
+  $query_language = "language = '" . $search_language . "' AND ";
+}
 $query = "select tb_book.*, !isnull(tb_lend.id) as lended, tb_lend.id as lend_id, tb_type.name as typeName " .
-           "from (select * from tb_book where code like ".$search_string_quoted." or title like ".$search_string_quoted." or author like ".$search_string_quoted." or coauthor like ".$search_string_quoted." order by date_creation desc) tb_book ".
+           "from (select * from tb_book where " . $query_language . " (code like ".$search_string_quoted." or title like ".$search_string_quoted." or author like ".$search_string_quoted." or coauthor like ".$search_string_quoted.") order by date_creation desc) tb_book ".
            "left join (select id, book_id from tb_lend where date_return is null) tb_lend on tb_book.id = tb_lend.book_id " .
            "left join tb_type on tb_book.type_id = tb_type.id";
 
