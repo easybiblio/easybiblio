@@ -139,6 +139,7 @@ bookLendSave.message.success=Emprunt du livre '%1' a été enregistré avec ID %
 bookReturn.title=Rentrer un livre
 bookReturn.button.confirmReturn=Confirmer le retour
 bookReturn.label.question=Vous confirmez le retour de ce livre ?
+bookReturn.message.bookLate=%1 mois de retard. Une indemnité de %1 EUR est due.
 
 bookReturnSave.message.loanNotFound=Emprunt pas trouvé !
 bookReturnSave.message.returnDateNotValid=Date de retour n'est pas valide !

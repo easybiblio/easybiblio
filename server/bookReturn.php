@@ -4,8 +4,17 @@
   include '_header.php';
 
   $lend_id = $_GET['lend_id'];
+  $message_alert = '';
   if ($lend_id != '') {
     $lend_columns = $database->get("tb_lend", "*", array("id" => $lend_id));
+
+    // Calculate how many months ago this book was lent
+    $query = "select TIMESTAMPDIFF(MONTH, date_lend , DATE_SUB(NOW(), INTERVAL 1 DAY)) from tb_lend where id = " . $database->quote($lend_id);
+    $month_ago = $database->query($query)->fetchAll()[0][0];
+    
+    if ($month_ago > 0) {
+      $message_alert = $t->__("bookReturn.message.bookLate", $month_ago);        
+    }
   }
 
   $book_id = $lend_columns['book_id'];
@@ -44,12 +53,16 @@
         });
 
         function confirmation() {
-            if (confirm("<?= $t->__('bookReturn.label.question') ?>")) {
+            if (confirm("<?= $message_alert . '\n' . $t->__('bookReturn.label.question') ?>")) {
                 document.forms["myform"].submit();
             }
         }
     </script>
-       
+
+    <?php if ($message_alert != '') { ?>
+    <div class="alert alert-warning" role="alert"><?=$message_alert?></div>
+    <?php } ?>
+
     <form action="bookReturnSave.php" method="post" id="myform">
         <input type="hidden" name="lend_id"   value="<?=$lend_id?>" />
 

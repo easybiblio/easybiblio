@@ -139,6 +139,7 @@ bookLendSave.message.success=Lent of the book '%1' is saved with ID %2
 bookReturn.title=Return of book
 bookReturn.button.confirmReturn=Confirm Return
 bookReturn.label.question=Do you confirm the return of this book?
+bookReturn.message.bookLate=%1 month(s) late. The fine is %1 EUR.
 
 bookReturnSave.message.loanNotFound=Loan not found !
 bookReturnSave.message.returnDateNotValid=Return date is not valid. Please try again !

@@ -139,6 +139,7 @@ bookLendSave.message.success=Empréstimo do livro '%1' está gravado com ID %2
 bookReturn.title=Devolução do livro
 bookReturn.button.confirmReturn=Confirmar devolução
 bookReturn.label.question=Você confirma a devolução deste livro?
+bookReturn.message.bookLate=%1 mês(es) de atraso. A multa para devolução é de %1 EUR.
 
 bookReturnSave.message.loanNotFound=Empréstimo não encontrado !
 bookReturnSave.message.returnDateNotValid=Data de devolução é inválida. Tente novamente !
