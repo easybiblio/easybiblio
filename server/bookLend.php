@@ -84,9 +84,22 @@ $datas = $database->query($query)->fetchAll();
 
 foreach($datas as $row) {
     $fmw->escapeHtmlArray($row);
+    
+    // Check if this person can lend more books
+    $personCanLend = true;
+    if (isset($row['qtt'])) {
+        if ($row['qtt'] >= $fmw->maxLentBooks()) {
+            $personCanLend = false;
+        }
+    }
+
     echo "<tr>";
     echo "<td>";
-    echo "<input type='radio' name='person_id' onchange='javascript:_personSelected(\"". $row['id'] . "\")'/>";
+    if ($personCanLend) {
+      echo "<input type='radio' name='person_id' onchange='javascript:_personSelected(\"". $row['id'] . "\")'/>";      
+    } else {
+      echo "<input type='radio' data-toggle='tooltip' title='", $t->__('bookLend.tooltip.maxNumberLent', $fmw->maxLentBooks()), "' disabled/>";
+    }
     echo "</td>";
     echo "<td>";
     echo "<a href='person.php?id=" . $row['id'] . "'>" . $row['name'] . '</a>';
@@ -132,6 +145,9 @@ foreach($datas as $row) {
         $(function() {
             $( "#datepicker" ).datepicker({ dateFormat: "dd/mm/yy" });
         });
+        
+        // Tooltip for this page
+        $('[data-toggle="tooltip"]').tooltip(); 
     </script>
     
     <table style="border-spacing: 5px; border-collapse: separate;">

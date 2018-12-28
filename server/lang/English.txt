@@ -82,6 +82,7 @@ db.about.site_meta_description=Meta Description
 db.about.site_meta_keywords=Meta Keywords
 db.about.site_logo_url=Site logo URL
 db.about.site_welcome=Welcome page of your library
+db.about.site_max_lent_books=Maximum simultaneous lent per person
 
 db.audit=Audit
 db.audit.username=Username
@@ -126,6 +127,8 @@ bookLend.title=Lending of a book
 
 bookLendConfirmation.title=Confirmation for lending a book
 bookLend.label.question=Do you confirm the lending of this book?
+
+bookLend.tooltip.maxNumberLent=A person can lent maximum %1 book(s). 
 
 bookLendSave.message.bookNotFound=Book was not found. Please try again.
 bookLendSave.message.personNotFound=Person was not found. Please try again.

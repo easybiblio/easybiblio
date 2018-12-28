@@ -82,6 +82,7 @@ db.about.site_meta_description=Meta Descrição
 db.about.site_meta_keywords=Meta Palavras Chaves
 db.about.site_logo_url=URL do logotipo
 db.about.site_welcome=Página de boas vindas de sua biblioteca
+db.about.site_max_lent_books=Numéro máximo de empréstimos simultâneos por pessoa
 
 db.audit=Auditoria
 db.audit.username=Usuário
@@ -126,6 +127,8 @@ bookLend.title=Empréstimo de um livro
 
 bookLendConfirmation.title=Confirmação do empréstimo do livro
 bookLend.label.question=Você confirma o empréstimo deste livro?
+
+bookLend.tooltip.maxNumberLent=Cada pessoa pode emprestar no máximo %1 livro(s). 
 
 bookLendSave.message.bookNotFound=Livro não encontrado. Tente novamente.
 bookLendSave.message.personNotFound=Pessoa não encontrada. Tente novamente.

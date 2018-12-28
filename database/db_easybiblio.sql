@@ -171,7 +171,8 @@ CREATE TABLE `tb_about` (
   `site_meta_description` VARCHAR(200) NULL,
   `site_meta_keywords` VARCHAR(200) NULL,
   `site_logo_url` TEXT NULL,
-  `site_welcome` LONGTEXT NULL)
+  `site_welcome` LONGTEXT NULL),
+  `site_max_lent_books` TINYINT(1) NOT NULL DEFAULT 2)
 ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `tb_about`(`site_shortname`, `site_longname`, `site_meta_description`, `site_meta_keywords`, `site_logo_url`, `site_welcome`) VALUES ('EasyBiblio','EasyBiblio - A Book Lending System made easy.','EasyBiblio - A Book Lending System made easy.','easybiblio',null,'<h1>Welcome to EasyBiblio Installation</h1>Put here custom information about your library (address, opening hours, rules for renting books, etc).');

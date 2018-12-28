@@ -212,6 +212,11 @@ class Framework {
           exit();
       }
   }
+
+  // Return the maximum numbers of books a person can let simultaneous.
+  function maxLentBooks() {
+      return $this->config->about['site_max_lent_books'];
+  }
     
 }
 

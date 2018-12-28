@@ -74,6 +74,13 @@ function loadImage() {
     </div>
   </div>
 
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.about.site_max_lent_books') ?>:</label>
+    <div class="col-sm-10">
+        <input id='site_max_lent_books' type="text" class="form-control" name="site_max_lent_books" value=<?= $fmw->getPostOrArrayQuoted($columns, 'site_max_lent_books') ?> maxlength="1">
+    </div>
+  </div>
+    
   <label class="control-label"><?= $t->__('db.about.site_welcome') ?>:</label>
     
   <div class="form-group">
