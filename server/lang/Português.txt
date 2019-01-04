@@ -47,6 +47,8 @@ db.person.phone1=Fone&nbsp;1
 db.person.phone2=Fone&nbsp;2
 db.person.email=E-mail
 db.person.notes=Notas
+db.person.active=Ativa?
+db.person.active_explanation=Ativar quando a pessoa concorda com os novos regulamentos de 2019.
 db.person.date_creation=Data&nbsp;de&nbsp;Criação
 
 db.lend=Dados&nbsp;do&nbsp;Empréstimo
@@ -128,7 +130,8 @@ bookLend.title=Empréstimo de um livro
 bookLendConfirmation.title=Confirmação do empréstimo do livro
 bookLend.label.question=Você confirma o empréstimo deste livro?
 
-bookLend.tooltip.maxNumberLent=Cada pessoa pode emprestar no máximo %1 livro(s). 
+bookLend.tooltip.maxNumberLent=Cada pessoa pode emprestar no máximo %1 livro(s).
+bookLend.tooltip.person_not_active=Pessoa não esta ativa, ela precisa aceitar as novas regras da biblioteca de 2019.
 
 bookLendSave.message.bookNotFound=Livro não encontrado. Tente novamente.
 bookLendSave.message.personNotFound=Pessoa não encontrada. Tente novamente.

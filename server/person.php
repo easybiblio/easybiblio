@@ -74,6 +74,14 @@
     </div>
   </div>
     
+  <div class="form-group">
+    <label class="control-label col-sm-2"><?= $t->__('db.person.active') ?></label>
+    <div class="col-sm-1">
+      <input type="checkbox" name="active" class="form-control" value='1' <?= $fmw->getPostOrArray($columns, 'active') == '1' ? 'checked' : '' ?> >
+    </div>
+    <p class="form-control-static"><?= $t->__('db.person.active_explanation') ?></p>
+  </div>
+    
   <?php if ($id != '') { ?>
   <div class="form-group">
     <label class="control-label col-sm-2"><?= $t->__('db.person.date_creation') ?>:</label>

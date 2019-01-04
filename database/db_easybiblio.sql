@@ -114,6 +114,7 @@ CREATE TABLE `tb_person` (
  `phone2` varchar(45) DEFAULT NULL,
  `email` varchar(100) DEFAULT NULL,
  `notes` longtext,
+ `active` BOOLEAN DEFAULT false,
  `date_creation` datetime DEFAULT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id_UNIQUE` (`id`),

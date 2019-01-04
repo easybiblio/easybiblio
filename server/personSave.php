@@ -17,6 +17,7 @@ $columns = array(
     "phone1" => $_POST['phone1'],
     "phone2" => $_POST['phone2'],
     "email" => $_POST['email'],
+    "active" => $_POST['active'],
     "notes" => $_POST['notes']
 );
 

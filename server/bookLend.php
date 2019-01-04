@@ -90,15 +90,24 @@ foreach($datas as $row) {
     if (isset($row['qtt'])) {
         if ($row['qtt'] >= $fmw->maxLentBooks()) {
             $personCanLend = false;
+            $message_personCanLend = $t->__('bookLend.tooltip.maxNumberLent', $fmw->maxLentBooks());
         }
     }
-
+    
+    // Check if this person is active
+    if (isset($row['active'])) {
+        if (!$row['active']) {
+            $personCanLend = false;
+            $message_personCanLend = $t->__('bookLend.tooltip.person_not_active');
+        }
+    }
+    
     echo "<tr>";
     echo "<td>";
     if ($personCanLend) {
       echo "<input type='radio' name='person_id' onchange='javascript:_personSelected(\"". $row['id'] . "\")'/>";      
     } else {
-      echo "<input type='radio' data-toggle='tooltip' title='", $t->__('bookLend.tooltip.maxNumberLent', $fmw->maxLentBooks()), "' disabled/>";
+      echo "<input type='radio' data-toggle='tooltip' title='", $fmw->escapeHtml($message_personCanLend), "' disabled/>";
     }
     echo "</td>";
     echo "<td>";
