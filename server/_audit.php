@@ -8,11 +8,11 @@ class Audit {
 	}
 	
     public function login() {
-        $this->audit('LOGIN');
+        $this->audit('LOGIN', NULL);
     }
     
     public function logout() {
-        $this->audit('LOGOUT');
+        $this->audit('LOGOUT', NULL);
     }
     
     public function bookLost($details) {
