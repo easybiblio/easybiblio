@@ -5,7 +5,7 @@
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title"><strong><?= $t->__('loginbyEmail.title') ?> </strong></h3></div>
           <div class="panel-body">
-           <form id="login" action="loginByEmailCodeAttempt.php" method="post" role="form">
+           <form id="login" action="loginbyEmailCodeAttempt.php" method="post" role="form">
               <input id="email" type="hidden" name='email' value="<?= trim($_GET['email']); ?>" />
               <div class="form-group">
                 <label for="email"><?= $t->__('loginbyEmail.email') ?></label>
@@ -30,7 +30,6 @@
     </div>
 </div>
 
-<script src="js/sjcl.js"></script>
 <script>
     $(function() {
         // Focus on email
