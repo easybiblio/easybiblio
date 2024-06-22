@@ -217,6 +217,20 @@ login.button.login=Login
 login.message.loginSuccessful=You are connected !
 login.message.loginFailed=Username or Password not valid.
 
+loginbyEmail.title=Login by code sent to your e-mail
+loginbyEmail.email=E-mail
+loginbyEmail.tip.email=Enter your e-mail address
+loginbyEmail.button.sendCode=Send Code to my e-mail
+
+loginbyEmailGenarateCode.message.emailNotFound=Your e-mail is not a registered e-mail in our system
+loginbyEmailGenarateCode.message.codesent=Your login code was sent to your e-mail. Please verify and type your code below.
+
+loginbyEmailCode.code=Code
+loginbyEmailCode.tip.code=Type the code you received by e-mail
+loginbyEmailCode.button.verifyCode=Verify my code
+
+loginByEmailCodeAttempt.message.codeNotFound=Code is not valid, try again.
+
 userList.title=List of users
 userActionSave.message.created=User '%1' has been created.
 userActionSave.message.usernameMandatory=User is mandatory.

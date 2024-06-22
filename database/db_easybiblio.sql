@@ -154,6 +154,8 @@ CREATE TABLE `tb_user` (
   `salt` VARCHAR(64) NOT NULL,
   `usertype` INT NOT NULL,
   `date_creation` datetime DEFAULT NULL,
+  `logincode` INT DEFAULT 0,
+  `timestamp_logincode` datetime DEFAULT NULL,
   PRIMARY KEY (`username`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC))
 ENGINE = InnoDB DEFAULT CHARSET=latin1;

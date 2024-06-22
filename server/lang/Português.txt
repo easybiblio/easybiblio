@@ -217,6 +217,20 @@ login.button.login=Login
 login.message.loginSuccessful=Você está conectado !
 login.message.loginFailed=Usuário ou Senha não são válidos.
 
+loginbyEmail.title=Login por código envido no seu e-mail
+loginbyEmail.email=E-mail
+loginbyEmail.tip.email=Entre o seu e-mail
+loginbyEmail.button.sendCode=Enviar código ao meu e-mail
+
+loginbyEmailGenarateCode.message.emailNotFound=Seu e-mail não está registrado em nosso sistema
+loginbyEmailGenarateCode.message.codesent=Seu código foi enviado ao seu e-mail. Verifique seu e-mail e digite o código abaixo.
+
+loginbyEmailCode.code=Código
+loginbyEmailCode.tip.code=Digite o código recebido por e-mail
+loginbyEmailCode.button.verifyCode=Verificar meu código
+
+loginByEmailCodeAttempt.message.codeNotFound=Código não é válido, verifique que você digitou o código correto e tente novamente.
+
 userList.title=Lista de usuários
 userActionSave.message.created=Usuário '%1' foi criado.
 userActionSave.message.usernameMandatory=Usuário é obrigatório.
