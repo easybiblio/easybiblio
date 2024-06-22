@@ -8,11 +8,11 @@ class Audit {
 	}
 	
     public function login() {
-        $this->audit('LOGIN', NULL);
+        $this->audit('LOGIN');
     }
     
     public function logout() {
-        $this->audit('LOGOUT', NULL);
+        $this->audit('LOGOUT');
     }
     
     public function bookLost($details) {
@@ -48,7 +48,7 @@ class Audit {
     }
     
     // This function inserts an audit in the table TB_AUDIT
-    private function audit($operation, $details) {
+    private function audit($operation, $details = NULL) {
       $columns = array(
         "#timestamp" => "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')",
         "username" => $_SESSION['_ebb_username'],

@@ -7,7 +7,7 @@ class Framework {
    public $translator;
    public $audit;
 
-   function Framework($config, $translator) {
+   function __construct($config, $translator) {
        $this->config = $config;
        $this->translator = $translator;
        
