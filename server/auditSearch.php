@@ -58,7 +58,7 @@
     </tr>
 <?php
 
-$query = "select * from tb_audit where STR_TO_DATE('".$start_date."','%d/%m/%Y') < timestamp and timestamp <= STR_TO_DATE('".$end_date." 23:59:59','%d/%m/%Y %H:%i:%s')";
+$query = "select * from tb_audit where STR_TO_DATE('".$start_date."','%d/%m/%Y') < timestamp and timestamp <= STR_TO_DATE('".$end_date." 23:59:59','%d/%m/%Y %H:%i:%s') order by timestamp DESC";
 
 $datas = $database->query($query)->fetchAll();
 
@@ -86,7 +86,7 @@ foreach($datas as $row) {
     echo "</td>";
     
     echo "</tr>\n";
-    if ($counter == 100) {
+    if ($counter == 200) {
         echo "<tr><td colspan='100' align='center'>";
         echo $t->__('message.there_are_more');
         echo "</td></tr>";
