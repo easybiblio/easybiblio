@@ -141,7 +141,7 @@
              $possible_languages = array_diff(scandir('lang'), array('..', '.'));
              foreach($possible_languages as $language) {
                  $language = substr($language, 0, strpos($language, '.'));
-                 echo "<li>", "<a href='' onClick=\"javascript:_changeLanguage('", $language ,"')\">", $language, "</a></li>";
+                 echo "<li>", "<a href='#' onClick=\"javascript:_changeLanguage('", $language ,"')\">", $language, "</a></li>";
              }
             ?>
 
