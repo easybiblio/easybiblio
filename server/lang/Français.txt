@@ -217,7 +217,7 @@ login.button.login=Connecter
 login.message.loginSuccessful=Vous êtes connecter !
 login.message.loginFailed=Utilisateur or Mot de passe ne sont pas valide.
 
-loginbyEmail.title=Login par code envoyé sur votre e-mail
+loginbyEmail.title=Login par code envoyé à votre e-mail
 loginbyEmail.email=E-mail
 loginbyEmail.tip.email=Entrer votre e-mail
 loginbyEmail.button.sendCode=Envoyer code à mon e-mail
@@ -227,9 +227,9 @@ loginbyEmailGenarateCode.message.codesent=Votre code a été envoyé à votre e-
 
 loginbyEmailCode.code=Code
 loginbyEmailCode.tip.code=Entrer le code reçu dans votre e-mail
-loginbyEmailCode.button.verifyCode=Verifier mon code
+loginbyEmailCode.button.verifyCode=Vérifier mon code
 
-loginByEmailCodeAttempt.message.codeNotFound=Code n'est pas valide, vérifier bien que c'est le bon code reçu par e-mail.
+loginByEmailCodeAttempt.message.codeNotFound=Code n'est pas valide, vérifiez bien que c'est le bon code reçu par e-mail.
 
 userList.title=Liste des utilisateurs
 userActionSave.message.created=Utilisateur '%1' a été créé.
