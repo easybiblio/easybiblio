@@ -5,7 +5,7 @@ class EBBConfig {
     var $database_name = 'easybiblio';
     var $server = 'localhost';
     var $username = 'root';
-    var $password = 'root';
+    var $password = '';
     var $language = 'English';
     
     // Be sure what to do when changing charset
