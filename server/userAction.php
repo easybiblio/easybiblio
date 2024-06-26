@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+use Medoo\Medoo;
+
 $fmw->checkAdmin();
 $action = $_GET['action'];
 
@@ -49,7 +51,7 @@ if ($action == 'delete') {
         "salt" => $salt,
         "usertype" => $_POST['usertype'],
         "password" => $password,
-        "#date_creation" => "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')"
+        "date_creation" => Medoo::raw("STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')")
     );
 
     $database->insert("tb_user", $columns); 

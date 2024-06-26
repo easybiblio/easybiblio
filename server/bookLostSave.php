@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+use Medoo\Medoo;
+
 $fmw->checkOperator();
 
 $id = $_POST['id'];
@@ -9,7 +11,7 @@ if ($id != '') {
     $columns = array(
         "lost" => ($makeLost ? 1 : 0),
         "lost_by_username" => ($makeLost ? $_SESSION['_ebb_username'] : NULL),
-        "#lost_timestamp" => ($makeLost ? "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')" : NULL)
+        "lost_timestamp" => ($makeLost ? Medoo::raw("STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')") : NULL)
     );
         
     $database->update("tb_book", $columns, array("id[=]" => $id));

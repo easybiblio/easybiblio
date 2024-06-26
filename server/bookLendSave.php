@@ -1,5 +1,8 @@
 <?php 
   include_once '_header.mandatory.php';
+
+  use Medoo\Medoo;
+
   $fmw->checkOperator();
 
   $book_id = $_POST['book_id'];
@@ -36,13 +39,15 @@
     $columns = array(
         "book_id" => $book_id,
         "person_id" => $person_id,
-        "#date_lend" => "STR_TO_DATE('" . $date_lend . "','%d/%m/%Y')",
+        "date_lend" => Medoo::raw("STR_TO_DATE('" . $date_lend . "','%d/%m/%Y')"),
         "notes" => $notes,
-        '#date_creation' => "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')"
+        'date_creation' => Medoo::raw("STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')")
     );
 
-    $last_book_lend_id = $database->insert("tb_lend", $columns);
+    $database->insert("tb_lend", $columns);
+    $last_book_lend_id = $database->id();
 	$fmw->info('bookLendSave.message.success', $book_columns['title'], $last_book_lend_id);
+    $fmw->checkDatabaseError();
 
     // Audit
     $toAudit = 'bookCode: '   . $book_columns['code']  . ', ';

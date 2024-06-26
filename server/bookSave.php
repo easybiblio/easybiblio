@@ -1,5 +1,7 @@
 <?php require_once '_header.mandatory.php';
 
+use Medoo\Medoo;
+
 $fmw->checkContributor();
 
 // Check if String ends with toCheck.
@@ -74,13 +76,15 @@ if ($id != '') {
     } else if (isset($to_check['id'])) {
         $fmw->error('bookSave.message.codeAlreadyExist', $to_check['title'], $code);
     } else {
-        $columns['#date_creation'] = "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')";
+        $columns['date_creation'] = Medoo::raw("STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')");
         
         // This line tries to copy the remote cover to your local file
         // copyImageFromServer($id, &$columns);
         
-        $last_book_id = $database->insert("tb_book", $columns);    
+        $database->insert("tb_book", $columns);
+        $last_book_id = $database->id();
         $fmw->info('bookSave.message.newBookSaved', $columns['title'], $last_book_id);
+        $fmw->checkDatabaseError();
         
         // Audit
         $audit->newBook($audit_details);

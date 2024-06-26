@@ -1,5 +1,7 @@
 <?php include '_header.mandatory.php';
 
+use Medoo\Medoo;
+
 $redirection = "loginbyEmail.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
@@ -11,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($columns['usertype'])) {
             $code = rand(100000,999999);
 
-            $columns['#timestamp_logincode'] = "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')";
+            $columns['timestamp_logincode'] = Medoo::raw("STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')");
             $columns['logincode'] = $code;
             $database->update("tb_user", $columns, array('email' => $email));
             mail($email, "Code for your login", "Your code, valid for 3 min, to login is: " + $code);

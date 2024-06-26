@@ -1,4 +1,7 @@
 <?php
+
+use Medoo\Medoo;
+
 class Audit {
 
     private $database;
@@ -50,7 +53,7 @@ class Audit {
     // This function inserts an audit in the table TB_AUDIT
     private function audit($operation, $details = NULL) {
       $columns = array(
-        "#timestamp" => "STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')",
+        "timestamp" => Medoo::raw("STR_TO_DATE('" . date('d/m/Y H:i:s') . "','%d/%m/%Y %H:%i:%s')"),
         "username" => $_SESSION['_ebb_username'],
         "operation" => $operation,
         "details" => $details

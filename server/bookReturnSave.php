@@ -1,5 +1,7 @@
 <?php include_once '_header.mandatory.php';
 
+  use Medoo\Medoo;
+
   $fmw->checkOperator();
 
   $lend_id = $_POST['lend_id'];
@@ -25,7 +27,7 @@
       // Validation is OK, let's save.
       
       $columns = array(
-        "#date_return" => "STR_TO_DATE('" . $date_return . "','%d/%m/%Y')",
+        "date_return" => Medoo::raw("STR_TO_DATE('" . $date_return . "','%d/%m/%Y')"),
         "notes" => $notes
       );
 

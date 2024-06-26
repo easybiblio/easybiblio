@@ -1,5 +1,7 @@
 <?php
 
+use Medoo\Medoo;
+
 class Framework {
 
    public $config;
@@ -20,7 +22,7 @@ class Framework {
          'charset' => $config->charset);
 
        // Medoo instance
-       $this->database = new medoo($dbconfig);
+       $this->database = new Medoo($dbconfig);
        
        // Audit
        $this->audit = new Audit($this->database);
