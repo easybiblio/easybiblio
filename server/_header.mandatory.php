@@ -11,6 +11,8 @@
   // Getting the language to be used
   if (isset($_SESSION['_language'])) {
       $config->language = $_SESSION['_language'];
+  } else {
+      $config->language = "English";
   }
 
   // Object for translating text
