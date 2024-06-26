@@ -14,9 +14,9 @@ class Framework {
        $this->translator = $translator;
        
        $dbconfig = array(
-         'database_type' => $config->database_type,
-         'database_name' => $config->database_name,
-         'server' => $config->server,
+         'type' => $config->database_type,
+         'database' => $config->database_name,
+         'host' => $config->server,
          'username' => $config->username,
          'password' => $config->password,
          'charset' => $config->charset);
@@ -102,9 +102,8 @@ class Framework {
   }
 
   function checkDatabaseError() {
-      $array_error = $this->database->error();
-      if (current($array_error) != "00000") {
-          $this->error('Error: ' . $array_error[2]);
+      if ($this->database->error != "") {
+          $this->error('Error: ' . $this->database->error . ": " . $this->database->errorInfo);
       }
   }
    
