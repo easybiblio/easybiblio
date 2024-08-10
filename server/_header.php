@@ -1,11 +1,5 @@
 <?php require_once '_header.mandatory.php' ?>
-<?php
-    $config->about = $database->select("tb_about", "*");
-    $config->about = $config->about[0];
-
-    // Meddo put lots of \ in the HTML. Let's remove them.
-    $config->about['site_welcome'] = str_replace(array('\\'),'',$config->about['site_welcome']);
-?>
+<?php $fmw->loadAbout(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

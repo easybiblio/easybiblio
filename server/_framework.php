@@ -214,6 +214,14 @@ class Framework {
       }
   }
 
+  function loadAbout() {
+    $this->config->about = $this->database->select("tb_about", "*");
+    $this->config->about = $this->config->about[0];
+
+    // Meddo put lots of \ in the HTML. Let's remove them.
+    $this->config->about['site_welcome'] = str_replace(array('\\'),'',$this->config->about['site_welcome']);
+  }
+    
   // Return the maximum numbers of books a person can let simultaneous.
   function maxLentBooks() {
       return $this->config->about['site_max_lent_books'];

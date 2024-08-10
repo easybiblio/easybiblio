@@ -13,6 +13,7 @@ $columns = array(
     "site_longname" => trim($_POST['site_longname']),
     "site_meta_description" => trim($_POST['site_meta_description']),
     "site_meta_keywords" => trim($_POST['site_meta_keywords']),
+    "site_email" => trim($_POST['site_email']),
     "site_logo_url" => trim($_POST['site_logo_url']),
     "site_welcome" => trim($_POST['site_welcome']),
     "site_max_lent_books" => $max_lent_books

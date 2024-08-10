@@ -23,6 +23,7 @@
 
               <button type="submit" class="btn btn-sm btn-default"><?= $t->__('login.button.login') ?></button>
             </form>
+            <br/><a href="loginbyEmail.php"><?= $t->__('login.loginByEmail') ?></a>
           </div>
         </div>
     </div>

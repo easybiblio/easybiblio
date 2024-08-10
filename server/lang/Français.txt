@@ -83,6 +83,7 @@ db.about.site_longname=Long nom
 db.about.site_meta_description=Meta Description
 db.about.site_meta_keywords=Meta Mot clés
 db.about.site_logo_url=Logo
+db.about.site_email=E-mail
 db.about.site_welcome=Page de bienvenue de votre bibliothèque
 db.about.site_max_lent_books=Maximum d'emprunts simultanés par personne
 
@@ -213,6 +214,7 @@ login.password=Mot de passe
 login.tip.username=Entrer votre utilisateur
 login.tip.password=Entrer votre mot de passe
 login.button.login=Connecter
+login.loginByEmail=Mot de passe oublié. Connecter avec mon adresse e-mail.
 
 login.message.loginSuccessful=Vous êtes connecter !
 login.message.loginFailed=Utilisateur or Mot de passe ne sont pas valide.

@@ -83,6 +83,7 @@ db.about.site_longname=Site Long Name
 db.about.site_meta_description=Meta Description
 db.about.site_meta_keywords=Meta Keywords
 db.about.site_logo_url=Site logo URL
+db.about.site_email=E-mail
 db.about.site_welcome=Welcome page of your library
 db.about.site_max_lent_books=Maximum simultaneous lent per person
 
@@ -213,6 +214,7 @@ login.password=Password
 login.tip.username=Enter Username
 login.tip.password=Enter Password
 login.button.login=Login
+login.loginByEmail=Password forgotten. Connect with my e-mail address.
 
 login.message.loginSuccessful=You are connected !
 login.message.loginFailed=Username or Password not valid.

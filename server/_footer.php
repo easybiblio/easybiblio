@@ -3,7 +3,7 @@
 ?>
 <footer class="pull-right">
     <font face="arial" size="-3">
-        Powered by <a target="_blank" href="http://www.easybiblio.com">EasyBiblio.com</a>
+        Powered by <a target="_blank" href="https://github.com/easybiblio">EasyBiblio</a>
     </font>
 </footer>
     
