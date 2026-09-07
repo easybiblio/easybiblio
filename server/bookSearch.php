@@ -76,7 +76,7 @@ $search_string = strtr($search_string, " ", "%");
 $search_string_quoted = $database->quote("%".$search_string."%");
 $query_language = "";
 if ($search_language != '') {
-  $query_language = "language = '" . $search_language . "' AND ";
+  $query_language = "language = " . $database->quote($search_language) . " AND ";
 }
 $query = "select tb_book.*, !isnull(tb_lend.id) as lended, tb_lend.id as lend_id, tb_type.name as typeName " .
            "from (select * from tb_book where " . $query_language . " (code like ".$search_string_quoted." or title like ".$search_string_quoted." or author like ".$search_string_quoted." or coauthor like ".$search_string_quoted." or description like ".$search_string_quoted.") order by date_creation desc) tb_book ".
